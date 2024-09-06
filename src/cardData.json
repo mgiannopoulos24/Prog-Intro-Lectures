@@ -1,0 +1,36 @@
+[
+    {
+      
+      "id": 1,
+      "icon": "",
+      "title": "Διάλεξη #0 Καλημέρα Κόσμε!",
+      "source": "https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf",
+      "slides": "https://hackintro.github.io/resources/00-introduction.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=9d16a22a",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=40e5dd15"
+    },
+    {
+      "id": 2,
+      "title": "Διάλεξη #0 Καλημέρα Κόσμε!",
+      "source": "https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf",
+      "slides": "https://hackintro.github.io/resources/00-introduction.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=9d16a22a",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=40e5dd15"
+    },
+    {
+      "id": 3,
+      "title": "Διάλεξη #0 Καλημέρα Κόσμε!",
+      "source": "https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf",
+      "slides": "https://hackintro.github.io/resources/00-introduction.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=9d16a22a",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=40e5dd15"
+    },
+    {
+      "id": 4,
+      "title": "Διάλεξη #0 Καλημέρα Κόσμε!",
+      "source": "https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf",
+      "slides": "https://hackintro.github.io/resources/00-introduction.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=9d16a22a",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=40e5dd15"
+    }
+]
