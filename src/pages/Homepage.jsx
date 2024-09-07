@@ -2,6 +2,7 @@ import React from "react";
 import "./styles/Homepage.css";
 import CustomCard from "../components/CustomCard";
 import cardData from "../cardData";
+import RoundIconButton from "../components/RoundIconButton";
 
 const Homepage = () => {
 
@@ -27,6 +28,7 @@ const Homepage = () => {
                     />
                 ))}
             </div>
+            <RoundIconButton />
             <footer className="footer mt-5">
                 <div className="container text-center py-4">
                     <p>&copy; {new Date().getFullYear()} Prog Intro Lectures. All rights reserved.</p>
