@@ -4,7 +4,7 @@
     height: 25rem;
     backdrop-filter: blur(8px);
     border-radius: 0.75rem;
-    border: 2px solid lightblue; /* Added border property */
+    border: 2px solid lightblue; 
     overflow: hidden;
     transform: scale(0.9);
     display: flex;
@@ -14,7 +14,7 @@
   
   .quiz-img-container {
     width: 100%;
-    height: 40%; /* Adjusted height to take up 40% of the container */
+    height: 40%;
     margin: 1rem auto 0;
     display: flex;
     justify-content: center;
@@ -23,12 +23,13 @@
   .quiz-title {
     flex-grow: 1;
     padding: 1rem;
-    background-color: transparent; /* Added background color to title area for better readability */
+    background-color: transparent; 
     color: black;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center; /* Added to center content horizontally */
+    align-items: center; 
+    font-family: 'Google Sans', sans-serif;
   }
 
   .quiz-info {

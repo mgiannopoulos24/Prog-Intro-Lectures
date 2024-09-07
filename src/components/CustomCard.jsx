@@ -2,13 +2,17 @@ import React from 'react';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import './CustomCard.css'; 
+import { iconMap } from './iconMap';
 
 const CustomCard = ({icon, title, source, slides, part1, part2 }) => {
+
+    const iconSrc = iconMap[icon] || icon;
+    
     return (
         <Card className="custom-card">
             <div className="custom-card-header">
                 <div className="icon-above-title">
-                    {icon}
+                    {iconSrc && <img src={iconSrc} alt="icon" />}
                 </div>
                 <Typography variant="h4" component="div" className="custom-card-title">
                     {title}

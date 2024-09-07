@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/Quizzes.css';
 import QuizzesCardData from '../QuizzesCardData';
 import CustomQuizCard from '../components/CustomQuizCard';
+import BackButton from '../components/BackToMain';
 
 const Quizzes = () => {
 
@@ -10,7 +11,8 @@ const Quizzes = () => {
     }
 
     return (
-        <>
+        <>  
+            <BackButton />
             <div className="Quizzes container mt-5">
                 <div className="text-center">
                     <h1>Kahoot Quizzes</h1>
