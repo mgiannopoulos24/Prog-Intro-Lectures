@@ -1,6 +1,7 @@
 [
     {
       "id": 1,
+      "icon": "wave",
       "title": "TBD",
       "source": "",
       "slides": "",
@@ -9,6 +10,7 @@
     },
     {
       "id": 2,
+      "icon": "matrix",
       "title": "TBD",
       "source": "",
       "slides": "",
@@ -17,6 +19,7 @@
     },
     {
       "id": 3,
+      "icon": "pointer",
       "title": "TBD",
       "source": "",
       "slides": "",

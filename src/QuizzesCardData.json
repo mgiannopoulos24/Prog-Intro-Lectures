@@ -17,4 +17,24 @@
         "description": "TBD",
         "image": "wave.png"
     }
+    ,
+    {
+        "id": 3,
+        "title": "Διάλεξη 2",
+        "description": "TBD",
+        "image": "wave.png"
+    }
+    ,
+    {
+        "id": 3,
+        "title": "Διάλεξη 2",
+        "description": "TBD",
+        "image": "wave.png"
+    },
+    {
+        "id": 3,
+        "title": "Διάλεξη 2",
+        "description": "TBD",
+        "image": "wave.png"
+    }
 ]
