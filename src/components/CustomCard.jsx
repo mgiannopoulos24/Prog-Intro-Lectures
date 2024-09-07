@@ -15,20 +15,20 @@ const CustomCard = ({icon, title, source, slides, part1, part2 }) => {
                 </Typography>
             </div>
             <div className="upper-section">
-                <button href={source} className="custom-button">
+                <a href={source} target="_blank" rel="noopener noreferrer" className="custom-button">
                     Προτεινόμενη Βιβλιογραφία
-                </button>
-                <button variant="contained" href={slides} className="custom-button">
+                </a>
+                <a href={slides} target="_blank" rel="noopener noreferrer" className="custom-button">
                     Διαφάνειες
-                </button>
+                </a>
             </div>
             <div className="lower-section">
-                    <button variant="contained" href={part1} className="custom-button custom-half-width-button">
-                        Διάλεξη Μέρος 1
-                    </button>
-                    <button variant="contained" href={part2} className="custom-button custom-half-width-button">
-                        Διάλεξη Μέρος 2
-                    </button>
+                <a href={part1} target="_blank" rel="noopener noreferrer" className="custom-button custom-half-width-button">
+                    Διάλεξη Μέρος 1
+                </a>
+                <a href={part2} target="_blank" rel="noopener noreferrer" className="custom-button custom-half-width-button">
+                    Διάλεξη Μέρος 2
+                </a>
             </div>
         </Card>
     );

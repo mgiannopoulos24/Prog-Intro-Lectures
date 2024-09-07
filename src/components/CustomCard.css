@@ -19,8 +19,8 @@
 }
 
 .icon-above-title{
-  font-size: 72px; /* Adjust the size as needed */
-  margin-bottom: 8px; /* Space between the icon and title */
+  font-size: 72px; 
+  margin-bottom: 8px; 
 }
 
 .custom-card .custom-card-header {
@@ -45,6 +45,7 @@
   justify-content: center;
   flex-wrap: wrap;
   justify-content: space-between; 
+  font-family: "Google Sans", sans-serif;
 }
 
 .custom-card .upper-section {
@@ -55,6 +56,7 @@
   justify-content: center;
   flex-wrap: wrap;
   justify-content: space-between; 
+  font-family: "Google Sans", sans-serif;
 }
 
 .custom-card .custom-button {
@@ -63,6 +65,9 @@
   padding: 20px 0;
   font-size: 16px;
   background-color: white;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .custom-card .custom-button:hover {
