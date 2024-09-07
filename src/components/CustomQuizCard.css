@@ -1,0 +1,53 @@
+.quiz-card {
+    position: relative;
+    width: 20rem;
+    height: 25rem;
+    backdrop-filter: blur(8px);
+    border-radius: 0.75rem;
+    border: 2px solid lightblue; /* Added border property */
+    overflow: hidden;
+    transform: scale(0.9);
+    display: flex;
+    flex-direction: column;
+    background-color: #999;
+  }
+  
+  .quiz-img-container {
+    width: 100%;
+    height: 40%; /* Adjusted height to take up 40% of the container */
+    margin: 1rem auto 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .quiz-title {
+    flex-grow: 1;
+    padding: 1rem;
+    background-color: transparent; /* Added background color to title area for better readability */
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; /* Added to center content horizontally */
+  }
+
+  .quiz-info {
+    text-align: center;
+  }
+
+  .play-button-container {
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+  }
+
+  .play-button {
+    background-color: lightblue  !important;
+    font-size: 1.2rem !important;
+    color: black !important
+  }
+
+  .play-button:hover {
+    background-color: #76bdd5  !important;
+  }
+
