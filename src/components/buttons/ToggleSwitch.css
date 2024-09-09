@@ -1,6 +1,6 @@
 .toggle-switch {
   position: fixed;
-  top: 10px;
+  top: 20px;
   right: 10px;
   z-index: 2;
   display: flex;
