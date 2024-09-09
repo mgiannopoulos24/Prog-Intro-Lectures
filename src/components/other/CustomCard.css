@@ -14,8 +14,8 @@
 
 @media (max-width: 425px) {
   .custom-card {
-    width: calc(100% - 10px);
-    max-width: none;
+    flex-grow: 0;
+    width: calc(100% - 50px);
   }
 }
 
