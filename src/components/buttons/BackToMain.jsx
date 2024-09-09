@@ -21,11 +21,10 @@ const BackButton = () => {
   return (
     <Link to="/" className="back-link">
       <Button
-        variant="primary"
+        
         className={`back-button ${isScrolled ? 'scrolled' : ''}`}
         style={{
           textTransform: 'none',
-          backgroundColor: '#76bdd5',
           color: 'black',
           borderRadius: '50px', 
           padding: isScrolled ? '6px 10px' : '6px 16px',
