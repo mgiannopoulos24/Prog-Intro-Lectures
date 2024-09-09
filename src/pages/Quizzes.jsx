@@ -1,8 +1,8 @@
 import React from 'react';
 import './styles/Quizzes.css';
-import QuizzesCardData from '../QuizzesCardData';
-import CustomQuizCard from '../components/CustomQuizCard';
-import BackButton from '../components/BackToMain';
+import QuizzesCardData from '../utils/QuizzesCardData.json';
+import CustomQuizCard from '../components/other/CustomQuizCard';
+import BackButton from '../components/buttons/BackToMain';
 
 const Quizzes = () => {
 

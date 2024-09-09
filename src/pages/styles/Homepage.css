@@ -40,3 +40,9 @@
 .footer p {
   margin: 0px 0;  
 }
+
+body.dark-mode .footer {
+  background-color: #1B1E1F;
+  color: #e0e0e0; /* Light text color for better contrast */
+  border-top: 1px solid #333; /* Darker border for dark mode */
+}
