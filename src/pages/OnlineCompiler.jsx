@@ -39,6 +39,11 @@ const OnlineCompiler = () => {
             code: userCode,
             language: "c",
             input: userInput
+        }, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        
         }).then((res) => {
             setLoading(false);
             setUserOutput(res.data.stdout || res.data.stderr);
