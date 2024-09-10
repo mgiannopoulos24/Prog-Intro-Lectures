@@ -35,7 +35,7 @@ const OnlineCompiler = () => {
         setLoading(true);
 
         // Post request to compile endpoint
-        Axios.post(`/api/compile`, {
+        Axios.post('/api/compile', {
             code: userCode,
             language: "c",
             input: userInput

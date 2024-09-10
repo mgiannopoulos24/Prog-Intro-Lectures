@@ -1,72 +1,54 @@
-// netlify/functions/compile.js
-const axios = require('axios');
+const express = require('express');
 const cors = require('cors');
-const { parse } = require('querystring');
+const Axios = require('axios');
 
-const corsMiddleware = cors({
-    origin: 'https://progintrolectures.netlify.app', // Replace with your actual frontend URL
+const app = express();
+const PORT = 8000;
+
+app.use(cors({
+    origin: '*', // Allow requests from any origin
     methods: 'GET,POST,PUT,DELETE',
     allowedHeaders: 'Content-Type,Authorization'
-});
+}));
+app.use(express.json());
 
-exports.handler = async function(event, context) {
-    return new Promise((resolve, reject) => {
-        corsMiddleware(event, context, async () => {
-            if (event.httpMethod === 'POST') {
-                try {
-                    const body = JSON.parse(event.body);
-                    const { code, language, input } = body;
+app.post('/compile', (req, res) => {
+    const { code, language, input } = req.body;
 
-                    const data = {
-                        language: language || "c", // Default to C if no language is provided
-                        version: "10.2.0",
-                        files: [
-                            {
-                                name: "main",
-                                content: code
-                            }
-                        ],
-                        stdin: input
-                    };
+    let data = {
+        "language": language || "c",
+        "version": "10.2.0",
+        "files": [
+            {
+                "name": "main",
+                "content": code
+            }
+        ],
+        "stdin": input
+    };
 
-                    const config = {
-                        method: 'post',
-                        url: 'https://emkc.org/api/v2/piston/execute',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        data: data
-                    };
+    let config = {
+        method: 'post',
+        url: 'https://emkc.org/api/v2/piston/execute',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: data
+    };
 
-                    const response = await axios(config);
-                    resolve({
-                        statusCode: 200,
-                        body: JSON.stringify(response.data.run),
-                    });
-                } catch (error) {
-                    if (error.response) {
-                        resolve({
-                            statusCode: error.response.status,
-                            body: JSON.stringify(error.response.data),
-                        });
-                    } else if (error.request) {
-                        resolve({
-                            statusCode: 500,
-                            body: JSON.stringify({ error: "No response from API" }),
-                        });
-                    } else {
-                        resolve({
-                            statusCode: 500,
-                            body: JSON.stringify({ error: error.message }),
-                        });
-                    }
-                }
+    Axios(config)
+        .then((response) => {
+            res.json(response.data.run);
+        })
+        .catch((error) => {
+            if (error.response) {
+                res.status(error.response.status).send(error.response.data);
+            } else if (error.request) {
+                res.status(500).send({ error: "No response from API" });
             } else {
-                resolve({
-                    statusCode: 405,
-                    body: JSON.stringify({ error: 'Method Not Allowed' }),
-                });
+                res.status(500).send({ error: error.message });
             }
         });
-    });
-};
+});
+
+module.exports = app;
