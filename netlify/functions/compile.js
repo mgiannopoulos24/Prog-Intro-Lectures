@@ -1,54 +1,29 @@
-const express = require('express');
-const cors = require('cors');
 const Axios = require('axios');
 
-const app = express();
-const PORT = 8000;
+exports.handler = async function(event, context) {
+    try {
+        const { code, language, input } = JSON.parse(event.body);
 
-app.use(cors({
-    origin: '*', // Allow requests from any origin
-    methods: 'GET,POST,PUT,DELETE',
-    allowedHeaders: 'Content-Type,Authorization'
-}));
-app.use(express.json());
+        const data = {
+            language: language || 'c',
+            version: '10.2.0',
+            files: [{ name: 'main', content: code }],
+            stdin: input
+        };
 
-app.post('/compile', (req, res) => {
-    const { code, language, input } = req.body;
-
-    let data = {
-        "language": language || "c",
-        "version": "10.2.0",
-        "files": [
-            {
-                "name": "main",
-                "content": code
-            }
-        ],
-        "stdin": input
-    };
-
-    let config = {
-        method: 'post',
-        url: 'https://emkc.org/api/v2/piston/execute',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        data: data
-    };
-
-    Axios(config)
-        .then((response) => {
-            res.json(response.data.run);
-        })
-        .catch((error) => {
-            if (error.response) {
-                res.status(error.response.status).send(error.response.data);
-            } else if (error.request) {
-                res.status(500).send({ error: "No response from API" });
-            } else {
-                res.status(500).send({ error: error.message });
-            }
+        const response = await Axios.post('https://emkc.org/api/v2/piston/execute', data, {
+            headers: { 'Content-Type': 'application/json' }
         });
-});
 
-module.exports = app;
+        return {
+            statusCode: 200,
+            body: JSON.stringify(response.data.run)
+        };
+    } catch (error) {
+        console.error(error);
+        return {
+            statusCode: error.response ? error.response.status : 500,
+            body: JSON.stringify({ error: error.message })
+        };
+    }
+};
