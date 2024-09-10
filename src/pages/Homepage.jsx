@@ -3,6 +3,8 @@ import "./styles/Homepage.css";
 import CustomCard from "../components/other/CustomCard";
 import cardData from "../utils/cardData";
 import RoundIconButton from "../components/buttons/RoundIconButton";
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import CodeIcon from '@mui/icons-material/Code';
 
 const Homepage = () => {
 
@@ -28,7 +30,8 @@ const Homepage = () => {
                     />
                 ))}
             </div>
-            <RoundIconButton />
+            <RoundIconButton icon={<SportsEsportsIcon/>} to="/Quizzes" position={0}/>
+            <RoundIconButton icon={<CodeIcon/>} to="/OnlineCompiler" position={1} />
             <footer className="footer mt-5">
                 <div className="container text-center py-3">
                     <p>&copy; {new Date().getFullYear()} Prog Intro Lectures. All rights reserved.</p>
