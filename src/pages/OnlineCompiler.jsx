@@ -11,7 +11,7 @@ const OnlineCompiler = () => {
     const [userCode, setUserCode] = useState(``);
 
     // State variable to set editors default language
-    const [userLang, setUserLang] = useState("c");
+    // const [userLang, setUserLang] = useState("c");
 
     // State variable to set users input
     const [userInput, setUserInput] = useState("");
