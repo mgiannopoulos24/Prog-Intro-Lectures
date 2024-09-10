@@ -1,8 +1,19 @@
+const express = require('express');
+const cors = require('cors');
 const Axios = require('axios');
 
-exports.handler = async function(event, context) {
+const app = express();
+
+app.use(cors({
+    origin: '*', // Allow requests from any origin
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type,Authorization'
+}));
+app.use(express.json()); // Middleware to parse JSON bodies
+
+app.post('/compile', async (req, res) => {
     try {
-        const { code, language, input } = JSON.parse(event.body);
+        const { code, language, input } = req.body;
 
         const data = {
             language: language || 'c',
@@ -15,15 +26,11 @@ exports.handler = async function(event, context) {
             headers: { 'Content-Type': 'application/json' }
         });
 
-        return {
-            statusCode: 200,
-            body: JSON.stringify(response.data.run)
-        };
+        res.json(response.data.run);
     } catch (error) {
         console.error(error);
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: error.message })
-        };
+        res.status(error.response ? error.response.status : 500).json({ error: error.message });
     }
-};
+});
+
+module.exports = app;
