@@ -1,12 +1,11 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import './RoundIconButton.css';
 import { Link } from 'react-router-dom';
 
-const RoundIconButton = () => {
+const RoundIconButton = ({icon, to, position}) => {
   return (
-    <Link to="/Quizzes" style={{ textDecoration: 'none' }}>
+    <Link to={to} style={{ textDecoration: 'none' }}>
     <Button
       variant="contained"
       color="primary"
@@ -17,10 +16,11 @@ const RoundIconButton = () => {
         minWidth: 0,
         p: 0,
         backgroundColor: 'lightblue',
+        bottom: 20 + 80*position,
       }}
       className="RoundIconButton"
     >
-      <SportsEsportsIcon id="sports"/>
+      {icon}
     </Button>
     </Link>
   );
