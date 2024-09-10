@@ -16,11 +16,11 @@ app.use(express.json()); // Enable JSON parsing
 
 app.post("/compile", (req, res) => {
     // Getting the required data from the request
-    const { code, language, input } = req.body;
+    const { code, input } = req.body;
 
     // Create the payload for the API request
     let data = {
-        "language": language || "c", // Default to C if no language is provided
+        "language": "c",
         "version": "10.2.0",
         "files": [
             {
