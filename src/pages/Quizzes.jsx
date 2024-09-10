@@ -3,6 +3,7 @@ import './styles/Quizzes.css';
 import QuizzesCardData from '../utils/QuizzesCardData.json';
 import CustomQuizCard from '../components/other/CustomQuizCard';
 import BackButton from '../components/buttons/BackToMain';
+import Footer from '../components/layout/Footer';
 
 const Quizzes = () => {
 
@@ -30,6 +31,7 @@ const Quizzes = () => {
                     />
                 ))}
             </div>
+            <Footer />
         </> 
     )
 }

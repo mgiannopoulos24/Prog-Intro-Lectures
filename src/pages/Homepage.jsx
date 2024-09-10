@@ -5,6 +5,7 @@ import cardData from "../utils/cardData";
 import RoundIconButton from "../components/buttons/RoundIconButton";
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import CodeIcon from '@mui/icons-material/Code';
+import Footer from "../components/layout/Footer";
 
 const Homepage = () => {
 
@@ -32,12 +33,7 @@ const Homepage = () => {
             </div>
             <RoundIconButton icon={<SportsEsportsIcon/>} to="/Quizzes" position={0}/>
             <RoundIconButton icon={<CodeIcon/>} to="/OnlineCompiler" position={1} />
-            <footer className="footer mt-5">
-                <div className="container text-center py-3">
-                    <p>&copy; {new Date().getFullYear()} Prog Intro Lectures. All rights reserved.</p>
-                    <p>Designed and Developed by <a href="https://github.com/matinanadali" target="_blank" rel="noopener noreferrer">matinanadali</a> and <a href="https://github.com/mgiannopoulos24"target="_blank" rel="noopener noreferrer">mgiannopoulos24</a>.</p>
-                </div>
-            </footer>
+            <Footer />
         </>
     );
 }

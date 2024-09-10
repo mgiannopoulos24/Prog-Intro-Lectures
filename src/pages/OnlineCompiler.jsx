@@ -4,6 +4,7 @@ import Editor from "@monaco-editor/react";
 import Axios from 'axios';
 import BackButton from '../components/buttons/BackToMain';
 import spinner from '../assets/spinner.svg';
+import Footer from '../components/layout/Footer';
 
 const OnlineCompiler = () => {
     // State variable to set users source code
@@ -106,6 +107,7 @@ const OnlineCompiler = () => {
                     )}
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
