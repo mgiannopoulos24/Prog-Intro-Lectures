@@ -9,3 +9,9 @@
     width: 80%;
     margin: auto;
 }
+
+@media (max-width: 500px) {
+    .OnlineCompiler h1 {
+        padding-top: 30px;
+    }
+}
