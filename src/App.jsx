@@ -4,10 +4,12 @@ import Homepage from './pages/Homepage';
 import Quizzes from './pages/Quizzes';
 import ToggleSwitch from './components/buttons/ToggleSwitch';
 import OnlineCompiler from './pages/OnlineCompiler';
+import { ThemeProvider } from './components/buttons/ThemeContext';
 
 function App() {
   return (
     <>
+    <ThemeProvider>
     <ToggleSwitch />
     <BrowserRouter>
       <Routes>
@@ -16,6 +18,7 @@ function App() {
         <Route path='/OnlineCompiler' element={<OnlineCompiler />} />
       </Routes>
     </BrowserRouter>
+    </ThemeProvider>
     </>
   );
 }

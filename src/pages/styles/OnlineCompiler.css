@@ -1,103 +1,11 @@
 .OnlineCompiler {
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    padding: 20px 50px;
+}
+
+.code-editor {
+    flex-grow: 1;
     width: 80%;
     margin: auto;
 }
-
-.main {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-
-.left-container, .right-container {
-    flex-shrink: 1; /* Allow both containers to grow and shrink equally */
-    padding: 10px;
-    box-sizing: border-box;
-    min-width: 300px;
-}
-
-.left-container {
-    flex-grow: 2;
-    flex-basis: 66%;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid #ddd;
-}
-
-.right-container {
-    flex-grow: 1;
-    flex-basis: 33%;
-}
-
-.left-container .run-btn {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.left-container .run-btn:hover {
-    background-color: #45a049;
-}
-
-.input-box {
-    margin-bottom: 20px;
-}
-
-.input-box textarea {
-    width: 100%;
-    height: 150px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    resize: vertical;
-    box-sizing: border-box;
-    background-color: #f4f4f4;
-}
-
-.input-box textarea:focus {
-    outline: 2px solid lightblue;
-}
-.output-box {
-    margin-bottom: 20px;
-}
-
-.output-box pre {
-    color: black;
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 4px;
-    overflow-x: auto;
-}
-
-.clear-btn {
-    padding: 10px 20px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.clear-btn:hover {
-    background-color: #e53935;
-}
-
-.spinner-box {
-    width: 100%;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-

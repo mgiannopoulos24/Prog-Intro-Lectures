@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import './ToggleSwitch.css';
+import { ThemeContext } from './ThemeContext';
 
 const ToggleSwitch = ({ onChange, defaultChecked }) => {
+
+  const { toggleTheme } = useContext(ThemeContext);
+
   const [isChecked, setIsChecked] = useState(() => {
     
     const savedPreference = localStorage.getItem('dark-mode');
@@ -16,6 +20,7 @@ const ToggleSwitch = ({ onChange, defaultChecked }) => {
   }, [isChecked]);
 
   const handleCheckboxChange = () => {
+    toggleTheme();
     setIsChecked((prev) => !prev);
     onChange?.(!isChecked);
   };

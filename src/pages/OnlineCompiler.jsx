@@ -1,106 +1,34 @@
-import { useState } from 'react';
 import './styles/OnlineCompiler.css';
-import Editor from "@monaco-editor/react";
-import executeCode from '../api/index.mjs';
 import BackButton from '../components/buttons/BackToMain';
-import spinner from '../assets/spinner.svg';
 import Footer from '../components/layout/Footer';
+import { useContext } from 'react';
+import { ThemeContext } from '../../src/components/buttons/ThemeContext';
 
 const OnlineCompiler = () => {
-    // State variable to set users source code
-    const [userCode, setUserCode] = useState(``);
 
-    // State variable to set users input
-    const [userInput, setUserInput] = useState("");
+    const { isDarkTheme } = useContext(ThemeContext);
 
-    // State variable to set users output
-    const [userOutput, setUserOutput] = useState("");
-
-    const [isError, setIsError] = useState(false);
-
-    // Loading state variable to show spinner
-    // while fetching data
-    const [loading, setLoading] = useState(false);
-
-    const options = {
-        fontSize: '20',
-        minimap: {
-            enabled: false, // Disable the minimap
-        },
-    }
-
-  const compile = async () => {
-    const sourceCode = userCode;
-    if (!sourceCode) return;
-    try {
-      setLoading(true);
-      const { run: result } = await executeCode("c", sourceCode);
-      setUserOutput(result.output.split("\n"));
-      result.stderr ? setIsError(true) : setIsError(false);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-    // Function to clear the output screen
-    function clearOutput() {
-        setUserOutput("");
-    }
+    // Function to generate the iframe src
+    const getIframeSrc = () => {
+        return `https://onecompiler.com/embed/c?hideLanguageSelection=true&hideNew=true&hideNewFileOption=true&hideTitle=true&fontSize=18${isDarkTheme === 'true' ? "&theme=dark" : ""}`;
+    };
 
     return (
         <div className="OnlineCompiler">
             <BackButton />
             <div className="container mt-5">
                 <div className="text-center">
-                    <h1>Online Compiler</h1>
-                    <h3>Time for some practice!</h3>
+                    <h1>Prog Intro Lectures</h1>
+                    <h3>Χειμερινό Εξάμηνο 2024-25</h3>
                     <hr className="my-4" />
                 </div>      
             </div>
-            <div className="main">
-                <div className="left-container">
-                    <Editor
-                        options={options}
-                        height="70vh"
-                        width="100%"
-                        minWidth="0"
-                        theme='vs-dark'
-                        language="c"
-                        defaultLanguage="c"
-                        defaultValue="// Enter your code here"
-                        onChange={(value) => { setUserCode(value) }}
-                        flexShrink={1}
-                    />
-                    <button className="run-btn" onClick={() => compile()}>
-                        Run
-                    </button>
-                </div>
-                <div className="right-container">
-                    <h4>Input:</h4>
-                    <div className="input-box">
-                        <textarea id="code-inp" onChange=
-                            {(e) => setUserInput(e.target.value)}>
-                        </textarea>
-                    </div>
-                    <h4>Output:</h4>
-                    {loading ? (
-                        <div className="spinner-box">
-                           <img src={spinner} alt="spinner" />
-                        </div>
-                    ) : (
-                        <div className="output-box">
-                            <pre>{userOutput}</pre>
-                            <button onClick={() => { clearOutput() }}
-                                className="clear-btn">
-                                Clear
-                            </button>
-                        </div>
-                    )}
-                </div>
-            </div>
-            <Footer />
+            <iframe className="cards d-flex justify-content-center flex-wrap gap-3 code-editor"
+                src={getIframeSrc()} 
+                width="100%"
+                title="code-editor"
+            ></iframe> 
+        <Footer />
         </div>
     );
 }
