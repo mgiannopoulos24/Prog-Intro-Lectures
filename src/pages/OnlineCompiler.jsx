@@ -44,7 +44,7 @@ const OnlineCompiler = () => {
 
     // Function to generate the iframe src
     const getIframeSrc = () => {
-        return `https://onecompiler.com/embed/c?hideLanguageSelection=true&hideNew=true&hideNewFileOption=true&hideTitle=true&fontSize=${fontSize}${isDarkTheme === 'true' ? "&theme=dark" : ""}`;
+        return `https://onecompiler.com/embed/c?hideLanguageSelection=true&hideNew=true&hideNewFileOption=true&hideTitle=true&fontSize=${fontSize}${isDarkTheme === 'false' ? "&theme=dark" : ""}`;
     };
 
     return (
