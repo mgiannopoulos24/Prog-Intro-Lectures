@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './styles/OnlineCompiler.css';
 import Editor from "@monaco-editor/react";
-import Axios from 'axios';
+import executeCode from '../api/index.mjs';
 import BackButton from '../components/buttons/BackToMain';
 import spinner from '../assets/spinner.svg';
 import Footer from '../components/layout/Footer';
@@ -10,14 +10,13 @@ const OnlineCompiler = () => {
     // State variable to set users source code
     const [userCode, setUserCode] = useState(``);
 
-    // State variable to set editors default language
-    // const [userLang, setUserLang] = useState("c");
-
     // State variable to set users input
     const [userInput, setUserInput] = useState("");
 
     // State variable to set users output
     const [userOutput, setUserOutput] = useState("");
+
+    const [isError, setIsError] = useState(false);
 
     // Loading state variable to show spinner
     // while fetching data
@@ -30,31 +29,20 @@ const OnlineCompiler = () => {
         },
     }
 
-    // Function to call the compile endpoint
-    function compile() {
-        setLoading(true);
-
-        // Post request to compile endpoint
-        Axios.post('https://progintrolectures.netlify.app/.netlify/functions/compile', {
-            code: userCode,
-            language: "c",
-            input: userInput
-        }, {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        
-        }).then((res) => {
-            setLoading(false);
-            setUserOutput(res.data.stdout || res.data.stderr);
-        }).then(() => {
-            setLoading(false);
-        }).catch((err) => {
-            console.error(err);
-            setUserOutput("Error: " + (err.response ? err.response.data.error : err.message));
-            setLoading(false);
-        });
+  const compile = async () => {
+    const sourceCode = userCode;
+    if (!sourceCode) return;
+    try {
+      setLoading(true);
+      const { run: result } = await executeCode("c", sourceCode);
+      setUserOutput(result.output.split("\n"));
+      result.stderr ? setIsError(true) : setIsError(false);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
     }
+  };
 
     // Function to clear the output screen
     function clearOutput() {
