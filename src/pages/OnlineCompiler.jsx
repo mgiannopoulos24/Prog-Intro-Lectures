@@ -52,8 +52,8 @@ const OnlineCompiler = () => {
             <BackButton />
             <div className="container mt-5">
                 <div className="text-center">
-                    <h1>Prog Intro Lectures</h1>
-                    <h3>Χειμερινό Εξάμηνο 2024-25</h3>
+                    <h1>Online Compiler</h1>
+                    <h3>Time for some practice!</h3>
                     <hr className="my-4" />
                 </div>      
             </div>
