@@ -73,6 +73,7 @@
 
 .custom-card .custom-button:hover {
   border-color: #252d4a;
+  transition: all ease-in-out 0.3s;
 }
 
 .custom-card .custom-half-width-button {

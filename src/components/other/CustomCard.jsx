@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import './CustomCard.css'; 
 import { iconMap } from './iconMap';
 
-const CustomCard = ({icon, title, source, slides, part1, part2 }) => {
+const CustomCard = ({icon, title, slides, part1, part2 }) => {
 
     const iconSrc = iconMap[icon] || icon;
     
@@ -19,9 +19,6 @@ const CustomCard = ({icon, title, source, slides, part1, part2 }) => {
                 </Typography>
             </div>
             <div className="upper-section">
-                <a href={source} target="_blank" rel="noopener noreferrer" className="custom-button">
-                    Προτεινόμενη Βιβλιογραφία
-                </a>
                 <a href={slides} target="_blank" rel="noopener noreferrer" className="custom-button">
                     Διαφάνειες
                 </a>

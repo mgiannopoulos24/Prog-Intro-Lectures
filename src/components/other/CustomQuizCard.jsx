@@ -1,23 +1,21 @@
 import React from 'react';
 import "./CustomQuizCard.css";
-import { Button } from '@mui/material'; 
+import { PlayButton } from '../buttons/PlayButton';
 
 const QuizCard = ({ image, title, description, onClick }) => {
   return (
     <div className="quiz-card">
       <div className="quiz-img-container">
-        <img src={require("../../assets/"+image)} alt="quiz-img" className="quiz-img" />
+        <img src={image} alt="quiz-img" className="quiz-img" />
       </div>
       <div className="quiz-title">
         <div className='quiz-info'>
           <h2>{title}</h2>
           <h3>{description}</h3>
         </div>
-        <div className="play-button-container">
-        <Button variant="contained" className="play-button" onClick={onClick}>
-          Play!
-        </Button>
-      </div>
+        <div className="play-button-container" onClick={onClick}>
+          <PlayButton />
+        </div>
       </div>
       
     </div>

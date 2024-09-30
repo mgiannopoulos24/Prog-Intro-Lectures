@@ -2,82 +2,9 @@
     {
       "id": 1,
       "icon": "wave",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
-    },
-    {
-      "id": 2,
-      "icon": "matrix",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
-    },
-    {
-      "id": 3,
-      "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
-    },
-    {
-      "id": 4,
-      "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
-    },
-    {
-      "id": 5,
-      "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
-    },
-    {
-      "id": 6,
-      "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
-    },
-    {
-      "id": 7,
-      "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
-    },
-    {
-      "id": 8,
-      "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
-    },
-    {
-      "id": 9,
-      "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
+      "title": "Διάλεξη 0: Καλημέρα Κόσμε!",
+      "slides": "https://progintro.github.io/assets/pdf/lec00.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=80cd2838",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=b92133a1"
     }
 ]
