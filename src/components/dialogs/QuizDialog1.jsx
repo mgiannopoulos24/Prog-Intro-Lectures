@@ -95,21 +95,21 @@ const QuizDialog1 = ({ open, onClose }) => {
             return (
                 <>
                     <p id='upper'>{message}</p>
-                    <p id='lower'>Oh 🙁 Better luck next time</p>
+                    <p id='lower'>Δεν τα πήγες τόσο καλά. 🙁</p>
                 </>
             );
         } else if (correctAnswers >= 4 && correctAnswers <= 7) {
             return (
                 <>
                     <p id='upper'>{message}</p>
-                    <p id='lower'>A for effort! 🙂</p>
+                    <p id='lower'>Καλή προσπάθεια! 🙂</p>
                 </>
             );
         } else if (correctAnswers >= 8 && correctAnswers <= 11) {
             return (
                 <>
                     <p id='upper'>{message}</p>
-                    <p id='lower'>Congratulations!!🎉</p>
+                    <p id='lower'>Συγχαρητήρια!!🎉</p>
                 </>
             );
         }
@@ -118,7 +118,7 @@ const QuizDialog1 = ({ open, onClose }) => {
     return (
         <Dialog open={open} onClose={handleDialogClose} PaperProps={{ style: { width: "80%", height: "80%" } }}>
             <DialogTitle style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold', fontSize: '20px' }}>
-                Stack Basics
+                Καλημέρα Κόσμε!
                 <CloseIcon onClick={handleDialogClose} style={{ cursor: 'pointer' }} />
             </DialogTitle>
             {showResult ? (

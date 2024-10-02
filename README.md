@@ -12,7 +12,7 @@
 1. React
 2. NodeJS
 3. React Boostrap
-4. Firebase (Firestore)
+~~4. Firebase (Firestore)~~
 
 ## Γλώσσες που χρησιμοποιήθηκαν
 1. HTML
@@ -24,7 +24,7 @@
 
 ## To-Do
 
-- [ ] Να βάλουμε τα quiz.
+- [X] Να βάλουμε τα quiz.
 - [X] Να βάλουμε τα emojis.
 - [X] Να φτιάξουμε το background dark-white.
 - [X] Να βάλουμε Google Sans γραμματοσειρά.
