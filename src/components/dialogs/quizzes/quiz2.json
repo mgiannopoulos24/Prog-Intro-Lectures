@@ -1,0 +1,62 @@
+[
+    {
+        "question": "Το λειτουργικό σύστημα που τρέχει το 90% των web servers σήμερα είναι το",
+        "answers": ["Linux", "Limux","MacOS","Windows"],
+        "correctAnswer": "Linux",
+        "photoURL": ""
+    },
+    {
+        "question": "Γιατί να ασπαστείς το Linux;",
+        "answers": ["Ασφάλεια", "Ταχύτητα","Τζαμπέ","Όλα τα παραπάνω"],
+        "correctAnswer": "Όλα τα παραπάνω",
+        "photoURL": ""
+    },
+    {
+        "question": "Το Linux είναι βασισμένο σε ένα λειτουργικό σύστημα που λέγεται",
+        "answers": ["Multics", "Simics","Unix","Κανένα από τα παραπάνω"],
+        "correctAnswer": "Unix",
+        "photoURL": ""
+    },
+    {
+        "question": "Στην εντολή /bin/echo hello good world ποιο είναι το 2ο όρισμα του προγράμματος",
+        "answers": ["echo", "hello","good","world"],
+        "correctAnswer": "good",
+        "photoURL": ""
+    },
+    {
+        "question": "Ποιο είναι το basename του αρχείου /home/users/ethan/example/hello.txt;",
+        "answers": ["/home/users/ethan/example/", "example","hello.txt","Δεν υπάρχει"],
+        "correctAnswer": "hello.txt",
+        "photoURL": ""
+    },
+    {
+        "question": "Ποιο είναι το filepath του αρχείου /home/users/ethan/example/hello.txt;",
+        "answers": ["/home/users/ethan/example/", "example","hello.txt","/home/users/ethan/example/hello.txt"],
+        "correctAnswer": "/home/users/ethan/example/hello.txt",
+        "photoURL": ""
+    },
+    {
+        "question": "Ποια εντολή μας δίνει δικαιοδοσία υπερ-χρήστη (root) σε ένα σύστημα Linux;",
+        "answers": ["doit", "root","sudo","Run as Administrator"],
+        "correctAnswer": "sudo",
+        "photoURL": ""
+    },
+    {
+        "question": "Στο Linux (σχεδόν) όλα είναι ένα:",
+        "answers": ["Ψέμα", "Αρχείο","IP Address","Κλικ"],
+        "correctAnswer": "Αρχείο",
+        "photoURL": ""
+    },
+    {
+        "question": "Ποια από τις παρακάτω εντολές τυπώνει τα περιεχόμενα ενός αρχείου",
+        "answers": ["printf", "cat","dog","echo"],
+        "correctAnswer": "cat",
+        "photoURL": ""
+    },
+    {
+        "question": "Netflix Interview Question: Με ποια εντολή θα έλεγχες το workload ενός απομακρυσμένου server;",
+        "answers": ["ls", "uptime","cat","users"],
+        "correctAnswer": "uptime",
+        "photoURL": ""
+    }
+]
