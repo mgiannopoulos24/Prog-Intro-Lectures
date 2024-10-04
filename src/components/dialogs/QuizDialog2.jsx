@@ -8,7 +8,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import questions from './quizzes/quiz1.json';
+import questions from './quizzes/quiz2.json';
 import './QuizDialog.css';
 import images from "./images";
 import Slide from '@mui/material/Slide';
@@ -17,14 +17,14 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const QuizDialog1 = ({ open, onClose }) => {
+const QuizDialog2 = ({ open, onClose }) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [correctAnswers, setCorrectAnswers] = useState(0);
     const [showResult, setShowResult] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [correctAnswerIndexes, setCorrectAnswerIndexes] = useState([]);
     const [userSelections, setUserSelections] = useState([]);
-
+    
     useEffect(() => {
         if (open) {
             resetQuiz();
@@ -125,10 +125,10 @@ const QuizDialog1 = ({ open, onClose }) => {
             open={open}
             onClose={handleDialogClose}
             PaperProps={{ style: { width: "80%", height: "80%" } }}
-            TransitionComponent={Transition} 
+            TransitionComponent={Transition}
         >
             <DialogTitle style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold', fontSize: '20px' }}>
-                Καλημέρα Κόσμε!
+                Η Γραμμή Εντολών
                 <CloseIcon onClick={handleDialogClose} style={{ cursor: 'pointer' }} />
             </DialogTitle>
             {showResult ? (
@@ -194,4 +194,4 @@ const QuizDialog1 = ({ open, onClose }) => {
     );
 };
 
-export default QuizDialog1;
+export default QuizDialog2;
