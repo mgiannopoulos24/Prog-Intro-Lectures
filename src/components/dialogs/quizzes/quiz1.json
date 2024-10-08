@@ -43,8 +43,8 @@
     },
     {
         "question": "Παραλλαγή φετινού θέματος: ποιο από τις παρακάτω γραμμές τυπώνει Michael Jordan ακολουθούμενο από νέα γραμμή;",
-        "answers": ["print \"Michael Jordan\";", "printf(\"Michael Jordan\n\");", "printf(\"Michael Jordan\");","print(Lebron James);"],
-        "correctAnswer": "Κατσαβίδι",
+        "answers": ["print \"Michael Jordan\";", "printf(\"Michael Jordan\\n\");", "printf(\"Michael Jordan\");", "print(Lebron James);"],
+        "correctAnswer": "printf(\"Michael Jordan\\n\");",
         "photoURL": "q1q8"
     }
 ]
