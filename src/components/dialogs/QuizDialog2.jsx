@@ -24,7 +24,7 @@ const QuizDialog2 = ({ open, onClose }) => {
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [correctAnswerIndexes, setCorrectAnswerIndexes] = useState([]);
     const [userSelections, setUserSelections] = useState([]);
-    
+
     useEffect(() => {
         if (open) {
             resetQuiz();
@@ -45,35 +45,42 @@ const QuizDialog2 = ({ open, onClose }) => {
             ? questions[currentQuestionIndex].correctAnswer
             : [questions[currentQuestionIndex].correctAnswer];
         const isCorrect = correctAnswersArray.includes(answer);
-
+    
         const correctIndexes = correctAnswersArray.map(correctAnswer =>
             questions[currentQuestionIndex].answers.indexOf(correctAnswer)
         );
-
+    
         setSelectedAnswer({ answer, isCorrect });
         setCorrectAnswerIndexes(correctIndexes);
-
+    
         setUserSelections(prevSelections => {
             const newSelections = [...prevSelections];
             newSelections[currentQuestionIndex] = { answer, isCorrect, correctIndexes };
             return newSelections;
         });
-
+    
         if (isCorrect) {
             setCorrectAnswers(prevCount => prevCount + 1);
         }
     };
+    
 
     const handleNextQuestion = () => {
         if (currentQuestionIndex < questions.length - 1) {
             setCurrentQuestionIndex(prevIndex => prevIndex + 1);
-            setSelectedAnswer(null);
-            setCorrectAnswerIndexes([]);
+            const nextSelection = userSelections[currentQuestionIndex + 1];
+            if (nextSelection) {
+                setSelectedAnswer({ answer: nextSelection.answer, isCorrect: nextSelection.isCorrect });
+                setCorrectAnswerIndexes(nextSelection.correctIndexes);
+            } else {
+                setSelectedAnswer(null);
+                setCorrectAnswerIndexes([]);
+            }
         } else {
             setShowResult(true);
         }
     };
-
+    
     const handlePreviousQuestion = () => {
         if (currentQuestionIndex > 0) {
             setCurrentQuestionIndex(prevIndex => prevIndex - 1);
@@ -87,6 +94,7 @@ const QuizDialog2 = ({ open, onClose }) => {
             }
         }
     };
+    
 
     const handleDialogClose = () => {
         resetQuiz();
@@ -125,10 +133,10 @@ const QuizDialog2 = ({ open, onClose }) => {
             open={open}
             onClose={handleDialogClose}
             PaperProps={{ style: { width: "80%", height: "80%" } }}
-            TransitionComponent={Transition}
+            TransitionComponent={Transition} 
         >
             <DialogTitle style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold', fontSize: '20px' }}>
-                Η Γραμμή Εντολών
+                Διάλεξη #1 Η Γραμμή Εντολών
                 <CloseIcon onClick={handleDialogClose} style={{ cursor: 'pointer' }} />
             </DialogTitle>
             {showResult ? (
@@ -150,23 +158,34 @@ const QuizDialog2 = ({ open, onClose }) => {
                             </div>
                             <p id="qtext">{questions[currentQuestionIndex].question}</p>
                             <div className="answers-container">
-                                {questions[currentQuestionIndex].answers.map((answer, index) => (
-                                    <Button
-                                        key={index}
-                                        variant="contained"
-                                        onClick={() => handleAnswerClick(answer, index)}
-                                        disabled={!!selectedAnswer}
-                                        style={{
-                                            backgroundColor: selectedAnswer && selectedAnswer.answer === answer ?
-                                                (selectedAnswer.isCorrect ? 'green' : 'red') :
-                                                (correctAnswerIndexes.includes(index) ? 'green' : ''),
-                                            opacity: 1,
-                                            color: 'white'
-                                        }}
-                                    >
-                                        {answer}
-                                    </Button>
-                                ))}
+                                {questions[currentQuestionIndex].answers.map((answer, index) => {
+                                    let backgroundColor = '';
+                                    if (selectedAnswer) {
+                                        if (selectedAnswer.answer === answer) {
+                                            backgroundColor = selectedAnswer.isCorrect ? 'green' : 'red';
+                                        } else if (correctAnswerIndexes.includes(index)) {
+                                            backgroundColor = 'green';
+                                        } else {
+                                            backgroundColor = 'gray';
+                                        }
+                                    }
+
+                                    return (
+                                        <Button
+                                            key={index}
+                                            variant="contained"
+                                            onClick={() => handleAnswerClick(answer, index)}
+                                            disabled={!!selectedAnswer}
+                                            style={{
+                                                backgroundColor: backgroundColor,
+                                                opacity: 1,
+                                                color: 'white',
+                                            }}
+                                        >
+                                            {answer}
+                                        </Button>
+                                    );
+                                })}
                             </div>
                         </div>
                     </DialogContent>

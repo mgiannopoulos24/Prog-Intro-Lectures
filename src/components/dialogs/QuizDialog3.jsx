@@ -8,7 +8,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import questions from './quizzes/quiz1.json';
+import questions from './quizzes/quiz3.json';
 import './QuizDialog.css';
 import images from "./images";
 import Slide from '@mui/material/Slide';
@@ -17,7 +17,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const QuizDialog1 = ({ open, onClose }) => {
+const QuizDialog3 = ({ open, onClose }) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [correctAnswers, setCorrectAnswers] = useState(0);
     const [showResult, setShowResult] = useState(false);
@@ -136,7 +136,7 @@ const QuizDialog1 = ({ open, onClose }) => {
             TransitionComponent={Transition} 
         >
             <DialogTitle style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold', fontSize: '20px' }}>
-                Καλημέρα Κόσμε!
+                Διάλεξη #2 Μνήμη και Μεταβλητές
                 <CloseIcon onClick={handleDialogClose} style={{ cursor: 'pointer' }} />
             </DialogTitle>
             {showResult ? (
@@ -158,8 +158,9 @@ const QuizDialog1 = ({ open, onClose }) => {
                             </div>
                             <p id="qtext">{questions[currentQuestionIndex].question}</p>
                             <div className="answers-container">
-                                {questions[currentQuestionIndex].answers.map((answer, index) => {
-                                let backgroundColor = '';
+                            {questions[currentQuestionIndex].answers.map((answer, index) => {
+                                    let backgroundColor = '';
+
                                     if (selectedAnswer) {
                                         if (selectedAnswer.answer === answer) {
                                             backgroundColor = selectedAnswer.isCorrect ? 'green' : 'red';
@@ -213,4 +214,4 @@ const QuizDialog1 = ({ open, onClose }) => {
     );
 };
 
-export default QuizDialog1;
+export default QuizDialog3;

@@ -6,10 +6,12 @@ import Footer from '../components/layout/Footer';
 import kahoot_img from '../assets/kahoot.png';
 import QuizDialog1 from '../components/dialogs/QuizDialog1'
 import QuizDialog2 from '../components/dialogs/QuizDialog2'
+import QuizDialog3 from '../components/dialogs/QuizDialog3'
 
 const Quizzes = () => {
     const [openDialog1, setOpenDialog1] = useState(false);
     const [openDialog2, setOpenDialog2] = useState(false);
+    const [openDialog3, setOpenDialog3] = useState(false);
 
     return (
         <>  
@@ -26,6 +28,8 @@ const Quizzes = () => {
                 <QuizDialog1 open={openDialog1} onClose={() => setOpenDialog1(false)} />
                 <CustomQuizCard image={kahoot_img} title= "Διάλεξη #1" description="Η Γραμμή Εντολών" onClick={() => setOpenDialog2(true)}/>
                 <QuizDialog2 open={openDialog2} onClose={() => setOpenDialog2(false)} />
+                <CustomQuizCard image={kahoot_img} title= "Διάλεξη #2" description="Μνήμη και Μεταβλητές" onClick={() => setOpenDialog3(true)}/>
+                <QuizDialog3 open={openDialog3} onClose={() => setOpenDialog3(false)} />
             </div>
             <Footer />
         </> 
