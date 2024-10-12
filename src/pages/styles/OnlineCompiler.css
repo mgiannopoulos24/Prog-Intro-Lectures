@@ -1,19 +1,35 @@
-.OnlineCompiler {
-    height: 100vh;
+.onlineCompiler {
     display: flex;
+    min-height: calc(100vh - 50px);
     flex-direction: column;
-    transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out;
+    margin: 20px auto;
+    width: 80vw;
+    box-sizing: border-box;
 }
 
-.code-editor {
-    flex-grow: 1;
-    width: 80%;
+.editorContainer {
+    width: 100%;
     margin: auto;
-    transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out;
+    flex-grow: 1;
+    padding: 5px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
-@media (max-width: 500px) {
-    .OnlineCompiler h1 {
-        padding-top: 30px;
-    }
+.ioBox {
+    background-color: #1e1e1e;
+    flex-grow: 1;
+    color: 'white';
+    padding: 10px;
+    height: 50%;
+}
+
+.controlBar {
+    background-color: grey;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 5px
 }

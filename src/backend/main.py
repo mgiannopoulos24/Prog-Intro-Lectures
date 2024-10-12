@@ -23,7 +23,7 @@ def compile_code():
     compile_process = subprocess.run(["gcc", "main.c", "-o", "main"], capture_output=True, text=True)
     
     if compile_process.returncode != 0:
-        return jsonify({"error": compile_process.stderr}), 400
+        return jsonify({"error": compile_process.stderr})
 
     # Run the compiled code
     run_process = subprocess.run(["./main"], capture_output=True, text=True)
