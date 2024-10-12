@@ -39,7 +39,7 @@ function App() {
 // code here`;
 
   return (
-    <div className='onlineCompiler'>  
+    <>
         <BackButton />
         <div className="container mt-5">
             <div className="text-center">
@@ -48,6 +48,7 @@ function App() {
                 <hr className="my-4" />
             </div>      
         </div>
+      <div className='onlineCompiler'>  
         <Grid className="controlBar" item size={{ xs: 12, md: 12, lg: 12}}>
               <Button variant="contained"  onClick={handleSubmit} sx={{color: 'white', backgroundColor: isDarkTheme === 'true' ? "#76bdd5" : "#1a4e63"}}>Submit</Button>
         </Grid>
@@ -80,6 +81,7 @@ function App() {
           </Grid>
         </Grid>
     </div>
+    </>
   );
 }
 
