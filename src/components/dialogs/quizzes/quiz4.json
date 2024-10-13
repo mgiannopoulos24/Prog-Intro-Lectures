@@ -1,0 +1,63 @@
+[
+    {
+        "question": "Ένα πρόγραμμα C είναι συνήθως:",
+        "answers": ["Μια σειρά από συναρτήσεις", "Η συνάρτηση main","Μια σειρά από τελεστές","Μια σειρά από εντολές"],
+        "correctAnswer": "Μια σειρά από συναρτήσεις",
+        "photoURL": "q4q1"
+    },
+    {
+        "question": "Τι θα τυπώσει η printf(\"England-Greece %d-%d\", 1, 2);",
+        "answers": ["England-Greece 1-2","England-Greece -1","England-Greece %d-%d","England-Greece 2-1"],
+        "correctAnswer": "England-Greece 1-2",
+        "photoURL": "q4q2"
+    },
+    {
+        "question": "Είναι καλή πρακτική να βάζω σχόλια στον κώδικά μου;",
+        "answers": ["True","False"],
+        "correctAnswer": "True",
+        "photoURL": "q4q3"
+    },
+    {
+        "question": "Ποια εντολή τρέχω για να βρω τι κάνει ένα πρόγραμμα στο σύστημά μου;",
+        "answers": ["cat","man","woman","tac"],
+        "correctAnswer": "man",
+        "photoURL": "q4q4"
+    },
+    {
+        "question": "Πως τυπώνουμε την ακολουθία: I'm \\\\ \"back\"",
+        "answers": ["printf(\"I'm \\\\\\\\ \\\"back\\\"\");","printf(\"I\\'m \\\\ \\\"back\\\"\");","printf(\"I'm \\\\ \"back\"\");","printf(\"I am \\n %dback%d\");"],
+        "correctAnswer": "printf(\"I'm \\\\\\\\ \\\"back\\\"\");",
+        "photoURL": "q4q5"
+          
+    },
+    {
+        "question": "Ποιο από τα παρακάτω είναι μέρος του ορισμού μιας συνάρτησης σε C;",
+        "answers": ["Ο τύπος επιστροφής","Το σώμα της συνάρτησης","Τα ορίσματα","Η συνολοθεωρία Cantor"],
+        "correctAnswer": ["Ο τύπος επιστροφής","Το σώμα της συνάρτησης","Τα ορίσματα"],
+        "photoURL": "q4q6"
+    },
+    {
+        "question": "Ποιος ο τύπος επιστροφής της συνάρτησης double square(int x) {return x*x;};",
+        "answers": ["square","double","int","x"],
+        "correctAnswer": "double",
+        "photoURL": "q4q7"
+    },
+    {
+        "question": "Ποια η τιμή που θα επιστρέψει η square(16.0) εφόσον double square(double x) {return x * x;}",
+        "answers": ["0","256","256.0","42"],
+        "correctAnswer": "256.0",
+        "photoURL": "q4q8"
+    },
+    {
+        "question": "Τι θα δω στην οθόνη αν τρέξω printf(\"hello\\rworld\");",
+        "answers": ["hello","world","hello world","hellorworld"],
+        "correctAnswer": "world",
+        "photoURL": "q4q9"
+    },
+    {
+        "question": "Η εκτέλεση της printf(\"%c\", 42); θα τυπώσει",
+        "answers": ["%c","*","42","0x42"],
+        "correctAnswer": "*",
+        "photoURL": "q4q10"
+    }
+]
