@@ -48,6 +48,7 @@ const OnlineCompiler = () => {
     };
 
     return (
+        <>
         <div className="OnlineCompiler">
             <BackButton />
             <div className="container mt-5">
@@ -62,8 +63,10 @@ const OnlineCompiler = () => {
                 width="100%"
                 title="code-editor"
             ></iframe> 
-        <Footer />
+        
         </div>
+        <Footer />
+        </>
     );
 }
 
