@@ -12,7 +12,7 @@
 1. React
 2. NodeJS
 3. React Boostrap
-~~4. Firebase (Firestore)~~
+4. ~~Firebase (Firestore)~~
 
 ## Γλώσσες που χρησιμοποιήθηκαν
 1. HTML
@@ -51,3 +51,7 @@ npm start
 ```
 
 Βεβαιωθείτε ότι έχετε εγκαταστήσει το [NodeJS](https://nodejs.org/en) στον υπολογιστή σας.
+
+## Ευχαριστίες 
+
+Θερμές ευχαριστίες αποδίδονται στον κύριο [Θανάση Αυγερινό](https://github.com/ethan42), ο οποίος μας παρείχε τα Kahoot Quiz.
