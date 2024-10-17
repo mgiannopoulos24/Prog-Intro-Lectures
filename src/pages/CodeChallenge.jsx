@@ -66,7 +66,7 @@ function CodeChallenge() {
           input: input,
         }
       );
-      if (response.data.return_code == "0") {
+      if (response.data.return_code === "0") {
         setOutput(response.data.output);
       } else {
         setOutput(response.data.error);
@@ -102,7 +102,7 @@ function CodeChallenge() {
           );
         } else {
           setProgress(0);
-          if (response.data.error != "") {
+          if (response.data.error !== "") {
             setOutput(response.data.error);
           } else {
             setWrongAnswer(true);
@@ -115,7 +115,7 @@ function CodeChallenge() {
         break;
       }
     }
-    if (i == challenges[challengeIndex]["tests"].length) {
+    if (i === challenges[challengeIndex]["tests"].length) {
       setOpenFeedback(true);
     }
     setDisabled(false);
@@ -147,14 +147,6 @@ function CodeChallenge() {
       this.style.height = this.scrollHeight + "px";
     });
   });
-
-  const getNextChallengeIndex = () => {
-    if (parseInt(challengeIndex) === challenges.length - 1) {
-      return -1;
-    }
-
-    return parseInt(challengeIndex) + 1;
-  };
 
   return (
     <>

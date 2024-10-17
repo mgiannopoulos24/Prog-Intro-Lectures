@@ -28,7 +28,7 @@ function LinearProgressWithLabel({ value, wrongAnswer }) {
       <Box sx={{ width: "100%", mr: 1 }}>
         <LinearProgress
           color={`${
-            showError ? "error" : value == 100 ? "success" : "inherit"
+            showError ? "error" : value === 100 ? "success" : "inherit"
           }`}
           variant="determinate"
           value={value}

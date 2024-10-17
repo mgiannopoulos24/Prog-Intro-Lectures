@@ -2,12 +2,8 @@ import Snackbar from "@mui/material/Snackbar";
 import * as React from "react";
 
 const FeedbackAlert = ({ open, setOpen }) => {
-  const [state, setState] = React.useState({
-    vertical: "bottom",
-    horizontal: "left",
-  });
-
-  const { vertical, horizontal } = state;
+  const vertical = "bottom";
+  const horizontal = "left";
 
   return (
     <Snackbar
