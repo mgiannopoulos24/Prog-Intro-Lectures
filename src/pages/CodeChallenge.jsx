@@ -170,12 +170,17 @@ function CodeChallenge() {
           spacing="5px"
           style={{ backgroundColor: "grey" }}
         >
-          <Grid item size={{ xs: 12, md: 12, lg: 8 }}>
+          <Grid
+            item
+            size={{ xs: 12, md: 12, lg: 8 }}
+            style={{ minHeight: "400px" }}
+          >
             <Editor
               width="100%"
               defaultLanguage="c"
               defaultValue={defaultCode}
               value={code}
+              height="100%"
               onChange={(value) => setCode(value)}
               loading=""
               theme={isDarkTheme === "true" ? "vs-dark" : "white"}
