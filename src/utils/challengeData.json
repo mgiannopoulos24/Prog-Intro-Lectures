@@ -1,62 +1,107 @@
 [
-    {
-        "problemTitle": "Βρες το όνομα",
-        "problem": "Γράψτε ένα πρόγραμμα που να τυπώνει το όνομα της μεγαλύτερης διαδικτυακής πλατφόρμας που χρησιμοποιείται για την αποθήκευση, διαχείριση και συνεργασία σε έργα λογισμικού.",
-        "tests": [
-            {
-                "input": "",
-                "expectedOutput": "Github"
-            }
-        ],
-        "defaultCode": "#include <stdio.h> \n int main() { \n }"
-    },
-    {
-        "problemTitle": "Μέτρα τα ψηφία",
-        "problem": "Συμπληρώστε τη συνάρτηση count_digits, έτσι ώστε να δέχεται ως όρισμα έναν ακέραιο $$n$$, (INT_MIN $$\\leq n \\leq$$ INT_MAX ) και να επιστρέφει τον αριθμό των ψηφίων του.  \n  \n**ΜΗΝ** τροποποιήσετε τη συνάρτηση main.",
-        "tests": [
-            {
-                "input": "12345",
-                "expectedOutput": "5"
-            },
-            {
-                "input": "0",
-                "expectedOutput": "1"
-            },
-            {
-                "input": "-1234",
-                "expectedOutput": "4"
-            },
-            {
-                "input": "100000",
-                "expectedOutput": "6"
-            },
-            {
-                "input": "9876543210",
-                "expectedOutput": "10"
-            },
-            {
-                "input": "42",
-                "expectedOutput": "2"
-            },
-            {
-                "input": "999999999",
-                "expectedOutput": "9"
-            },
-            {
-                "input": "-1001",
-                "expectedOutput": "4"
-            },
-            {
-                "input": "7",
-                "expectedOutput": "1"
-            },
-            {
-                "input": "-987654321",
-                "expectedOutput": "9"
-            }
-        ],
-        "defaultCode": "#include <stdio.h>\n\nint count_digits(int n) {\n\n}\n\nint main() { \n\tint n;\n\tscanf(\"%d\", &n);\n\tprintf(\"%d\", count_digits(n));\n\treturn 0;\n}"
-
-    }
-
+  {
+    "problemTitle": "Βρες το όνομα",
+    "problem": "Γράψτε ένα πρόγραμμα που να τυπώνει το όνομα της μεγαλύτερης διαδικτυακής πλατφόρμας που χρησιμοποιείται για την αποθήκευση, διαχείριση και συνεργασία σε έργα λογισμικού.",
+    "tests": [
+      {
+        "input": "",
+        "expectedOutput": "Github"
+      }
+    ],
+    "defaultCode": "#include <stdio.h> \nint main() { \n\n}"
+  },
+  {
+    "problemTitle": "Μέτρα τα ψηφία",
+    "problem": "Συμπληρώστε τη συνάρτηση count_digits, έτσι ώστε να δέχεται ως όρισμα έναν ακέραιο $$n$$, (INT_MIN $$\\leq n \\leq$$ INT_MAX ) και να επιστρέφει τον αριθμό των ψηφίων του.  \n  \n**ΜΗΝ** τροποποιήσετε τη συνάρτηση main.",
+    "tests": [
+      {
+        "input": "12345",
+        "expectedOutput": "5"
+      },
+      {
+        "input": "0",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "-1234",
+        "expectedOutput": "4"
+      },
+      {
+        "input": "100000",
+        "expectedOutput": "6"
+      },
+      {
+        "input": "9876543210",
+        "expectedOutput": "10"
+      },
+      {
+        "input": "42",
+        "expectedOutput": "2"
+      },
+      {
+        "input": "999999999",
+        "expectedOutput": "9"
+      },
+      {
+        "input": "-1001",
+        "expectedOutput": "4"
+      },
+      {
+        "input": "7",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "-987654321",
+        "expectedOutput": "9"
+      }
+    ],
+    "defaultCode": "#include <stdio.h>\n\nint count_digits(int n) {\n\n}\n\nint main() { \n\tint n;\n\tscanf(\"%d\", &n);\n\tprintf(\"%d\", count_digits(n));\n\treturn 0;\n}"
+  },
+  {
+    "problemTitle": "Πειραγμένο Παραγοντικό",
+    "problem": "Συμπληρώστε τη συνάρτηση weird_factorial, έτσι ώστε να δέχεται ως όρισμα έναν θετικό ακέραιο $$n$$, (1 $$\\leq n \\leq$$ 1000 ) και να βρίσκει το γινόμενο όλων των θετικών ακέραιων που είναι μικρότεροι ή ίσοι του $$n$$, αλλά δεν είναι διαιρέτες του.  \nΕπιστρέψτε το αποτέλεσμα **mod** $$10^9+7$$.  \n \n**ΜΗΝ** τροποποιήσετε τη συνάρτηση main.",
+    "tests": [
+      {
+        "input": "1",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "294",
+        "expectedOutput": "901061679"
+      },
+      {
+        "input": "335",
+        "expectedOutput": "235221416"
+      },
+      {
+        "input": "1000",
+        "expectedOutput": "433178710"
+      },
+      {
+        "input": "743",
+        "expectedOutput": "999293262"
+      },
+      {
+        "input": "42",
+        "expectedOutput": "416069769"
+      },
+      {
+        "input": "999",
+        "expectedOutput": "200561020"
+      },
+      {
+        "input": "8",
+        "expectedOutput": "630"
+      },
+      {
+        "input": "689",
+        "expectedOutput": "567551532"
+      },
+      {
+        "input": "888",
+        "expectedOutput": "371975084"
+      }
+    ],
+    "defaultCode": "#include <stdio.h>\n\nlong long int weird_factorial(int n) {\n\n}\n\nint main() { \n\tint n;\n\tscanf(\"%d\", &n);\n\tprintf(\"%lld\", weird_factorial(n));\n\treturn 0;\n}"
+  }
 ]

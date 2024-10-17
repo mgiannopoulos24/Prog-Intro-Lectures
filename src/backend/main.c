@@ -1,22 +1,19 @@
 #include <stdio.h>
 
-int count_digits(int n) {
+int mod = 1000000007;
 
-
-    // If the number is negative, take its absolute value
-    if (n < 0) n = -n;
-
-    int count = 0;
-    while (n > 0) {
-        count++;
-        n /= 10; // Remove the last digit
+long long int weird_factorial(int n) {
+    long long int result = 1;
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0) continue;
+        result = (result * i) % mod;
     }
-    return count;
+    return result;
 }
 
 int main() { 
 	int n;
 	scanf("%d", &n);
-	printf("%d", count_digits(n));
+	printf("%lld", weird_factorial(n));
 	return 0;
 }
