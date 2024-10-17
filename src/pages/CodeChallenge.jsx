@@ -59,18 +59,19 @@ function CodeChallenge() {
   const handleRun = async () => {
     setOutput("");
     try {
-      const response = await axios.post("http://localhost:5000/run", {
-        code: code,
-        input: input,
-      });
-      console.log(response);
+      const response = await axios.post(
+        "https://prog-intro-lectures-lidq.onrender.com/run",
+        {
+          code: code,
+          input: input,
+        }
+      );
       if (response.data.return_code == "0") {
         setOutput(response.data.output);
       } else {
         setOutput(response.data.error);
       }
     } catch (error) {
-      console.log(error);
       setOutput(error.message);
     }
   };
@@ -86,11 +87,14 @@ function CodeChallenge() {
     for (i = 0; i < challenges[challengeIndex]["tests"].length; i++) {
       try {
         // Send code and challengeIndex to start tests
-        const response = await axios.post("http://localhost:5000/run-tests", {
-          code: code,
-          challengeIndex: parseInt(challengeIndex), // Ensure this is an integer
-          testIndex: i,
-        });
+        const response = await axios.post(
+          "https://prog-intro-lectures-lidq.onrender.com/run-tests",
+          {
+            code: code,
+            challengeIndex: parseInt(challengeIndex), // Ensure this is an integer
+            testIndex: i,
+          }
+        );
 
         if (response.data.isCorrect === true) {
           setProgress(
@@ -107,7 +111,6 @@ function CodeChallenge() {
           break;
         }
       } catch (err) {
-        console.error("Error running tests", err);
         setOutput(err.message);
         break;
       }
