@@ -30,5 +30,13 @@
       "slides": "https://progintro.github.io/assets/pdf/lec03.pdf",
       "part1": "https://delos.uoa.gr/opendelos/player?rid=39d8dbb2",
       "part2": "https://delos.uoa.gr/opendelos/player?rid=f550c3de"
+    },
+    {
+      "id": 5,
+      "icon": "git",
+      "title": "Διάλεξη 4: Git και Τελεστές",
+      "slides": "https://progintro.github.io/assets/pdf/lec04.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=27ddd12e",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=2689c41d"
     }
 ]

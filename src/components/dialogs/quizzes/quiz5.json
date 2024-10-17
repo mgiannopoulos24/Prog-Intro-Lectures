@@ -1,0 +1,62 @@
+[
+    {
+        "question": "Το git είναι απλό στην κατανόηση - θα το αφήσω για το βράδυ της προθεσμίας",
+        "answers": ["True", "False"],
+        "correctAnswer": "False",
+        "photoURL": "q5q1"
+    },
+    {
+        "question": "Το git και το GitHub είναι το ίδιο πράγμα",
+        "answers": ["True", "False"],
+        "correctAnswer": "False",
+        "photoURL": "q5q2"
+    },
+    {
+        "question": "Είσαι πιο pro αν χρησιμοποιείς git από:",
+        "answers": ["Την κονσόλα","Το GUI"],
+        "correctAnswer": "Την κονσόλα",
+        "photoURL": "q5q3"
+    },
+    {
+        "question": "Ποιες από τις ακόλουθες είναι εντολές git;",
+        "answers": ["git push", "git status", "git gud", "git commit"],
+        "correctAnswer": "git push, git status, git commit",
+        "photoURL": "q5q4"
+    },
+    {
+        "question": "Ποια η τιμή της παράστασης 0x42 & 0xFF",
+        "answers": ["0xFF","42","0x42", "0"],
+        "correctAnswer": "0x42",
+        "photoURL": "q5q5"
+    },
+    {
+        "question": "Ποια η τιμή της παράστασης 0xFF | 0x42",
+        "answers": ["0xFF","42","0x42", "1"],
+        "correctAnswer": "0xFF",
+        "photoURL": "q5q6"
+    },
+    {
+        "question": "Ποια η τιμή της παράστασης 3 << 2",
+        "answers": ["3","6","12","42"],
+        "correctAnswer": "12",
+        "photoURL": "q5q7"
+    },
+    {
+        "question": "Βάλτε τις ακόλουθες εντολές σε χρονολογική σειρά",
+        "answers": ["git clone → git add → git commit → git push","git clone → git commit → git add → git push","git add → git clone → git commit → git push","git commit → git push → git add → git clone"],
+        "correctAnswer": "git clone → git add → git commit → git push",
+        "photoURL": "q5q8"
+    },
+    {
+        "question": "Google backend engineer interview question: πως απομονώνουμε το πιο σημαντικό bit (το 8ο) σε ένα byte;",
+        "answers": ["byte & 0xFF","byte & 0x80","byte | 0xFF","byte | 0x80"],
+        "correctAnswer": "byte & 0x80",
+        "photoURL": "q5q9"
+    },
+    {
+        "question": "Ποια η τιμή της παράστασης 0xbeef | 0xcafe0000",
+        "answers": ["0xffffffff","0xcafebeef","0xbeefcafe","0x00000000"],
+        "correctAnswer": "0xcafebeef",
+        "photoURL": "q5q10"
+    }
+]
