@@ -8,7 +8,7 @@ const ThemeProvider = ({ children }) => {
     // Initialize state based on localStorage
     const [isDarkTheme, setIsDarkTheme] = useState(() => {
         const savedPreference = localStorage.getItem('dark-mode');
-        return savedPreference === 'true' ? 'false' : 'true';
+        return savedPreference === 'true' ? 'true' : 'false';
     });
 
     // Update theme based on localStorage changes

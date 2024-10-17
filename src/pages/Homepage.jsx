@@ -37,7 +37,7 @@ const Homepage = () => {
                 ))}
             </div>
             <RoundIconButton icon={<SportsEsportsIcon/>} to="/Quizzes" position={0}/>
-            <RoundIconButton icon={<CodeIcon/>} to="/OnlineCompiler" position={1} />
+            <RoundIconButton icon={<CodeIcon/>} to="/CodeChallenges" position={1} />
             <Footer />
         </>
     );

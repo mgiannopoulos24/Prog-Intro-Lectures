@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import Quizzes from './pages/Quizzes';
 import ToggleSwitch from './components/buttons/ToggleSwitch';
-import OnlineCompiler from './pages/OnlineCompiler';
+import CodeChallenges from './pages/CodeChallenges'
 import { ThemeProvider } from './components/buttons/ThemeContext';
+import CodeChallenge from './pages/CodeChallenge';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path='/Quizzes' element={<Quizzes />} />
-        <Route path='/OnlineCompiler' element={<OnlineCompiler />} />
+        <Route path='/CodeChallenges' element={<CodeChallenges />} />
+        <Route path='/CodeChallenge/:challengeIndex' element={<CodeChallenge />} />
       </Routes>
     </BrowserRouter>
     </ThemeProvider>

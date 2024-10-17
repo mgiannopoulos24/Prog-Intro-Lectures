@@ -2,7 +2,7 @@ import React from 'react';
 import "./CustomQuizCard.css";
 import { PlayButton } from '../buttons/PlayButton';
 
-const QuizCard = ({ image, title, description, onClick }) => {
+const QuizCard = ({ image, title, description, onClick, buttonText }) => {
   return (
     <div className="quiz-card">
       <div className="quiz-img-container">
@@ -14,7 +14,7 @@ const QuizCard = ({ image, title, description, onClick }) => {
           <h3>{description}</h3>
         </div>
         <div className="play-button-container" onClick={onClick}>
-          <PlayButton />
+          <PlayButton text={buttonText} />
         </div>
       </div>
       
