@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-export const PlayButton = () => {
+export const PlayButton = ({text}) => {
   return (
     <StyledWrapper>
       <button className="button">
-        <span className="button-content">Play </span>
+        <span className="button-content">{text}</span>
       </button>
     </StyledWrapper>
   );

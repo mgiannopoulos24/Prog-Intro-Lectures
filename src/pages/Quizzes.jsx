@@ -24,11 +24,11 @@ const Quizzes = () => {
                 </div>      
             </div>
             <div className="cards d-flex justify-content-center flex-wrap gap-3">
-                <CustomQuizCard image={kahoot_img} title= "Διάλεξη #0" description="Καλημέρα Κόσμε!" onClick={() => setOpenDialog1(true)}/>
+                <CustomQuizCard image={kahoot_img} title= "Διάλεξη #0" description="Καλημέρα Κόσμε!" onClick={() => setOpenDialog1(true)} buttonText="Play"/>
                 <QuizDialog1 open={openDialog1} onClose={() => setOpenDialog1(false)} />
-                <CustomQuizCard image={kahoot_img} title= "Διάλεξη #1" description="Η Γραμμή Εντολών" onClick={() => setOpenDialog2(true)}/>
+                <CustomQuizCard image={kahoot_img} title= "Διάλεξη #1" description="Η Γραμμή Εντολών" onClick={() => setOpenDialog2(true)} buttonText="Play"/>
                 <QuizDialog2 open={openDialog2} onClose={() => setOpenDialog2(false)} />
-                <CustomQuizCard image={kahoot_img} title= "Διάλεξη #2" description="Μνήμη και Μεταβλητές" onClick={() => setOpenDialog3(true)}/>
+                <CustomQuizCard image={kahoot_img} title= "Διάλεξη #2" description="Μνήμη και Μεταβλητές" onClick={() => setOpenDialog3(true)} buttonText="Play"/>
                 <QuizDialog3 open={openDialog3} onClose={() => setOpenDialog3(false)} />
             </div>
             <Footer />
