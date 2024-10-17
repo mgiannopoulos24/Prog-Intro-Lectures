@@ -66,7 +66,7 @@ function CodeChallenge() {
           input: input,
         }
       );
-      if (response.data.return_code === "0") {
+      if (parseInt(response.data.return_code) === 0) {
         setOutput(response.data.output);
       } else {
         setOutput(response.data.error);
