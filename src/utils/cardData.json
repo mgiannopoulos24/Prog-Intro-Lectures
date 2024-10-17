@@ -22,5 +22,13 @@
       "slides": "https://progintro.github.io/assets/pdf/lec02.pdf",
       "part1": "https://delos.uoa.gr/opendelos/player?rid=6232ea43",
       "part2": "https://delos.uoa.gr/opendelos/player?rid=a456608c"
+    },
+    {
+      "id": 4,
+      "icon": "functions",
+      "title": "Διάλεξη 3: Συναρτήσεις",
+      "slides": "https://progintro.github.io/assets/pdf/lec03.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=39d8dbb2",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=f550c3de"
     }
 ]

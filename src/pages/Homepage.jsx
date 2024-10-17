@@ -1,4 +1,5 @@
 import React from "react";
+import 'react-app-polyfill/ie11';
 import "./styles/Homepage.css";
 import CustomCard from "../components/other/CustomCard";
 import cardData from "../utils/cardData";
@@ -6,11 +7,15 @@ import RoundIconButton from "../components/buttons/RoundIconButton";
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import CodeIcon from '@mui/icons-material/Code';
 import Footer from "../components/layout/Footer";
+import GitHubRibbon from 'react-github-ribbons';
 
 const Homepage = () => {
 
     return (
         <>  
+            <div>
+                <GitHubRibbon href="https://github.com/mgiannopoulos24/Prog-Intro-Lectures" color="red" target="_blank" position="left"/>
+            </div>
             <div className="container mt-5">
                 <div className="text-center">
                     <h1>Prog Intro Lectures</h1>
