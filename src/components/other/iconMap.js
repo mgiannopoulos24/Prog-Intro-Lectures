@@ -4,6 +4,7 @@ import pointer from '../../assets/return.png';
 import terminal from '../../assets/terminal.png';
 import mem_variables from '../../assets/mem_variables.png';
 import functions from '../../assets/functions.png';
+import git from '../../assets/git.png';
 
 export const iconMap = {
     'wave': wave,
@@ -11,5 +12,6 @@ export const iconMap = {
     'pointer': pointer,
     'terminal': terminal,
     'mem_variables': mem_variables,
-    'functions': functions
+    'functions': functions,
+    'git': git
 };
