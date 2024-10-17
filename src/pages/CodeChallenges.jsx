@@ -4,7 +4,7 @@ import './styles/Quizzes.css';
 import CustomQuizCard from '../components/other/CustomQuizCard';
 import BackButton from '../components/buttons/BackToMain';
 import Footer from '../components/layout/Footer';
-import challenges from '../utils/challengeData';
+import challenges from '../backend/challengeData';
 import challenge_img from '../assets/challenge_img.jpg';
 
 const CodeChallenges = () => {

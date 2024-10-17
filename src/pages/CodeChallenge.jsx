@@ -16,7 +16,7 @@ import SubmitCodeButton from "../components/buttons/SubmitCodeButton";
 import RunCodeButton from "../components/buttons/RunCodeButton";
 import FeedbackAlert from "../components/other/FeedbackAlert";
 import "./styles/CodeChallenge.css";
-import challenges from "../utils/challengeData";
+import challenges from "../backend/challengeData";
 
 function CodeChallenge() {
   const [code, setCode] = useState("");

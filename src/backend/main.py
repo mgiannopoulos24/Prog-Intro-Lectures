@@ -78,7 +78,7 @@ def run_tests():
 
     # Load the challenge data
     challenges = []
-    with open("../utils/challengeData.json", "r") as file:
+    with open("challengeData.json", "r") as file:
         challenges = json.load(file)
 
     test = challenges[challengeIndex]['tests'][testIndex]
