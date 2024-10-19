@@ -1,0 +1,12 @@
+.back-challs-button {
+    position: fixed !important;
+    top: 60px;
+    left: 20px;
+    z-index: 3;
+    background-color: lightblue !important;
+}
+
+.back-challs-button:hover {
+    cursor: pointer;
+    background-color: #76bdd5 !important;
+}
