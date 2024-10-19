@@ -10,6 +10,7 @@ import "katex/dist/katex.min.css";
 
 import Editor from "@monaco-editor/react";
 import BackButton from "../components/buttons/BackToMain";
+import BackToChalls from '../components/buttons/BackToChalls';
 import Grid from "@mui/material/Grid2";
 import LinearWithValueLabel from "../components/other/LinearProgressWithLabel";
 import SubmitCodeButton from "../components/buttons/SubmitCodeButton";
@@ -128,7 +129,7 @@ function CodeChallenge() {
         <div className="container mt-5">
           <div className="text-center">
             <h1>Coding Challenges</h1>
-            <h3>Time for some practice!</h3>
+            <h3>Ώρα για εξάσκηση!</h3>
             <hr className="my-4" />
           </div>
         </div>
@@ -151,11 +152,12 @@ function CodeChallenge() {
   return (
     <>
       <BackButton />
+      <BackToChalls />
       <FeedbackAlert open={openFeedback} setOpen={setOpenFeedback} />
       <div className="container mt-5">
         <div className="text-center">
           <h1>Coding Challenges</h1>
-          <h3>Time for some practice!</h3>
+          <h3>Ώρα για εξάσκηση!</h3>
           <hr className="my-4" />
         </div>
       </div>

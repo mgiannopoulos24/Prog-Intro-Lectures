@@ -18,8 +18,8 @@ const CodeChallenges = () => {
             <BackButton />
             <div className="Quizzes container mt-5">
                 <div className="text-center">
-                    <h1>Code Challenges</h1>
-                    <h3>Time for some practice!</h3>
+                    <h1>Coding Challenges</h1>
+                    <h3>Ώρα για εξάσκηση!</h3>
                     <hr className="my-4" />
                 </div>      
             </div>
