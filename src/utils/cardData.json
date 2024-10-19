@@ -38,5 +38,13 @@
       "slides": "https://progintro.github.io/assets/pdf/lec04.pdf",
       "part1": "https://delos.uoa.gr/opendelos/player?rid=27ddd12e",
       "part2": "https://delos.uoa.gr/opendelos/player?rid=2689c41d"
+    },
+    {
+      "id": 6,
+      "icon": "maths",
+      "title": "Διάλεξη 5: Τελεστές και Εντολές",
+      "slides": "https://progintro.github.io/assets/pdf/lec05.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=f960e1e9",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=2d04bc27"
     }
 ]

@@ -5,6 +5,7 @@ import terminal from '../../assets/terminal.png';
 import mem_variables from '../../assets/mem_variables.png';
 import functions from '../../assets/functions.png';
 import git from '../../assets/git.png';
+import maths from '../../assets/maths.png';
 
 export const iconMap = {
     'wave': wave,
@@ -13,5 +14,6 @@ export const iconMap = {
     'terminal': terminal,
     'mem_variables': mem_variables,
     'functions': functions,
-    'git': git
+    'git': git,
+    'maths': maths
 };
