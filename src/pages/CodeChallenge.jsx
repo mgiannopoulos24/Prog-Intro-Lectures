@@ -18,6 +18,7 @@ import RunCodeButton from "../components/buttons/RunCodeButton";
 import FeedbackAlert from "../components/other/FeedbackAlert";
 import "./styles/CodeChallenge.css";
 import challenges from "../backend/challengeData";
+import { Alert } from "@mui/material";
 
 function CodeChallenge() {
   const [code, setCode] = useState("");
@@ -160,7 +161,13 @@ function CodeChallenge() {
           <h3>Ώρα για εξάσκηση!</h3>
           <hr className="my-4" />
         </div>
+        <div className="row">
+          <Alert severity="warning" style={{"opacity":"75%"}}>
+            <strong>Προσοχή!</strong> Κάποιες φορές το Run μπορεί να μην δουλέψει, οπότε απαιτείται Refresh της σελίδας.
+          </Alert>
+        </div>
       </div>
+      
       <div className="onlineCompiler">
         <Grid className="controlBar" item size={{ xs: 12, md: 12, lg: 12 }}>
           <RunCodeButton onClick={handleRun} />
