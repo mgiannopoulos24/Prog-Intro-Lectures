@@ -61,7 +61,7 @@ def run():
 
     # Run the code
     run_result = run_code(input)
-    return jsonify({"output": run_result['output'], "error": run_result['error'], "return_code": run_result['return_code']})
+    return jsonify({"output": run_result['output'], "success": run_result['success'], "return_code": run_result['return_code']})
 
 
 @app.route('/run-tests', methods=['POST'])
