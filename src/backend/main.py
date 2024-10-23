@@ -19,7 +19,7 @@ def compile_code(code):
     # Compile the C code
     compile_process = subprocess.run(
         ["gcc", "main.c", "-o", "main", "-lm"], capture_output=True, text=True)
-    return {"output": "", "error": compile_process.stderr, "return_code": compile_process.returncode}
+    return {"output": "", "success": compile_process.stderr, "return_code": compile_process.returncode}
 
 
 def run_code(input_data):
