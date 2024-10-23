@@ -163,7 +163,7 @@ function CodeChallenge() {
         </div>
         <div className="row">
           <Alert severity="warning" style={{"opacity":"75%"}}>
-            <strong>Προσοχή!</strong> Κάποιες φορές το Run μπορεί να μην δουλέψει, οπότε απαιτείται Refresh της σελίδας.
+            <strong>Σημείωση:</strong> Αν το κουμπί 'Run' δεν λειτουργήσει, δοκιμάστε να ανανεώσετε τη σελίδα.
           </Alert>
         </div>
       </div>
