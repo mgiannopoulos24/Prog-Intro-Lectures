@@ -28,15 +28,10 @@ def run_code(input_data):
         run_process = subprocess.run(
             ["./main"], input=input_data, capture_output=True, text=True, timeout=10)
 
-        if run_process.returncode == 0:
-            return {"output": run_process.stdout, "error": "", "return_code": run_process.returncode}
-        else:
-            return {"output": run_process.stdout, "error": "Runtime Error", "return_code": run_process.returncode}
-
+        return {"output": run_process.stdout, "success": "Runtime", "return_code": run_process.returncode}
     except subprocess.TimeoutExpired:
         # Handle timeout: return a specific TLE error message
         return {"output": "", "error": "Time Limit Exceeded", "return_code": -1}
-
 
 
 def are_equal(str1, str2):
