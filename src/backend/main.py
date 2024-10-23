@@ -57,7 +57,7 @@ def run():
     # Compile the code
     compile_result = compile_code(code)
     if compile_result['return_code'] != 0:
-        return jsonify({"output": "", "error": compile_result['status'], "return_code": compile_result['return_code']})
+        return jsonify({"output": "", "status": compile_result['status'], "return_code": compile_result['return_code']})
 
     # Run the code
     run_result = run_code(input)
