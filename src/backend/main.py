@@ -19,7 +19,7 @@ def compile_code(code):
     # Compile the C code
     compile_process = subprocess.run(
         ["gcc", "main.c", "-o", "main", "-lm"], capture_output=True, text=True)
-    return {"output": "", "success": compile_process.stderr, "return_code": compile_process.returncode}
+    return {"output": "", "status": compile_process.stderr, "return_code": compile_process.returncode}
 
 
 def run_code(input_data):
@@ -28,10 +28,10 @@ def run_code(input_data):
         run_process = subprocess.run(
             ["./main"], input=input_data, capture_output=True, text=True, timeout=10)
 
-        return {"output": run_process.stdout, "success": "Runtime", "return_code": run_process.returncode}
+        return {"output": run_process.stdout, "status": "Runtime", "return_code": run_process.returncode}
     except subprocess.TimeoutExpired:
         # Handle timeout: return a specific TLE error message
-        return {"output": "", "error": "Time Limit Exceeded", "return_code": -1}
+        return {"output": "", "status": "Time Limit Exceeded", "return_code": -1}
 
 
 def are_equal(str1, str2):
@@ -57,11 +57,11 @@ def run():
     # Compile the code
     compile_result = compile_code(code)
     if compile_result['return_code'] != 0:
-        return jsonify({"output": "", "error": compile_result['error'], "return_code": compile_result['return_code']})
+        return jsonify({"output": "", "error": compile_result['status'], "return_code": compile_result['return_code']})
 
     # Run the code
     run_result = run_code(input)
-    return jsonify({"output": run_result['output'], "success": run_result['success'], "return_code": run_result['return_code']})
+    return jsonify({"output": run_result['output'], "status": run_result['status'], "return_code": run_result['return_code']})
 
 
 @app.route('/run-tests', methods=['POST'])
@@ -74,7 +74,7 @@ def run_tests():
     # Compile the code
     compile_result = compile_code(code)
     if compile_result['return_code'] != 0:
-        return jsonify({"output": "", "error": compile_result['error'], "return_code": compile_result['return_code']})
+        return jsonify({"output": "", "status": compile_result['status'], "return_code": compile_result['return_code']})
 
     # Load the challenge data
     challenges = []
@@ -86,13 +86,13 @@ def run_tests():
     run_result = run_code(test['input'])
 
     if run_result['return_code'] != 0:
-        return jsonify({"isCorrect": False, "error": run_result['error']})
+        return jsonify({"isCorrect": False, "status": run_result['status']})
 
     is_correct = are_equal(test['expectedOutput'], run_result['output'])
 
     time.sleep(0.5)
 
-    return jsonify({"isCorrect": is_correct, "success": ""})
+    return jsonify({"isCorrect": is_correct, "status": ""})
 
 
 if __name__ == '__main__':
