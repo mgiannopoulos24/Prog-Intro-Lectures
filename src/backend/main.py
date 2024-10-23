@@ -92,7 +92,7 @@ def run_tests():
 
     time.sleep(0.5)
 
-    return jsonify({"isCorrect": is_correct, "error": ""})
+    return jsonify({"isCorrect": is_correct, "success": ""})
 
 
 if __name__ == '__main__':
