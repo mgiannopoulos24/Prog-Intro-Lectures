@@ -1,99 +1,179 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # Import CORS
-from flask import Response, stream_with_context
+from flask_cors import CORS
 import subprocess
 import os
 import json
-import time
 from threading import Lock
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS
 
+# Initialize a lock to prevent race conditions
+file_lock = Lock()
 
 def compile_code(code):
-    # Generate the C file
-    with open("main.c", "w") as file:
-        file.write(code)
+    with file_lock:
+        # Generate a unique filename using process ID and timestamp
+        unique_id = str(int(time.time() * 1000))
+        source_file = f"main_{unique_id}.c"
+        binary_file = f"main_{unique_id}"
 
-    # Compile the C code
-    compile_process = subprocess.run(
-        ["gcc", "main.c", "-o", "main", "-lm"], capture_output=True, text=True)
-    return {"output": "", "status": compile_process.stderr, "return_code": compile_process.returncode}
+        try:
+            # Write the C code to the source file
+            with open(source_file, "w") as file:
+                file.write(code)
 
+            # Compile the C code
+            compile_process = subprocess.run(
+                ["gcc", source_file, "-o", binary_file, "-lm"],
+                capture_output=True,
+                text=True
+            )
 
-def run_code(input_data):
+            if compile_process.return_code != 0:
+                return {
+                    "output": compile_process.stdout,
+                    "error": compile_process.stderr,
+                    "return_code": compile_process.return_code
+                }
+
+            return {
+                "output": compile_process.stdout,
+                "error": compile_process.stderr,
+                "return_code": compile_process.return_code,
+                "binary": binary_file  # Return the binary filename for execution
+            }
+        finally:
+            # Clean up the source file
+            if os.path.exists(source_file):
+                os.remove(source_file)
+
+def run_code(binary, input_data):
     try:
-        # Run the compiled code
         run_process = subprocess.run(
-            ["./main"], input=input_data, capture_output=True, text=True, timeout=10)
+            [f"./{binary}"],
+            input=input_data,
+            capture_output=True,
+            text=True,
+            timeout=10
+        )
 
-        return {"output": run_process.stdout, "status": "Runtime", "return_code": run_process.returncode}
+        return {
+            "output": run_process.stdout,
+            "error": run_process.stderr,
+            "return_code": run_process.returncode
+        }
     except subprocess.TimeoutExpired:
-        # Handle timeout: return a specific TLE error message
-        return {"output": "", "status": "Time Limit Exceeded", "return_code": -1}
-
+        return {
+            "output": "",
+            "error": "Time Limit Exceeded",
+            "return_code": -1
+        }
+    finally:
+        # Clean up the binary file after execution
+        if os.path.exists(binary):
+            os.remove(binary)
 
 def are_equal(str1, str2):
-    # Normalize by removing spaces, newlines, and converting to lowercase
-    normalized_str1 = str1.replace(" ", "").replace("\n", "").lower()
-    normalized_str2 = str2.replace(" ", "").replace("\n", "").lower()
-
-    # Compare the normalized strings
+    normalized_str1 = ''.join(str1.split()).lower()
+    normalized_str2 = ''.join(str2.split()).lower()
     return normalized_str1 == normalized_str2
-
 
 @app.route('/')
 def home():
     return "Welcome to the Online Compiler API!"
 
-
 @app.route('/run', methods=['POST'])
 def run():
     data = request.get_json()
     code = data.get('code')
-    input = data.get('input')
+    input_data = data.get('input', '')
+
+    if not code:
+        return jsonify({"output": "", "error": "No code provided.", "return_code": -1}), 400
 
     # Compile the code
     compile_result = compile_code(code)
     if compile_result['return_code'] != 0:
-        return jsonify({"output": "", "status": compile_result['status'], "return_code": compile_result['return_code']})
+        return jsonify({
+            "output": compile_result.get('output', ''),
+            "error": compile_result.get('error', ''),
+            "return_code": compile_result['return_code']
+        }), 400
+
+    binary = compile_result.get('binary')
+    if not binary:
+        return jsonify({
+            "output": compile_result.get('output', ''),
+            "error": "Compilation failed without return code.",
+            "return_code": -1
+        }), 400
 
     # Run the code
-    run_result = run_code(input)
-    return jsonify({"output": run_result['output'], "status": run_result['status'], "return_code": run_result['return_code']})
+    run_result = run_code(binary, input_data)
 
+    return jsonify({
+        "output": run_result.get('output', ''),
+        "error": run_result.get('error', ''),
+        "return_code": run_result['return_code']
+    })
 
 @app.route('/run-tests', methods=['POST'])
 def run_tests():
     data = request.get_json()
     code = data.get('code')
-    challengeIndex = int(data.get('challengeIndex'))
-    testIndex = int(data.get('testIndex'))
+    challengeIndex = data.get('challengeIndex')
+    testIndex = data.get('testIndex')
+
+    if code is None or challengeIndex is None or testIndex is None:
+        return jsonify({"isCorrect": False, "error": "Missing parameters."}), 400
+
+    try:
+        challengeIndex = int(challengeIndex)
+        testIndex = int(testIndex)
+    except ValueError:
+        return jsonify({"isCorrect": False, "error": "Invalid index values."}), 400
 
     # Compile the code
     compile_result = compile_code(code)
     if compile_result['return_code'] != 0:
-        return jsonify({"output": "", "status": compile_result['status'], "return_code": compile_result['return_code']})
+        return jsonify({
+            "isCorrect": False,
+            "error": compile_result.get('error', ''),
+            "return_code": compile_result['return_code']
+        }), 400
+
+    binary = compile_result.get('binary')
+    if not binary:
+        return jsonify({
+            "isCorrect": False,
+            "error": "Compilation failed without return code.",
+            "return_code": -1
+        }), 400
 
     # Load the challenge data
-    challenges = []
-    with open("challengeData.json", "r") as file:
-        challenges = json.load(file)
+    try:
+        with open("challengeData.json", "r") as file:
+            challenges = json.load(file)
+    except FileNotFoundError:
+        return jsonify({"isCorrect": False, "error": "Challenge data not found."}), 500
+    except json.JSONDecodeError:
+        return jsonify({"isCorrect": False, "error": "Invalid challenge data format."}), 500
 
-    test = challenges[challengeIndex]['tests'][testIndex]
+    try:
+        test = challenges[challengeIndex]['tests'][testIndex]
+    except (IndexError, KeyError):
+        return jsonify({"isCorrect": False, "error": "Invalid challenge or test index."}), 400
 
-    run_result = run_code(test['input'])
+    # Run the code with test input
+    run_result = run_code(binary, test['input'])
 
     if run_result['return_code'] != 0:
-        return jsonify({"isCorrect": False, "status": run_result['status']})
+        return jsonify({"isCorrect": False, "error": run_result.get('error', '')}), 200
 
     is_correct = are_equal(test['expectedOutput'], run_result['output'])
 
-    time.sleep(0.5)
-
-    return jsonify({"isCorrect": is_correct, "status": ""})
-
+    return jsonify({"isCorrect": is_correct, "error": run_result.get('error', '')})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, threaded=True)
