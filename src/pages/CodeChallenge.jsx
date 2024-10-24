@@ -152,7 +152,6 @@ function CodeChallenge() {
 
   return (
     <>
-      <BackButton />
       <BackToChalls />
       <FeedbackAlert open={openFeedback} setOpen={setOpenFeedback} />
       <div className="container mt-5">
@@ -163,7 +162,7 @@ function CodeChallenge() {
         </div>
         <div className="row">
           <Alert severity="warning" style={{"opacity":"75%"}}>
-            <strong>Σημείωση:</strong> Αν το κουμπί 'Run' δεν λειτουργήσει, δοκιμάστε να ανανεώσετε τη σελίδα.
+            <strong>Σημείωση:</strong> Αν το κουμπί 'Run' δεν ανταποκρίνεται, δοκιμάστε να ανανεώσετε τη σελίδα. Αν εξακολουθεί να μην λειτουργεί, το ζήτημα μπορεί να οφείλεται σε καθυστέρηση στη φόρτωση.
           </Alert>
         </div>
       </div>
