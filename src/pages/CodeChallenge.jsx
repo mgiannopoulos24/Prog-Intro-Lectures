@@ -9,7 +9,6 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 
 import Editor from "@monaco-editor/react";
-import BackButton from "../components/buttons/BackToMain";
 import BackToChalls from '../components/buttons/BackToChalls';
 import Grid from "@mui/material/Grid2";
 import LinearWithValueLabel from "../components/other/LinearProgressWithLabel";
@@ -125,8 +124,7 @@ function CodeChallenge() {
 
   if (loading) {
     return (
-      <>
-        <BackButton />
+      <> 
         <div className="container mt-5">
           <div className="text-center">
             <h1>Coding Challenges</h1>
