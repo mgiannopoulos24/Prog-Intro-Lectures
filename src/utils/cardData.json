@@ -46,5 +46,13 @@
       "slides": "https://progintro.github.io/assets/pdf/lec05.pdf",
       "part1": "https://delos.uoa.gr/opendelos/player?rid=f960e1e9",
       "part2": "https://delos.uoa.gr/opendelos/player?rid=2d04bc27"
+    },
+    {
+      "id": 7,
+      "icon": "loop",
+      "title": "Διάλεξη 6: Εντολές και Ροή Ελέγχου",
+      "slides": "https://progintro.github.io/assets/pdf/lec06.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=aa3d3944",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=a89b0b7"
     }
 ]

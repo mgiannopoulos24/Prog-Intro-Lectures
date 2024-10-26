@@ -6,6 +6,7 @@ import mem_variables from '../../assets/mem_variables.png';
 import functions from '../../assets/functions.png';
 import git from '../../assets/git.png';
 import maths from '../../assets/maths.png';
+import loop from '../../assets/loop.png';
 
 export const iconMap = {
     'wave': wave,
@@ -15,5 +16,6 @@ export const iconMap = {
     'mem_variables': mem_variables,
     'functions': functions,
     'git': git,
-    'maths': maths
+    'maths': maths,
+    'loop': loop
 };
