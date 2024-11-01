@@ -7,6 +7,8 @@ import functions from '../../assets/functions.png';
 import git from '../../assets/git.png';
 import maths from '../../assets/maths.png';
 import loop from '../../assets/loop.png';
+import solution from '../../assets/solution.png';
+import flow from '../../assets/flow.png';
 
 export const iconMap = {
     'wave': wave,
@@ -17,5 +19,7 @@ export const iconMap = {
     'functions': functions,
     'git': git,
     'maths': maths,
-    'loop': loop
+    'loop': loop,
+    'solution': solution,
+    'flow': flow
 };

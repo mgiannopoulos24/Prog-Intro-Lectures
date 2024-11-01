@@ -54,5 +54,21 @@
       "slides": "https://progintro.github.io/assets/pdf/lec06.pdf",
       "part1": "https://delos.uoa.gr/opendelos/player?rid=aa3d3944",
       "part2": "https://delos.uoa.gr/opendelos/player?rid=a89b0b7"
+    },
+    {
+      "id": 8,
+      "icon": "solution",
+      "title": "Διάλεξη 7: Επίλυση Προβλημάτων",
+      "slides": "https://progintro.github.io/assets/pdf/lec07.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=3af51be7",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=216fc354"
+    },
+    {
+      "id": 9,
+      "icon": "flow",
+      "title": "Διάλεξη 8: Ροή Ελέγχου #2",
+      "slides": "https://progintro.github.io/assets/pdf/lec08.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=c96a6f62",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=40bc918"
     }
 ]
