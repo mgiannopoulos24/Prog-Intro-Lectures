@@ -1,0 +1,14 @@
+.navbar, .navbar-brand, .nav-link {
+    font-family: 'Product Sans', sans-serif;
+}
+
+.dark-navbar {
+    background-color: #1B1E1F;
+    color: #e0e0e0; 
+    border-bottom: 1px solid #6c757d; 
+}
+
+.navbar{
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #6c757d;
+}

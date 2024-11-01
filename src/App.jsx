@@ -6,11 +6,13 @@ import ToggleSwitch from './components/buttons/ToggleSwitch';
 import CodeChallenges from './pages/CodeChallenges'
 import { ThemeProvider } from './components/buttons/ThemeContext';
 import CodeChallenge from './pages/CodeChallenge';
+import NewNavbar from './components/layout/NewNavbar';
 
 function App() {
   return (
     <>
     <ThemeProvider>
+    <NewNavbar />
     <ToggleSwitch />
     <BrowserRouter>
       <Routes>
