@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./styles/Quizzes.css";
 import CustomQuizCard from "../components/other/CustomQuizCard";
-import BackButton from "../components/buttons/BackToMain";
 import Footer from "../components/layout/Footer";
 import kahoot_img from "../assets/kahoot.png";
 import QuizDialog1 from "../components/dialogs/QuizDialog1";
@@ -10,6 +9,8 @@ import QuizDialog3 from "../components/dialogs/QuizDialog3";
 import QuizDialog4 from "../components/dialogs/QuizDialog4";
 import QuizDialog5 from "../components/dialogs/QuizDialog5";
 import QuizDialog6 from "../components/dialogs/QuizDialog6";
+import QuizDialog7 from "../components/dialogs/QuizDialog7";
+import QuizDialog8 from "../components/dialogs/QuizDialog8";
 
 const Quizzes = () => {
   const [openDialog1, setOpenDialog1] = useState(false);
@@ -18,10 +19,11 @@ const Quizzes = () => {
   const [openDialog4, setOpenDialog4] = useState(false);
   const [openDialog5, setOpenDialog5] = useState(false);
   const [openDialog6, setOpenDialog6] = useState(false);
+  const [openDialog7, setOpenDialog7] = useState(false);
+  const [openDialog8, setOpenDialog8] = useState(false);
 
   return (
     <>
-      <BackButton />
       <div className="Quizzes container mt-5">
         <div className="text-center">
           <h1>Kahoot Quizzes</h1>
@@ -78,6 +80,22 @@ const Quizzes = () => {
           buttonText="Play"
         />
         <QuizDialog6 open={openDialog6} onClose={() => setOpenDialog6(false)} />
+        <CustomQuizCard
+          image={kahoot_img}
+          title="Διάλεξη #7"
+          description="Επίλυση Προβλημάτων"
+          onClick={() => setOpenDialog7(true)}
+          buttonText="Play"
+        />
+        <QuizDialog7 open={openDialog7} onClose={() => setOpenDialog7(false)} />
+        <CustomQuizCard
+          image={kahoot_img}
+          title="Διάλεξη #8"
+          description="Ροή Ελέγχου #2"
+          onClick={() => setOpenDialog8(true)}
+          buttonText="Play"
+        />
+        <QuizDialog8 open={openDialog8} onClose={() => setOpenDialog8(false)} />
       </div>
       <Footer />
     </>

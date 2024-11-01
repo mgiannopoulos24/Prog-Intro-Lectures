@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/Quizzes.css';
 import CustomQuizCard from '../components/other/CustomQuizCard';
-import BackButton from '../components/buttons/BackToMain';
 import Footer from '../components/layout/Footer';
 import challenges from '../backend/challengeData';
 import challenge_img from '../assets/challenge_img.jpg';
@@ -15,7 +14,6 @@ const CodeChallenges = () => {
     }
     return (
         <>  
-            <BackButton />
             <div className="Quizzes container mt-5">
                 <div className="text-center">
                     <h1>Coding Challenges</h1>
