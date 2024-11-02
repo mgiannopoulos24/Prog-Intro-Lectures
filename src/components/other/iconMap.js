@@ -9,6 +9,7 @@ import maths from '../../assets/maths.png';
 import loop from '../../assets/loop.png';
 import solution from '../../assets/solution.png';
 import flow from '../../assets/flow.png';
+import lab from '../../assets/lab.png'
 
 export const iconMap = {
     'wave': wave,
@@ -21,5 +22,6 @@ export const iconMap = {
     'maths': maths,
     'loop': loop,
     'solution': solution,
-    'flow': flow
+    'flow': flow,
+    'lab': lab
 };
