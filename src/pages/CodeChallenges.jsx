@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/Quizzes.css';
 import CustomQuizCard from '../components/other/CustomQuizCard';
-import Footer from '../components/layout/Footer';
 import challenges from '../backend/challengeData';
 import challenge_img from '../assets/challenge_img.jpg';
 
@@ -28,7 +27,6 @@ const CodeChallenges = () => {
                 )
                 }
             </div>
-            <Footer />
         </> 
     )
 }

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./styles/Quizzes.css";
 import CustomQuizCard from "../components/other/CustomQuizCard";
-import Footer from "../components/layout/Footer";
 import kahoot_img from "../assets/kahoot.png";
 import QuizDialog1 from "../components/dialogs/QuizDialog1";
 import QuizDialog2 from "../components/dialogs/QuizDialog2";
@@ -97,7 +96,6 @@ const Quizzes = () => {
         />
         <QuizDialog8 open={openDialog8} onClose={() => setOpenDialog8(false)} />
       </div>
-      <Footer />
     </>
   );
 };

@@ -1,9 +1,7 @@
 import React from "react";
 import 'react-app-polyfill/ie11';
-import "./styles/Homepage.css";
 import CustomCard from "../components/other/CustomCard";
 import cardData from "../utils/cardData";
-import Footer from "../components/layout/Footer";
 
 const Homepage = () => {
 
@@ -29,7 +27,6 @@ const Homepage = () => {
                     />
                 ))}
             </div>
-            <Footer />
         </>
     );
 }

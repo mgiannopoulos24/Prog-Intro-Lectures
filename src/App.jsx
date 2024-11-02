@@ -6,7 +6,10 @@ import ToggleSwitch from './components/buttons/ToggleSwitch';
 import CodeChallenges from './pages/CodeChallenges'
 import { ThemeProvider } from './components/buttons/ThemeContext';
 import CodeChallenge from './pages/CodeChallenge';
+import Labs from './pages/Labs';
+import Uoabot from './pages/Uoabot';
 import NewNavbar from './components/layout/NewNavbar';
+import Footer from './components/layout/Footer';
 
 function App() {
   return (
@@ -20,8 +23,11 @@ function App() {
         <Route path='/Quizzes' element={<Quizzes />} />
         <Route path='/CodeChallenges' element={<CodeChallenges />} />
         <Route path='/CodeChallenge/:challengeIndex' element={<CodeChallenge />} />
+        <Route path='/Labs' element={<Labs />} />
+        <Route path='/Uoabot' element={<Uoabot/>} />
       </Routes>
     </BrowserRouter>
+    <Footer />
     </ThemeProvider>
     </>
   );
