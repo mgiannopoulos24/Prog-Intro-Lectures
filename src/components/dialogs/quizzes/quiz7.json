@@ -24,7 +24,7 @@
         "photoURL": "q7q4"
     },
     {
-        "question": "Πόσες φορές θα τυπώσει hello αυτό το loop: for(int i = 0; i < N; i++) printf(\"hello\n\\\");",
+        "question": "Πόσες φορές θα τυπώσει hello αυτό το loop: for(int i = 0; i < N; i++) printf(\"hello\\n\");",
         "answers": ["N","N-1","N+1","Εξαρτάται (call me Γιάννης)"],
         "correctAnswer": "Εξαρτάται (call me Γιάννης)",
         "photoURL": "q7q5"
