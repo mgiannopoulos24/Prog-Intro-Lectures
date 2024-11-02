@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
-import './CustomCard.css'; 
+import './styles/CustomCard.css'; 
 import { iconMap } from './iconMap';
 
 const CustomCard = ({icon, title, slides, part1, part2 }) => {

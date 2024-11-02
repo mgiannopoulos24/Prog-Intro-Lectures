@@ -1,5 +1,5 @@
 import React from 'react';
-import "./CustomQuizCard.css";
+import "./styles/CustomQuizCard.css";
 import { PlayButton } from '../buttons/PlayButton';
 
 const QuizCard = ({ image, title, description, onClick, buttonText }) => {

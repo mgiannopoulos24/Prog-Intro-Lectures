@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap'; 
 import { ThemeContext } from '../buttons/ThemeContext';
-import './NewNavbar.css';
+import './styles/NewNavbar.css';
 
 const NewNavbar = () => {
     const { isDarkTheme } = useContext(ThemeContext);
@@ -20,6 +20,8 @@ const NewNavbar = () => {
                     <Nav className="me-auto">
                         <Nav.Link href="/Quizzes">Quizzes</Nav.Link>
                         <Nav.Link href="/CodeChallenges">Code Challenges</Nav.Link>
+                        <Nav.Link href="/Labs">Labs</Nav.Link>
+                        <Nav.Link href="/Uoabot">Uoabot</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
