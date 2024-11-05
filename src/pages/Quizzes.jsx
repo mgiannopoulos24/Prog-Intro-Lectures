@@ -10,6 +10,7 @@ import QuizDialog5 from "../components/dialogs/QuizDialog5";
 import QuizDialog6 from "../components/dialogs/QuizDialog6";
 import QuizDialog7 from "../components/dialogs/QuizDialog7";
 import QuizDialog8 from "../components/dialogs/QuizDialog8";
+import QuizDialog9 from "../components/dialogs/QuizDialog9";
 
 const Quizzes = () => {
   const [openDialog1, setOpenDialog1] = useState(false);
@@ -20,6 +21,7 @@ const Quizzes = () => {
   const [openDialog6, setOpenDialog6] = useState(false);
   const [openDialog7, setOpenDialog7] = useState(false);
   const [openDialog8, setOpenDialog8] = useState(false);
+  const [openDialog9, setOpenDialog9] = useState(false);
 
   return (
     <>
@@ -95,6 +97,14 @@ const Quizzes = () => {
           buttonText="Play"
         />
         <QuizDialog8 open={openDialog8} onClose={() => setOpenDialog8(false)} />
+        <CustomQuizCard
+          image={kahoot_img}
+          title="Διάλεξη #9"
+          description="Δεδομένα Εισόδου"
+          onClick={() => setOpenDialog9(true)}
+          buttonText="Play"
+        />
+        <QuizDialog9 open={openDialog9} onClose={() => setOpenDialog9(false)} />
       </div>
     </>
   );

@@ -70,5 +70,13 @@
       "slides": "https://progintro.github.io/assets/pdf/lec08.pdf",
       "part1": "https://delos.uoa.gr/opendelos/player?rid=c96a6f62",
       "part2": "https://delos.uoa.gr/opendelos/player?rid=40bc918"
+    },
+    {
+      "id": 10,
+      "icon": "entry",
+      "title": "Διάλεξη 9: Δεδομένα Εισόδου",
+      "slides": "https://progintro.github.io/assets/pdf/lec09.pdf",
+      "part1":"https://delos.uoa.gr/opendelos/player?rid=7cb841d2",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=277c2dcb"
     }
 ]
