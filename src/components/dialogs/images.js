@@ -91,6 +91,18 @@ import q9q7 from '../../assets/q9q7.png';
 import q9q8 from '../../assets/q9q8.jpg';
 import q9q9 from '../../assets/q9q9.jpg';
 import q9q10 from '../../assets/q9q10.jpg';
+import q10q1 from '../../assets/q10q1.jpg';
+import q10q2 from '../../assets/q10q2.jpg';
+import q10q3 from '../../assets/q10q3.jpg';
+import q10q4 from '../../assets/q10q4.jpg';
+import q10q5 from '../../assets/q10q5.gif';
+import q10q6 from '../../assets/q10q6.jpg';
+import q10q7 from '../../assets/q10q7.jpg';
+import q10q8 from '../../assets/q10q8.jpg';
+import q10q9 from '../../assets/q10q9.jpg';
+import q10q10 from '../../assets/q10q10.jpg';
+import q10q11 from '../../assets/q10q11.jpg';
+import q10q12 from '../../assets/q10q12.jpg';
 
 const images = {
     "q1q1": q1q1, "q1q2": q1q2, "q1q3": q1q3, "q1q4": q1q4, "q1q5": q1q5, "q1q6": q1q6, "q1q7": q1q7, "q1q8": q1q8,
@@ -101,7 +113,8 @@ const images = {
     "q6q1": q6q1, "q6q2": q6q2, "q6q3": q6q3, "q6q4": q6q4, "q6q5": q6q5, "q6q6": q6q6, "q6q7": q6q7, "q6q8": q6q8, "q6q9": q6q9, "q6q10": q6q10,
     "q7q1": q7q1 ,"q7q2": q7q2, "q7q3": q7q3, "q7q4": q7q4, "q7q5": q7q5, "q7q6": q7q6, "q7q7": q7q7, "q7q8": q7q8, "q7q9": q7q9, "q7q10": q7q10,
     "q8q1": q8q1, "q8q2": q8q2, "q8q3": q8q3, "q8q4": q8q4, "q8q5": q8q5, "q8q6": q8q6, "q8q7": q8q7, "q8q8": q8q8, "q8q9": q8q9, "q8q10": q8q10,
-    "q9q1": q9q1, "q9q2": q9q2, "q9q3": q9q3, "q9q4": q9q4, "q9q5": q9q5, "q9q6": q9q6, "q9q7": q9q7, "q9q8": q9q8, "q9q9": q9q9, "q9q10": q9q10
+    "q9q1": q9q1, "q9q2": q9q2, "q9q3": q9q3, "q9q4": q9q4, "q9q5": q9q5, "q9q6": q9q6, "q9q7": q9q7, "q9q8": q9q8, "q9q9": q9q9, "q9q10": q9q10,
+    "q10q1": q10q1, "q10q2": q10q2, "q10q3": q10q3, "q10q4": q10q4, "q10q5": q10q5, "q10q6": q10q6, "q10q7": q10q7, "q10q8": q10q8, "q10q9": q10q9, "q10q10": q10q10, "q10q11": q10q11, "q10q12": q10q12
 };
 
 export default images;
