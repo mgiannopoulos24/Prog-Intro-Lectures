@@ -78,5 +78,13 @@
       "slides": "https://progintro.github.io/assets/pdf/lec09.pdf",
       "part1":"https://delos.uoa.gr/opendelos/player?rid=7cb841d2",
       "part2": "https://delos.uoa.gr/opendelos/player?rid=277c2dcb"
+    },
+    {
+      "id": 11,
+      "icon": "matrix",
+      "title": "Διάλεξη 10: Πίνακες",
+      "slides": "https://progintro.github.io/assets/pdf/lec10.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=af41d4c4",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=1790512"
     }
 ]
