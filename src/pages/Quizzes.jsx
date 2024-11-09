@@ -11,6 +11,7 @@ import QuizDialog6 from "../components/dialogs/QuizDialog6";
 import QuizDialog7 from "../components/dialogs/QuizDialog7";
 import QuizDialog8 from "../components/dialogs/QuizDialog8";
 import QuizDialog9 from "../components/dialogs/QuizDialog9";
+import QuizDialog10 from "../components/dialogs/QuizDialog10";
 
 const Quizzes = () => {
   const [openDialog1, setOpenDialog1] = useState(false);
@@ -22,13 +23,14 @@ const Quizzes = () => {
   const [openDialog7, setOpenDialog7] = useState(false);
   const [openDialog8, setOpenDialog8] = useState(false);
   const [openDialog9, setOpenDialog9] = useState(false);
+  const [openDialog10, setOpenDialog10] = useState(false);
 
   return (
     <>
       <div className="Quizzes container mt-5">
         <div className="text-center">
           <h1>Kahoot Quizzes</h1>
-          <h3>Time for some fun!</h3>
+          <h3>Εδώ θα βρεις όλα τα Kahoot από τις διαλέξεις.</h3>
           <hr className="my-4" />
         </div>
       </div>
@@ -105,6 +107,14 @@ const Quizzes = () => {
           buttonText="Play"
         />
         <QuizDialog9 open={openDialog9} onClose={() => setOpenDialog9(false)} />
+        <CustomQuizCard
+          image={kahoot_img}
+          title="Διάλεξη #10"
+          description="Πίνακες"
+          onClick={() => setOpenDialog10(true)}
+          buttonText="Play"
+        />
+        <QuizDialog10 open={openDialog10} onClose={() => setOpenDialog10(false)} />
       </div>
     </>
   );

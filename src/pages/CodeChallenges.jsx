@@ -16,7 +16,7 @@ const CodeChallenges = () => {
             <div className="Quizzes container mt-5">
                 <div className="text-center">
                     <h1>Coding Challenges</h1>
-                    <h3>Ώρα για εξάσκηση!</h3>
+                    <h3>Εδώ θα βρεις κάποια challenges για εξάσκηση!</h3>
                     <hr className="my-4" />
                 </div>      
             </div>
