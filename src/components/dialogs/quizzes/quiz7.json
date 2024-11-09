@@ -42,7 +42,7 @@
         "photoURL": "q7q7"
     },
     {
-        "question": "Η εντολή while(!42) printf(\"yes\n\\\"); θα τυπώσει yes:",
+        "question": "Η εντολή while(!42) printf(\"yes\\n\"); θα τυπώσει yes:",
         "answers": ["0 φορές","42 φορές","άπειρες φορές","Δεν είναι έγκυρη C"],
         "correctAnswer": "0 φορές",
         "photoURL": "q7q8"

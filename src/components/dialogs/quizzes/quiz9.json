@@ -54,7 +54,7 @@
         "photoURL": "q9q9"
     },
     {
-        "question": "Τι ισχύει για το πρόγραμμα: while((c = getchar()) != '\\\n') charcount++; printf(\"%d\", charcount);",
+        "question": "Τι ισχύει για το πρόγραμμα: while((c = getchar()) != '\\n') charcount++; printf(\"%d\", charcount);",
         "answers": ["Θα τυπώνει 0 1 2 3 μέχρι να δώσει ο χρήστης αλλαγή γραμμής", "Δεν είναι δεκτή C","Δεν θα τερματίσει ποτέ εάν ο χρήστης δώσει EOF","tl;dr"],
         "correctAnswer": "Δεν θα τερματίσει ποτέ εάν ο χρήστης δώσει EOF",
         "photoURL": "q9q10"
