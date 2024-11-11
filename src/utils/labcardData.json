@@ -25,13 +25,20 @@
         "icon": "lab",
         "title": "Εργαστήριο 3",
         "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab03",
-        "solution": ""
+        "solution": "https://github.com/dimskomex/ip-labs-solutions/tree/main/Lab%203"
     },
     {
         "id": 5,
         "icon": "lab",
         "title": "Εργαστήριο 4",
         "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab04",
+        "solution": ""
+    },
+    {
+        "id": 6,
+        "icon": "lab",
+        "title": "Εργαστήριο 5",
+        "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab05",
         "solution": ""
     }
 ]
