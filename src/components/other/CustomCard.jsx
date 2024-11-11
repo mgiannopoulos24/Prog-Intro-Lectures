@@ -14,7 +14,19 @@ const CustomCard = ({icon, title, slides, part1, part2 }) => {
                 <div className="icon-above-title">
                     {iconSrc && <img src={iconSrc} alt="icon" />}
                 </div>
-                <Typography variant="h4" component="div" className="custom-card-title">
+                <Typography 
+                    variant="h4" 
+                    className="custom-card-title"
+                    sx={{
+                        minHeight: '64px',
+                        fontSize: '1.5rem',
+                        lineHeight: 1.2,
+                        overflow: 'hidden',
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical'
+                    }}
+                >
                     {title}
                 </Typography>
             </div>
