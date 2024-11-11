@@ -103,22 +103,24 @@ const QuizDialog2 = ({ open, onClose }) => {
 
     const getMessage = () => {
         const totalQuestions = questions.length;
+        const percentage = (correctAnswers / totalQuestions) * 100;
         const message = `Πέτυχες ${correctAnswers} από τις ${totalQuestions} ερωτήσεις!`;
-        if (correctAnswers >= 0 && correctAnswers <= 3) {
+    
+        if (percentage <= 33) {
             return (
                 <>
                     <p id='upper'>{message}</p>
                     <p id='lower'>Δεν τα πήγες τόσο καλά. 🙁</p>
                 </>
             );
-        } else if (correctAnswers >= 4 && correctAnswers <= 7) {
+        } else if (percentage <= 66) {
             return (
                 <>
                     <p id='upper'>{message}</p>
                     <p id='lower'>Καλή προσπάθεια! 🙂</p>
                 </>
             );
-        } else if (correctAnswers >= 8 && correctAnswers <= 11) {
+        } else {
             return (
                 <>
                     <p id='upper'>{message}</p>
