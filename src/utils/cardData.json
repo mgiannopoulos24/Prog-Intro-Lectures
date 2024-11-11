@@ -86,5 +86,13 @@
       "slides": "https://progintro.github.io/assets/pdf/lec10.pdf",
       "part1": "https://delos.uoa.gr/opendelos/player?rid=af41d4c4",
       "part2": "https://delos.uoa.gr/opendelos/player?rid=1790512"
+    },
+    {
+      "id": 12,
+      "icon": "pointer",
+      "title": "Διάλεξη 11: Δείκτες και Αναδρομή",
+      "slides": "https://progintro.github.io/assets/pdf/lec11.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=8fe6e497",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=12a55f8d"
     }
 ]

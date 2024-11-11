@@ -1,6 +1,6 @@
 import wave from '../../assets/wave.png';
 import matrix from '../../assets/mathematics.png';
-import pointer from '../../assets/return.png';
+import pointer from '../../assets/pointer.png';
 import terminal from '../../assets/terminal.png';
 import mem_variables from '../../assets/mem_variables.png';
 import functions from '../../assets/functions.png';
