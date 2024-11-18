@@ -33,13 +33,11 @@ const ToggleSwitch = ({ onChange, defaultChecked }) => {
         <div className="theme-switch__container">
           <div className="theme-switch__clouds" />
           <div className="theme-switch__stars-container">
-            {/* Include your SVG content here */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 144 55"
               fill="none"
             >
-              {/* SVG paths */}
             </svg>
           </div>
           <div className="theme-switch__circle-container">
