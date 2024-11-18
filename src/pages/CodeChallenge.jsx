@@ -127,7 +127,7 @@ function CodeChallenge() {
       <> 
         <div className="container mt-5">
           <div className="text-center">
-            <h1>Coding Challenges</h1>
+            <h1>Coding Challenge</h1>
             <h3>Ώρα για εξάσκηση!</h3>
             <hr className="my-4" />
           </div>
@@ -154,8 +154,8 @@ function CodeChallenge() {
       <FeedbackAlert open={openFeedback} setOpen={setOpenFeedback} />
       <div className="container mt-5">
         <div className="text-center">
-          <h1>Coding Challenges</h1>
-          <h3>Ώρα για εξάσκηση!</h3>
+          <h1>Coding Challenge</h1>
+          <h3>{challenges[challengeIndex]["problemTitle"]}</h3>
           <hr className="my-4" />
         </div>
         <div className="row">

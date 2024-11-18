@@ -23,7 +23,7 @@ const ToggleSwitch = ({ onChange, defaultChecked }) => {
 
   return (
     <StyledWrapper>
-      <label className="theme-switch">
+      <label className="theme-switch" aria-label="Toggle dark mode">
         <input
           type="checkbox"
           className="theme-switch__checkbox"

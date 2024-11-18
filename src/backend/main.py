@@ -14,38 +14,34 @@ file_lock = Lock()
 
 def compile_code(code):
     with file_lock:
-        # Generate a unique filename using process ID and timestamp
         unique_id = str(int(time.time() * 1000))
         source_file = f"main_{unique_id}.c"
         binary_file = f"main_{unique_id}"
 
         try:
-            # Write the C code to the source file
             with open(source_file, "w") as file:
                 file.write(code)
 
-            # Compile the C code
             compile_process = subprocess.run(
                 ["gcc", source_file, "-o", binary_file, "-lm"],
                 capture_output=True,
                 text=True
             )
 
-            if compile_process.return_code != 0:
+            if compile_process.returncode != 0:
                 return {
                     "output": compile_process.stdout,
                     "error": compile_process.stderr,
-                    "return_code": compile_process.return_code
+                    "return_code": compile_process.returncode
                 }
 
             return {
                 "output": compile_process.stdout,
                 "error": compile_process.stderr,
-                "return_code": compile_process.return_code,
-                "binary": binary_file  # Return the binary filename for execution
+                "return_code": compile_process.returncode,
+                "binary": binary_file
             }
         finally:
-            # Clean up the source file
             if os.path.exists(source_file):
                 os.remove(source_file)
 
@@ -71,7 +67,6 @@ def run_code(binary, input_data):
             "return_code": -1
         }
     finally:
-        # Clean up the binary file after execution
         if os.path.exists(binary):
             os.remove(binary)
 
@@ -93,7 +88,6 @@ def run():
     if not code:
         return jsonify({"output": "", "error": "No code provided.", "return_code": -1}), 400
 
-    # Compile the code
     compile_result = compile_code(code)
     if compile_result['return_code'] != 0:
         return jsonify({
@@ -110,7 +104,6 @@ def run():
             "return_code": -1
         }), 400
 
-    # Run the code
     run_result = run_code(binary, input_data)
 
     return jsonify({
@@ -135,7 +128,6 @@ def run_tests():
     except ValueError:
         return jsonify({"isCorrect": False, "error": "Invalid index values."}), 400
 
-    # Compile the code
     compile_result = compile_code(code)
     if compile_result['return_code'] != 0:
         return jsonify({
@@ -152,7 +144,6 @@ def run_tests():
             "return_code": -1
         }), 400
 
-    # Load the challenge data
     try:
         with open("challengeData.json", "r") as file:
             challenges = json.load(file)
@@ -166,7 +157,6 @@ def run_tests():
     except (IndexError, KeyError):
         return jsonify({"isCorrect": False, "error": "Invalid challenge or test index."}), 400
 
-    # Run the code with test input
     run_result = run_code(binary, test['input'])
 
     if run_result['return_code'] != 0:
