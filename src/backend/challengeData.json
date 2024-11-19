@@ -146,7 +146,7 @@
         "expectedOutput": "1"
       }
     ],
-    "defaultCode": "#include <stdio.h>\n#include <stdlib.h>\n\nint two_difference(int n, int *array, int target) {\n\treturn 0;\n}\n\nint main() {\n\tint n, target;\n\tscanf(\"%d %d\", &n, &target);\n\tint *array = malloc(n * sizeof(int));\n\tif (!s)\n\t\treturn 1;\n\n\tfor (int i = 0; i < n; i++) {\n\t scanf(\"%d\", array + i); \n\t} \n\tprintf(\"%d\", two_difference(n, array, target));\n\tfree(array);\n\treturn 0;\n}"
+    "defaultCode": "#include <stdio.h>\n#include <stdlib.h>\n\nint two_difference(int n, int *array, int target) {\n\treturn 0;\n}\n\nint main() {\n\tint n, target;\n\tscanf(\"%d %d\", &n, &target);\n\tint *array = malloc(n * sizeof(int));\n\tif (!array)\n\t\treturn 1;\n\n\tfor (int i = 0; i < n; i++) {\n\t scanf(\"%d\", array + i); \n\t} \n\tprintf(\"%d\", two_difference(n, array, target));\n\tfree(array);\n\treturn 0;\n}"
   },
   {
     "problemTitle": "'Ενας, πρώτος και μοναδικός",
@@ -161,7 +161,7 @@
         "expectedOutput": "b"
       },
       {
-        "input": "7 \nabcdefa",
+        "input": "7\nabcdefa",
         "expectedOutput": "b"
       },
       {
