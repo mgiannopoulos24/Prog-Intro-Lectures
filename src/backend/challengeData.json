@@ -158,7 +158,7 @@
       },
       {
         "input": "6 aaabca",
-        "expectedOutput": "4"
+        "expectedOutput": "3"
       },
       {
         "input": "7 abcdefa",
