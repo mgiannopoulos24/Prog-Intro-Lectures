@@ -158,6 +158,9 @@ def run_tests():
     except json.JSONDecodeError:
         return jsonify({"isCorrect": False, "error": "Invalid challenge data format."}), 500
 
+    if challengeIndex < 0 or challengeIndex >= len(challenges):
+        return jsonify({"isCorrect": False, "error": "Invalid challenge index." + challengeIndex}), 400
+
     try:
         test = challenges[challengeIndex]['tests'][testIndex]
     except (IndexError, KeyError):
