@@ -170,7 +170,7 @@
       },
       {
         "input": "1 a",
-        "expectedOutput": "1"
+        "expectedOutput": "0"
       },
       {
         "input": "4 abab",
