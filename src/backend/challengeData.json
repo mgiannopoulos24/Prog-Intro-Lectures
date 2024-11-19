@@ -103,5 +103,54 @@
       }
     ],
     "defaultCode": "#include <stdio.h>\n\nlong long int weird_factorial(int n) {\n\n}\n\nint main() { \n\tint n;\n\tscanf(\"%d\", &n);\n\tprintf(\"%lld\", weird_factorial(n));\n\treturn 0;\n}"
+  },
+  {
+    "problemTitle": "2-Difference",
+    "problem": "Συμπληρώστε τη συνάρτηση `two_difference`, ώστε να επιστρέφει $$1$$ αν υπάρχουν δύο ακέραιοι στον πίνακα $array$, η διαφορά των οποίων ισούται κατά απόλυτη τιμή με τον ακέραιο $target$. \n\n Με άλλα λόγια, η συνάρτηση πρέπει να επιστρέφει 1 αν υπάρχουν $$i$$, $$j$$, με $$0 \\leq i < j < n$$, ώστε $$ | array[i] - array[j] | = target$$. Διαφορετικά, η συνάρτηση πρέπει να επιστρέφει $$0$$.",
+    "tests": [
+      [
+        {
+          "input": "6 78\n5 20 3 2 50 80",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "5 45\n90 70 20 80 50",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "4 4\n1 5 9 12",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "3 5\n10 15 20",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "3 7\n10 15 20",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "5 0\n1 2 3 4 5",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "2 10\n-5 5",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "6 100\n1 200 300 400 500 600",
+          "expectedOutput": "0"
+        },
+        {
+          "input": "7 2\n1 3 5 7 9 11 13",
+          "expectedOutput": "1"
+        },
+        {
+          "input": "5 50\n100 150 200 250 300",
+          "expectedOutput": "1"
+        }
+      ]
+    ],
+    "defaultCode": "#include <stdio.h>\n#include <stdlib.h>\n\nint two_difference(int n, int *array, int target) {\nreturn 0;\n}\n\nint main() {\n\tint n, target;\n\tscanf(\"%d %d\", &n, &target);\n\tint *array = malloc(n * sizeof(int));\n\tfor (int i = 0; i < n; i++) {\n\t scanf(\"%d\", array + i); \n\t} \n\tprintf(\"%d\", two_difference(n, array, target));\n\tfree(array);\n\treturn 0;\n}"
   }
 ]

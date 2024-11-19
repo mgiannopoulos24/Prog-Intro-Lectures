@@ -9,7 +9,7 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 
 import Editor from "@monaco-editor/react";
-import BackToChalls from '../components/buttons/BackToChalls';
+import BackToChalls from "../components/buttons/BackToChalls";
 import Grid from "@mui/material/Grid2";
 import LinearWithValueLabel from "../components/other/LinearProgressWithLabel";
 import SubmitCodeButton from "../components/buttons/SubmitCodeButton";
@@ -86,6 +86,7 @@ function CodeChallenge() {
     setWrongAnswer(false);
     let i;
     for (i = 0; i < challenges[challengeIndex]["tests"].length; i++) {
+      console.log(challengeIndex);
       try {
         // Send code and challengeIndex to start tests
         const response = await axios.post(
@@ -124,7 +125,7 @@ function CodeChallenge() {
 
   if (loading) {
     return (
-      <> 
+      <>
         <div className="container mt-5">
           <div className="text-center">
             <h1>Coding Challenge</h1>
@@ -159,12 +160,13 @@ function CodeChallenge() {
           <hr className="my-4" />
         </div>
         <div className="row">
-          <Alert severity="warning" style={{"opacity":"75%"}}>
-            <strong>Σημείωση:</strong> Αν το κουμπί 'Run' δεν ανταποκρίνεται, οφείλεται σε καθυστέρηση στη φόρτωση.
+          <Alert severity="warning" style={{ opacity: "75%" }}>
+            <strong>Σημείωση:</strong> Αν το κουμπί 'Run' δεν ανταποκρίνεται,
+            οφείλεται σε καθυστέρηση στη φόρτωση.
           </Alert>
         </div>
       </div>
-      
+
       <div className="onlineCompiler">
         <Grid className="controlBar" item size={{ xs: 12, md: 12, lg: 12 }}>
           <RunCodeButton onClick={handleRun} />

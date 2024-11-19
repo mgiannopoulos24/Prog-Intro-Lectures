@@ -12,6 +12,7 @@ CORS(app)  # Enable CORS
 # Initialize a lock to prevent race conditions
 file_lock = Lock()
 
+
 def compile_code(code):
     with file_lock:
         unique_id = str(int(time.time() * 1000))
@@ -45,6 +46,7 @@ def compile_code(code):
             if os.path.exists(source_file):
                 os.remove(source_file)
 
+
 def run_code(binary, input_data):
     try:
         run_process = subprocess.run(
@@ -70,14 +72,17 @@ def run_code(binary, input_data):
         if os.path.exists(binary):
             os.remove(binary)
 
+
 def are_equal(str1, str2):
     normalized_str1 = ''.join(str1.split()).lower()
     normalized_str2 = ''.join(str2.split()).lower()
     return normalized_str1 == normalized_str2
 
+
 @app.route('/')
 def home():
     return "Welcome to the Online Compiler API!"
+
 
 @app.route('/run', methods=['POST'])
 def run():
@@ -111,6 +116,7 @@ def run():
         "error": run_result.get('error', ''),
         "return_code": run_result['return_code']
     })
+
 
 @app.route('/run-tests', methods=['POST'])
 def run_tests():
@@ -165,6 +171,7 @@ def run_tests():
     is_correct = are_equal(test['expectedOutput'], run_result['output'])
 
     return jsonify({"isCorrect": is_correct, "error": run_result.get('error', '')})
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, threaded=True)
