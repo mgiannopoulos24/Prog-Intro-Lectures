@@ -86,7 +86,6 @@ function CodeChallenge() {
     setWrongAnswer(false);
     let i;
     for (i = 0; i < challenges[challengeIndex]["tests"].length; i++) {
-      console.log(challengeIndex);
       try {
         // Send code and challengeIndex to start tests
         const response = await axios.post(

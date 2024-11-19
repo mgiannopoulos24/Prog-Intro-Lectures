@@ -146,6 +146,53 @@
         "expectedOutput": "1"
       }
     ],
-    "defaultCode": "#include <stdio.h>\n#include <stdlib.h>\n\nint two_difference(int n, int *array, int target) {\n\treturn 0;\n}\n\nint main() {\n\tint n, target;\n\tscanf(\"%d %d\", &n, &target);\n\tint *array = malloc(n * sizeof(int));\n\tfor (int i = 0; i < n; i++) {\n\t scanf(\"%d\", array + i); \n\t} \n\tprintf(\"%d\", two_difference(n, array, target));\n\tfree(array);\n\treturn 0;\n}"
+    "defaultCode": "#include <stdio.h>\n#include <stdlib.h>\n\nint two_difference(int n, int *array, int target) {\n\treturn 0;\n}\n\nint main() {\n\tint n, target;\n\tscanf(\"%d %d\", &n, &target);\n\tint *array = malloc(n * sizeof(int));\n\tif (!s)\n\t\treturn 1;\n\n\tfor (int i = 0; i < n; i++) {\n\t scanf(\"%d\", array + i); \n\t} \n\tprintf(\"%d\", two_difference(n, array, target));\n\tfree(array);\n\treturn 0;\n}"
+  },
+  {
+    "problemTitle": "'Ενας, πρώτος και μοναδικός",
+    "problem": "Γράψτε μια συνάρτηση `first_unique_char`, η οποία λαμβάνει ως είσοδο μια συμβολοσειρά s, μήκους $n$ και επιστρέφει τον πρώτο χαρακτήρα της συμβολοσειράς που δεν επαναλαμβάνεται (δηλαδή εμφανίζεται ακριβώς μία φορά). \n\nΑν δεν υπάρχει τέτοιος χαρακτήρας στη συμβολοσειρά, η συνάρτηση πρέπει να επιστρέφει τον ειδικό χαρακτήρα '\\0'.",
+    "tests":[
+      {
+        "input": "12\ngeeksforgeeks",
+        "expectedOutput": "f"
+      },
+      {
+        "input": "6\naaabca",
+        "expectedOutput": "b"
+      },
+      {
+        "input": "7 \nabcdefa",
+        "expectedOutput": "b"
+      },
+      {
+        "input": "5\naaaaa",
+        "expectedOutput": "\u0000"
+      },
+      {
+        "input": "1\na",
+        "expectedOutput": "a"
+      },
+      {
+        "input": "4\nabab",
+        "expectedOutput": "\u0000"
+      },
+      {
+        "input": "10\naabbccddee",
+        "expectedOutput": "\u0000"
+      },
+      {
+        "input": "8\nabcdeabc",
+        "expectedOutput": "d"
+      },
+      {
+        "input": "2\nzz",
+        "expectedOutput": "\u0000"
+      },
+      {
+        "input": "0\n",
+        "expectedOutput": "\u0000"
+      }
+    ],
+    "defaultCode": "#include <stdio.h>\n\nchar first_unique_char(int n, char *s) {\n\treturn '\\0';\n}\n\nint main() {\n\tint n;\n\tscanf(\"%d\", &n);\n\n\tchar *s = malloc((n+1) * sizeof(char));\n\tif (!s)\n\t\treturn 1;\n\n\tscanf(\"%s\", s);\n\tprintf(\"%c\", first_unique_char(n, s));\n\n\tfree(s);\n\treturn 0;\n}"
   }
 ]
