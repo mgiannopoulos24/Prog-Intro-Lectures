@@ -74,8 +74,8 @@ def run_code(binary, input_data):
 
 
 def are_equal(str1, str2):
-    normalized_str1 = ''.join(str1.split()).lower()
-    normalized_str2 = ''.join(str2.split()).lower()
+    normalized_str1 = str1.strip()
+    normalized_str2 = str2.strip()
     return normalized_str1 == normalized_str2
 
 
