@@ -90,7 +90,7 @@ function CodeChallenge() {
       try {
         // Send code and challengeIndex to start tests
         const response = await axios.post(
-          "https://prog-intro-lectures-lidq.onrender.com/run-tests",
+          "http://localhost:5000/run-tests",
           {
             code: code,
             challengeIndex: parseInt(challengeIndex), // Ensure this is an integer
