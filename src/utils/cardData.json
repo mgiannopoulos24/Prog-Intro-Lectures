@@ -94,5 +94,13 @@
       "slides": "https://progintro.github.io/assets/pdf/lec11.pdf",
       "part1": "https://delos.uoa.gr/opendelos/player?rid=8fe6e497",
       "part2": "https://delos.uoa.gr/opendelos/player?rid=12a55f8d"
+    },
+    {
+      "id": 13,
+      "icon": "array",
+      "title": "Διάλεξη 12: Πίνακες και Δείκτες",
+      "slides": "https://progintro.github.io/assets/pdf/lec12.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=d1a52e63",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=4f9084a8"
     }
 ]
