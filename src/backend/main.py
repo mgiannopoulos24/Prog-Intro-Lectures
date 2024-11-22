@@ -155,7 +155,7 @@ def run_tests():
             "isCorrect": False,
             "error": compile_result.get('error', ''),
             "return_code": compile_result['return_code']
-        }), 400
+        }), 200
 
     binary = compile_result.get('binary')
     if not binary:
