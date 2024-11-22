@@ -125,6 +125,7 @@ def run_tests():
     code = data.get('code')
     challengeIndex = data.get('challengeIndex')
     testIndex = data.get('testIndex')
+    includeLM = data.get('mathLibrary') == "True"
 
     if code is None or challengeIndex is None or testIndex is None:
         return jsonify({"isCorrect": False, "error": "Missing parameters."}), 400
@@ -136,7 +137,7 @@ def run_tests():
         return jsonify({"isCorrect": False, "error": "Invalid index values."}), 400
 
     compile_result = compile_code(
-        code, data[challengeIndex]["mathLibrary"] == "True")
+        code, includeLM)
     if compile_result['return_code'] != 0:
         return jsonify({
             "isCorrect": False,

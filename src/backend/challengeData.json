@@ -202,50 +202,50 @@
   },
   {
     "problemTitle": "Αδύναμη δύναμη",
-    "problem": "Γράψτε μια συνάρτηση `powerless_power`, η οποία λαμβάνει ως όρισμα δύο ακέραιους $n, k$, $1 \\leq n, k \\leq 100$ επιστρέφει την τιμή της παράστασης $n^k$ χωρίς να κάνεις χρήση της συνάρτησης pow της μαθηματικής βιβλιοθήκης.",
+    "problem": "Γράψτε μια συνάρτηση `powerless_power`, η οποία λαμβάνει ως όρισμα δύο ακέραιους $n, k$, $0 \\leq n, k \\leq 100$ επιστρέφει την τιμή της παράστασης $n^k$ χωρίς να κάνεις χρήση της συνάρτησης pow της μαθηματικής βιβλιοθήκης.",
     "tests": [
       {
-        "input": "13 geeksforgeeks",
-        "expectedOutput": "5"
+        "input": "2 3",
+        "expectedOutput": "8"
       },
       {
-        "input": "6 aaabca",
-        "expectedOutput": "3"
-      },
-      {
-        "input": "7 abcdefa",
+        "input": "5 0",
         "expectedOutput": "1"
       },
       {
-        "input": "5 aaaaa",
-        "expectedOutput": "-1"
+        "input": "10 2",
+        "expectedOutput": "100"
       },
       {
-        "input": "1 a",
-        "expectedOutput": "0"
+        "input": "7 1",
+        "expectedOutput": "7"
       },
       {
-        "input": "4 abab",
-        "expectedOutput": "-1"
+        "input": "3 4",
+        "expectedOutput": "81"
       },
       {
-        "input": "10 aabbccddee",
-        "expectedOutput": "-1"
+        "input": "1 100",
+        "expectedOutput": "1"
       },
       {
-        "input": "8 abcdeabc",
-        "expectedOutput": "3"
+        "input": "100 1",
+        "expectedOutput": "100"
       },
       {
-        "input": "2 zz",
-        "expectedOutput": "-1"
+        "input": "4 5",
+        "expectedOutput": "1024"
       },
       {
-        "input": "0",
-        "expectedOutput": "-1"
+        "input": "9 3",
+        "expectedOutput": "729"
+      },
+      {
+        "input": "6 6",
+        "expectedOutput": "46656"
       }
     ],
     "mathLibrary": "False",
-    "defaultCode": "#include <stdio.h>\n\nint first_unique_char(int n, char *s) {\n\treturn -1;\n}\n\nint main() {\n\tint n;\n\tscanf(\"%d\", &n);\n\n\tchar *s = malloc((n+1) * sizeof(char));\n\tif (!s)\n\t\treturn 1;\n\n\tscanf(\"%s\", s);\n\tprintf(\"%d\", first_unique_char(n, s));\n\n\tfree(s);\n\treturn 0;\n}"
+    "defaultCode": "#include <stdio.h>\n\nint powerless_power(int n, int k) {\n\treturn -1;\n}\n\nint main() {\n\tint n, k;\n\tscanf(\"%d %d\", &n, &k);\n\tprintf(\"%d\", powerless_power(n, k));\n\treturn 0;\n}"
   }
 ]
