@@ -23,9 +23,12 @@ def compile_code(code, include_lm):
             with open(source_file, "w") as file:
                 file.write(code)
 
+            compile_args = ["gcc", source_file, "-o", binary_file]
+            if include_lm:
+                compile_args.append("-lm")
+
             compile_process = subprocess.run(
-                ["gcc", source_file, "-o", binary_file,
-                    "-lm" if include_lm else ""],
+                compile_args,
                 capture_output=True,
                 text=True
             )
