@@ -8,6 +8,7 @@
         "expectedOutput": "Github"
       }
     ],
+    "mathLibrary": "True",
     "defaultCode": "#include <stdio.h> \nint main() { \n\n}"
   },
   {
@@ -55,6 +56,7 @@
         "expectedOutput": "9"
       }
     ],
+    "mathLibrary": "True",
     "defaultCode": "#include <stdio.h>\n\nint count_digits(int n) {\n\n}\n\nint main() { \n\tint n;\n\tscanf(\"%d\", &n);\n\tprintf(\"%d\", count_digits(n));\n\treturn 0;\n}"
   },
   {
@@ -102,6 +104,7 @@
         "expectedOutput": "371975084"
       }
     ],
+    "mathLibrary": "True",
     "defaultCode": "#include <stdio.h>\n\nlong long int weird_factorial(int n) {\n\n}\n\nint main() { \n\tint n;\n\tscanf(\"%d\", &n);\n\tprintf(\"%lld\", weird_factorial(n));\n\treturn 0;\n}"
   },
   {
@@ -146,11 +149,12 @@
         "expectedOutput": "1"
       }
     ],
+    "mathLibrary": "True",
     "defaultCode": "#include <stdio.h>\n#include <stdlib.h>\n\nint two_difference(int n, int *array, int target) {\n\treturn 0;\n}\n\nint main() {\n\tint n, target;\n\tscanf(\"%d %d\", &n, &target);\n\tint *array = malloc(n * sizeof(int));\n\tif (!array)\n\t\treturn 1;\n\n\tfor (int i = 0; i < n; i++) {\n\t scanf(\"%d\", array + i); \n\t} \n\tprintf(\"%d\", two_difference(n, array, target));\n\tfree(array);\n\treturn 0;\n}"
   },
   {
     "problemTitle": "'Ενας, πρώτος και μοναδικός",
-    "problem": "Γράψτε μια συνάρτηση `first_unique_char`, η οποία λαμβάνει ως είσοδο μια συμβολοσειρά s, μήκους $n$ και επιστρέφει τη θέση (index) του πρώτου χαρακτήρα της συμβολοσειράς που δεν επαναλαμβάνεται (δηλαδή εμφανίζεται ακριβώς μία φορά). \n\nΑν δεν υπάρχει τέτοιος χαρακτήρας στη συμβολοσειρά, η συνάρτηση πρέπει να επιστρέφει -1.",
+    "problem": "Γράψτε μια συνάρτηση `first_unique_char`, η οποία λαμβάνει ως όρισμα μια συμβολοσειρά s, μήκους $n$ και επιστρέφει τη θέση (index) του πρώτου χαρακτήρα της συμβολοσειράς που δεν επαναλαμβάνεται (δηλαδή εμφανίζεται ακριβώς μία φορά). \n\nΑν δεν υπάρχει τέτοιος χαρακτήρας στη συμβολοσειρά, η συνάρτηση πρέπει να επιστρέφει -1.",
     "tests": [
       {
         "input": "13 geeksforgeeks",
@@ -193,6 +197,55 @@
         "expectedOutput": "-1"
       }
     ],
+    "mathLibrary": "True",
+    "defaultCode": "#include <stdio.h>\n\nint first_unique_char(int n, char *s) {\n\treturn -1;\n}\n\nint main() {\n\tint n;\n\tscanf(\"%d\", &n);\n\n\tchar *s = malloc((n+1) * sizeof(char));\n\tif (!s)\n\t\treturn 1;\n\n\tscanf(\"%s\", s);\n\tprintf(\"%d\", first_unique_char(n, s));\n\n\tfree(s);\n\treturn 0;\n}"
+  },
+  {
+    "problemTitle": "Αδύναμη δύναμη",
+    "problem": "Γράψτε μια συνάρτηση `powerless_power`, η οποία λαμβάνει ως όρισμα δύο ακέραιους $n, k$, $1 \\leq n, k \\leq 100$ επιστρέφει την τιμή της παράστασης $n^k$ χωρίς να κάνεις χρήση της συνάρτησης pow της μαθηματικής βιβλιοθήκης.",
+    "tests": [
+      {
+        "input": "13 geeksforgeeks",
+        "expectedOutput": "5"
+      },
+      {
+        "input": "6 aaabca",
+        "expectedOutput": "3"
+      },
+      {
+        "input": "7 abcdefa",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "5 aaaaa",
+        "expectedOutput": "-1"
+      },
+      {
+        "input": "1 a",
+        "expectedOutput": "0"
+      },
+      {
+        "input": "4 abab",
+        "expectedOutput": "-1"
+      },
+      {
+        "input": "10 aabbccddee",
+        "expectedOutput": "-1"
+      },
+      {
+        "input": "8 abcdeabc",
+        "expectedOutput": "3"
+      },
+      {
+        "input": "2 zz",
+        "expectedOutput": "-1"
+      },
+      {
+        "input": "0",
+        "expectedOutput": "-1"
+      }
+    ],
+    "mathLibrary": "False",
     "defaultCode": "#include <stdio.h>\n\nint first_unique_char(int n, char *s) {\n\treturn -1;\n}\n\nint main() {\n\tint n;\n\tscanf(\"%d\", &n);\n\n\tchar *s = malloc((n+1) * sizeof(char));\n\tif (!s)\n\t\treturn 1;\n\n\tscanf(\"%s\", s);\n\tprintf(\"%d\", first_unique_char(n, s));\n\n\tfree(s);\n\treturn 0;\n}"
   }
 ]

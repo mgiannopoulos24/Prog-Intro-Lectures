@@ -13,7 +13,7 @@ CORS(app)  # Enable CORS
 file_lock = Lock()
 
 
-def compile_code(code):
+def compile_code(code, include_lm):
     with file_lock:
         unique_id = str(int(time.time() * 1000))
         source_file = f"main_{unique_id}.c"
@@ -24,7 +24,8 @@ def compile_code(code):
                 file.write(code)
 
             compile_process = subprocess.run(
-                ["gcc", source_file, "-o", binary_file, "-lm"],
+                ["gcc", source_file, "-o", binary_file,
+                    "-lm" if include_lm else ""],
                 capture_output=True,
                 text=True
             )
@@ -93,7 +94,7 @@ def run():
     if not code:
         return jsonify({"output": "", "error": "No code provided.", "return_code": -1}), 400
 
-    compile_result = compile_code(code)
+    compile_result = compile_code(code, True)
     if compile_result['return_code'] != 0:
         return jsonify({
             "output": compile_result.get('output', ''),
@@ -134,7 +135,8 @@ def run_tests():
     except ValueError:
         return jsonify({"isCorrect": False, "error": "Invalid index values."}), 400
 
-    compile_result = compile_code(code)
+    compile_result = compile_code(
+        code, data[challengeIndex]["mathLibrary"] == "True")
     if compile_result['return_code'] != 0:
         return jsonify({
             "isCorrect": False,
