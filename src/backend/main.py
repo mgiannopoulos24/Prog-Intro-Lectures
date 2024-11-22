@@ -125,7 +125,16 @@ def run_tests():
     code = data.get('code')
     challengeIndex = data.get('challengeIndex')
     testIndex = data.get('testIndex')
-    includeLM = data.get('mathLibrary') == "True"
+
+    try:
+        with open("challengeData.json", "r") as file:
+            challenges = json.load(file)
+    except FileNotFoundError:
+        return jsonify({"isCorrect": False, "error": "Challenge data not found."}), 500
+    except json.JSONDecodeError:
+        return jsonify({"isCorrect": False, "error": "Invalid challenge data format."}), 500
+
+    includeLM = challenges[challengeIndex]['mathLibrary'] == "True"
 
     if code is None or challengeIndex is None or testIndex is None:
         return jsonify({"isCorrect": False, "error": "Missing parameters."}), 400
@@ -152,14 +161,6 @@ def run_tests():
             "error": "Compilation failed without return code.",
             "return_code": -1
         }), 400
-
-    try:
-        with open("challengeData.json", "r") as file:
-            challenges = json.load(file)
-    except FileNotFoundError:
-        return jsonify({"isCorrect": False, "error": "Challenge data not found."}), 500
-    except json.JSONDecodeError:
-        return jsonify({"isCorrect": False, "error": "Invalid challenge data format."}), 500
 
     try:
         test = challenges[challengeIndex]['tests'][testIndex]
