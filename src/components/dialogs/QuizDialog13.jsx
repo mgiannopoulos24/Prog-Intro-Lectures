@@ -8,7 +8,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import questions from './quizzes/quiz12.json';
+import questions from './quizzes/quiz13.json';
 import './QuizDialog.css';
 import images from "./images";
 import Slide from '@mui/material/Slide';
@@ -138,7 +138,7 @@ const QuizDialog11 = ({ open, onClose }) => {
             TransitionComponent={Transition} 
         >
             <DialogTitle style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold', fontSize: '20px' }}>
-                Πίνακες και Συναρτήσεις
+                Μνήμη
                 <CloseIcon onClick={handleDialogClose} style={{ cursor: 'pointer' }} />
             </DialogTitle>
             {showResult ? (

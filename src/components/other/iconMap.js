@@ -12,6 +12,7 @@ import flow from '../../assets/flow.png';
 import lab from '../../assets/lab.png'
 import entry from '../../assets/entry.png';
 import array from '../../assets/array.png';
+import ram from '../../assets/ram.png';
 
 export const iconMap = {
     'wave': wave,
@@ -27,5 +28,6 @@ export const iconMap = {
     'flow': flow,
     'lab': lab,
     'entry': entry,
-    'array': array
+    'array': array,
+    'ram': ram
 };

@@ -102,5 +102,13 @@
       "slides": "https://progintro.github.io/assets/pdf/lec12.pdf",
       "part1": "https://delos.uoa.gr/opendelos/player?rid=d1a52e63",
       "part2": "https://delos.uoa.gr/opendelos/player?rid=4f9084a8"
+    },
+    {
+      "id": 14,
+      "icon": "ram",
+      "title": "Διάλεξη 13: Μνήμη",
+      "slides": "https://progintro.github.io/assets/pdf/lec13.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=4389c91e",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=ffd34713"
     }
 ]

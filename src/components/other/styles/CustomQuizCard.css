@@ -3,7 +3,7 @@
   width: 20rem;
   height: 25rem;
   backdrop-filter: blur(8px);
-  border-radius: 0.75rem;
+  border-radius: 5px;
   border: 2px solid lightblue; 
   overflow: hidden;
   transform: scale(0.9);
