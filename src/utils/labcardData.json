@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "icon": "lab",
+        "title": "Εργαστήριο 0",
+        "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab00",
+        "solution": "https://github.com/dimskomex/ip-labs-solutions/tree/main/Lab%200"
+    },
+    {
+        "id": 2,
+        "icon": "lab",
+        "title": "Εργαστήριο 1",
+        "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab01",
+        "solution": "https://github.com/dimskomex/ip-labs-solutions/tree/main/Lab%201"
+    },
+    {
+        "id": 3,
+        "icon": "lab",
+        "title": "Εργαστήριο 2",
+        "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab02",
+        "solution": "https://github.com/dimskomex/ip-labs-solutions/tree/main/Lab%202"
+    },
+    {
+        "id": 4,
+        "icon": "lab",
+        "title": "Εργαστήριο 3",
+        "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab03",
+        "solution": "https://github.com/dimskomex/ip-labs-solutions/tree/main/Lab%203"
+    },
+    {
+        "id": 5,
+        "icon": "lab",
+        "title": "Εργαστήριο 4",
+        "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab04",
+        "solution": ""
+    },
+    {
+        "id": 6,
+        "icon": "lab",
+        "title": "Εργαστήριο 5",
+        "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab05",
+        "solution": ""
+    },
+    {
+        "id": 7,
+        "icon": "lab",
+        "title": "Εργαστήριο 6",
+        "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab06",
+        "solution": ""
+    },
+    {
+        "id": 8,
+        "icon": "lab",
+        "title": "Εργαστήριο 7",
+        "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab07",
+        "solution": ""
+    }
+]

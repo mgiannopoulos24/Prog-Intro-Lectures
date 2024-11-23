@@ -1,0 +1,86 @@
+[
+    {
+        "question": "Η διεύθυνση μιας μεταβλητής είναι *πάντα* ένας ακέραιος αριθμός",
+        "answers": ["True", "False"],
+        "correctAnswer": "True",
+        "photoURL": "q11q1"
+    },
+    {
+        "question": "int x = 41; int * ptr = &x; x++; printf(\"%d\", *ptr); Τι θα τυπώσει;",
+        "answers": ["41", "42", "43", "Που να ξέρω"],
+        "correctAnswer": "42",
+        "photoURL": "q11q2"
+    },
+    {
+        "question": "int x = 41; int * ptr = &x; (*ptr)++; printf(\"%d\", *ptr); Τι θα τυπώσει;",
+        "answers": ["41", "42", "43", "Που να ξέρω"],
+        "correctAnswer": "42",
+        "photoURL": "q11q3"
+    },
+    {
+        "question": "int x = 41; int * ptr = &x; ptr++; printf(\"%d\", *ptr); Τι θα τυπώσει;",
+        "answers": ["41", "42", "43", "Που να ξέρω"],
+        "correctAnswer": "Που να ξέρω",
+        "photoURL": "q11q4"
+    },
+    {
+        "question": "Η τιμή δείκτη NULL στα σημερινά συστήματα ισούται με τον αριθμό 0",
+        "answers": ["True", "False"],
+        "correctAnswer": "True",
+        "photoURL": "q11q5"
+    },
+    {
+        "question": "Μια μεταβλητή πίνακα συμπεριφέρεται ακριβώς όπως ένας δείκτης",
+        "answers": ["True", "False"],
+        "correctAnswer": "False",
+        "photoURL": "q11q6"
+    },
+    {
+        "question": "Οι μεταβλητές double *x; και char *c; καταλαμβάνουν τον ίδιο χώρο στην μνήμη",
+        "answers": ["True", "False"],
+        "correctAnswer": "True",
+        "photoURL": "q11q7"
+    },
+    {
+        "question": "Παλιό θέμα: Η εντολή y = *&x; στην C είναι:",
+        "answers": ["Ισοδύναμη με την εντολή y = x;", "Ισοδύναμη με την εντολή y = &*x;", "Ισοδύναμη με την εντολή y = *x;", "Συντακτικά λανθασμένη"],
+        "correctAnswer": "Ισοδύναμη με την εντολή y = x;",
+        "photoURL": "q11q8"
+    },
+    {
+        "question": "Έστω ότι η τιμή του δείκτη int * ptr είναι 42. Η τιμή του δείκτη (ptr + 1) είναι:",
+        "answers": ["43", "46", "42", "Εξαρτάται"],
+        "correctAnswer": "Εξαρτάται",
+        "photoURL": "q11q9"
+    },
+    {
+        "question": "Έστω ότι sizeof(int) == 4 και η τιμή του int * ptr είναι 0x42. Ποια η τιμή της έκφρασης ptr + 4;",
+        "answers": ["0x46", "42", "0x52", "0x4C"],
+        "correctAnswer": "0x52",
+        "photoURL": "q11q10"
+    },
+    {
+        "question": "Η έκφραση *(ptr + 4) είναι ισοδύναμη με την έκφραση ptr[4]",
+        "answers": ["True", "False"],
+        "correctAnswer": "True",
+        "photoURL": "q11q11"
+    },
+    {
+        "question": "Η αναδρομή πρέπει να τερματίζει",
+        "answers": ["True", "False"],
+        "correctAnswer": "True",
+        "photoURL": "q11q12"
+    },
+    {
+        "question": "int a[] = {10, 20, 30, 40}; int *ptr = &a[1]; printf(\"%d\", ptr[1]); - Θα τυπώσει:",
+        "answers": ["20", "30", "40", "10"],
+        "correctAnswer": "30",
+        "photoURL": "q11q13"
+    },
+    {
+        "question": "Έστω ότι int * p, * q είναι δύο δείκτες και ο καθένας έχει τιμή 42. Τότε η παράσταση p + q είναι:",
+        "answers": ["84", "166", "Μη δεκτή στην C", "0"],
+        "correctAnswer": "Μη δεκτή στην C",
+        "photoURL": "q11q14"
+    }
+]

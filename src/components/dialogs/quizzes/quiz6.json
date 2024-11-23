@@ -1,0 +1,62 @@
+[
+    {
+        "question": "Χρειάζεται να φτιάξω και προσωπικό repository για την Εργασία 0;",
+        "answers": ["Ναι","Όχι","Εξαρτάται","Κάτσε, έχει βγει εργασία;"],
+        "correctAnswer": "Ναι",
+        "photoURL": "q6q1"
+    },
+    {
+        "question": "Τι επιστρέφει η παράσταση (int)42.842;",
+        "answers": ["42","43", "42.8", "42.842"],
+        "correctAnswer": "42",
+        "photoURL": "q6q2"
+    },
+    {
+        "question": "Τι θα τελειώσει πιο γρήγορα;",
+        "answers": ["Η εντολή while(1);","Το μετρό της Θεσσαλονίκης"],
+        "correctAnswer": "Το μετρό της Θεσσαλονίκης",
+        "photoURL": "q6q3"
+    },
+    {
+        "question": "Τι θα τυπώσει το πρόγραμμα: int x = 42, y = 42; printf(\"%d %d\", x++, ++y);",
+        "answers": ["42 42","43 42","42 43","43 43"],
+        "correctAnswer": "42 43",
+        "photoURL": "q6q4"
+    },
+    {
+        "question": "Τι θα τυπώσει το ακόλουθο πρόγραμμα: int x = 42; if (x  > 42) printf(\"Hello\"); else printf(\"World\");",
+        "answers": ["Hello","World","HelloWorld","Hello World"],
+        "correctAnswer": "World",
+        "photoURL": "q6q5"
+    },
+    {
+        "question": "Τα while και do-while loops είναι το ίδιο πράγμα;",
+        "answers": ["True","False"],
+        "correctAnswer": "False",
+        "photoURL": "q6q6"
+    },
+    {
+        "question": "Το loop while(condition) statement; είναι ισοδύναμο με:",
+        "answers": ["for(condition ; ; statement);","for(; condition ; statement);","for(; condition;) statement;","for(;;condition) statement;"],
+        "correctAnswer": "for(; condition;) statement;",
+        "photoURL": "q6q7"
+    },
+    {
+        "question": "Η εντολή if x == 42 printf(\"Hello world\\n\"); είναι δεκτή στην C",
+        "answers": ["True","False"],
+        "correctAnswer": "False",
+        "photoURL": "q6q8"
+    },
+    {
+        "question": "To loop int i; for(i = 0 ; i < 100 ; i+= 2) ; θα εκτελεστεί:",
+        "answers": ["100 φορές","99 φορές","49 φορές","50 φορές"],
+        "correctAnswer": "50 φορές",
+        "photoURL": "q6q9"
+    },
+    {
+        "question": "Πόσες φορές θα τυπώσει hello world το παραπάνω πρόγραμμα;",
+        "answers": ["100","200","10000","1000000"],
+        "correctAnswer": "10000",
+        "photoURL": "q6q10"
+    }
+]

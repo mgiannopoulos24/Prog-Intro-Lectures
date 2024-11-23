@@ -1,0 +1,92 @@
+[
+    {
+        "question": "Ποια μονάδα πληροφορίας είναι μεγαλύτερη;",
+        "answers": ["Bit", "Byte"],
+        "correctAnswer": "Byte",
+        "photoURL": "q3q1"
+    },
+    {
+        "question": "Μόλις έπεσε το ρεύμα, τα δεδομένα σου διατηρήθηκαν μόνο αν τα έσωσες στην",
+        "answers": ["Κύρια μνήμη","Δευτερεύουσα μνήμη"],
+        "correctAnswer": "Δευτερεύουσα μνήμη",
+        "photoURL": "q3q2"
+    },
+    {
+        "question": "Πόσες διαφορετικές τιμές μπορεί να πάρει ένα 8-bit byte?",
+        "answers": ["2^8", "2^16", "8", "16"],
+        "correctAnswer": "2^8",
+        "photoURL": "q3q3"
+    },
+    {
+        "question": "Ποια από τα παρακάτω αντιστοιχεί σε ένα IP address;",
+        "answers": ["1.2.3","1.1.1.1","A.B.C.D.E","hello world"],
+        "correctAnswer": "1.1.1.1",
+        "photoURL": "q3q4"
+    },
+    {
+        "question": "Κάθε ένας από τους 4 αριθμούς μιας IP address είναι από το 0 μέχρι το 255. Για να αναπαρασταθεί κάθε ένας επαρκεί:",
+        "answers": ["Ένα bit","Ένα byte","Ένας 32-bit αριθμός","Ένας 64-bit αριθμός"],
+        "correctAnswer": "Ένα byte",
+        "photoURL": "q3q5"
+    },
+    {
+        "question": "Με δεδομένο ότι μια IP address περιέχει 4 byte, πόσες IP διευθύνσεις μπορούν να υπάρξουν;",
+        "answers": ["1.101.101.10","4 δις","2^16","256.000"],
+        "correctAnswer": "4 δις",
+        "photoURL": "q3q6"
+    },
+    {
+        "question": "Με πόσα bytes αναπαρίσταται ο τύπος int στην μνήμη;",
+        "answers": ["2","4","8","Εξαρτάται"],
+        "correctAnswer": "Εξαρτάται",
+        "photoURL": "q3q7"
+    },
+    {
+        "question": "Πόσους διαφορετικούς αριθμούς μπορώ να αναπαραστήσω με έναν uint64_t;",
+        "answers": ["2^64","4 δις","Όλους τους ακεραίους","Εξαρτάται"],
+        "correctAnswer": "2^64",
+        "photoURL": "q3q8"
+    },
+    {
+        "question": "Πόσο μεγάλος αριθμός είναι περίπου το 2^64 ;",
+        "answers": ["10^10","10^20","10^30","42"],
+        "correctAnswer": "10^20",
+        "photoURL": "q3q9"
+    },
+    {
+        "question": "Όταν το Gagnam Style στο Youtube κόντευε τα 2 δις views η Google άλλαξε τον τύπο των views. Τι τύπου ήταν αρχικά;",
+        "answers": ["char","double","int64_t","int"],
+        "correctAnswer": "int",
+        "photoURL": "q3q10"
+    },
+    {
+        "question": "Το Ariane 5 αναπαριστούσε την ταχύτητα με έναν uint16_t - ποια είναι η μεγαλύτερη τιμή της ταχύτητας που επιτρέπεται;",
+        "answers": ["100","2^16","16000","Όλες"],
+        "correctAnswer": "2^16",
+        "photoURL": "q3q11"
+    },
+    {
+        "question": "Για ένα signed char που έχει τιμή 0xFF (συμπλήρωμα του δύο), ποια είναι η δεκαδική τιμή του;",
+        "answers": ["1","-1","256","0"],
+        "correctAnswer": "-1",
+        "photoURL": "q3q12"
+    },
+    {
+        "question": "Αν προσθέσω δύο θετικούς αριθμούς τύπου int το αποτέλεσμα είναι πάντα θετικό;",
+        "answers": ["Ναι","Όχι"],
+        "correctAnswer": "Όχι",
+        "photoURL": "q3q13"
+    },
+    {
+        "question": "Αν προσθέσω δύο θετικούς αριθμούς τύπου unsigned int το αποτέλεσμα είναι πάντα θετικό;",
+        "answers": ["Ναι","Όχι"],
+        "correctAnswer": "Ναι",
+        "photoURL": "q3q14"
+    },
+    {
+        "question": "Εάν ο χαρακτήρας 'I' έχει κωδικό ASCII 0x49 ποιος είναι ο κωδικός του 'J';",
+        "answers": ["0x50","0x48","0x4A","0x39"],
+        "correctAnswer": "0x4A",
+        "photoURL": "q3q15"
+    }
+]

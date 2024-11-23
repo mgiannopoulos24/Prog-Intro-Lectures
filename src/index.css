@@ -14,11 +14,11 @@ code {
 }
 
 body.dark-mode {
-  background-color: #333232;
+  background-color: black;
   transition: all 0.3s ease-in-out;
   color: white;
 }
 
 body.dark-mode a {
-  color: lightblue; /* Links */
+  color: lightblue;
 }

@@ -1,0 +1,102 @@
+/* Base card styles */
+.custom-card {
+  flex-grow: 1;
+  margin: 0.5%;
+  padding: 0;
+  text-align: center;
+  width: calc(33.3333% - 10px);
+  max-width: 345px;
+  background-color: #e0e0e0;
+  border: 1px solid #999;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+@media (max-width: 425px) {
+  .custom-card {
+    flex-grow: 0;
+    width: calc(100% - 50px);
+  }
+}
+
+.icon-above-title {
+  font-size: 72px;
+  margin-bottom: 8px;
+}
+
+.custom-card .custom-card-header {
+  background-color: lightblue;
+  color: black;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}
+
+.custom-card .custom-card-title {
+  font-family: "Google Sans", sans-serif;
+}
+
+.custom-card .lower-section {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: "Google Sans", sans-serif;
+}
+
+.custom-card .upper-section {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: "Google Sans", sans-serif;
+}
+
+.custom-card .custom-button {
+  color: #252d4a;
+  border: 2px solid #c2c7d6;
+  padding: 20px 0;
+  font-size: 16px;
+  background-color: white;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.custom-card .custom-button:hover {
+  border-color: #252d4a;
+  transition: all ease-in-out 0.3s;
+}
+
+.custom-card .custom-half-width-button {
+  width: calc(50%);
+}
+
+/* Dark mode styles */
+body.dark-mode .custom-card {
+  background-color: #333;
+  border: 1px solid #444;
+}
+
+body.dark-mode .custom-card-header {
+  background-color: #1B4958;
+  color: #e0e0e0;
+}
+
+body.dark-mode .custom-card .custom-button {
+  color: #e0e0e0;
+  border: 2px solid #666;
+  background-color: #444;
+}
+
+body.dark-mode .custom-card .custom-button:hover {
+  border-color: #e0e0e0;
+}

@@ -2,82 +2,113 @@
     {
       "id": 1,
       "icon": "wave",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
+      "title": "Διάλεξη 0: Καλημέρα Κόσμε!",
+      "slides": "https://progintro.github.io/assets/pdf/lec00.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=80cd2838",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=b92133a1"
     },
     {
       "id": 2,
-      "icon": "matrix",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
+      "icon": "terminal",
+      "title": "Διάλεξη 1: Η Γραμμή Εντολών",
+      "slides": "https://progintro.github.io/assets/pdf/lec01.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=e52f3866",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=309ae0c5"
     },
     {
       "id": 3,
-      "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
+      "icon": "mem_variables",
+      "title": "Διάλεξη 2: Μνήμη και Μεταβλητές",
+      "slides": "https://progintro.github.io/assets/pdf/lec02.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=6232ea43",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=a456608c"
     },
     {
       "id": 4,
-      "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
+      "icon": "functions",
+      "title": "Διάλεξη 3: Συναρτήσεις",
+      "slides": "https://progintro.github.io/assets/pdf/lec03.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=39d8dbb2",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=f550c3de"
     },
     {
       "id": 5,
-      "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
+      "icon": "git",
+      "title": "Διάλεξη 4: Git και Τελεστές",
+      "slides": "https://progintro.github.io/assets/pdf/lec04.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=27ddd12e",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=2689c41d"
     },
     {
       "id": 6,
-      "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
+      "icon": "maths",
+      "title": "Διάλεξη 5: Τελεστές και Εντολές",
+      "slides": "https://progintro.github.io/assets/pdf/lec05.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=f960e1e9",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=2d04bc27"
     },
     {
       "id": 7,
-      "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
+      "icon": "loop",
+      "title": "Διάλεξη 6: Εντολές και Ροή Ελέγχου",
+      "slides": "https://progintro.github.io/assets/pdf/lec06.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=aa3d3944",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=a89b0b7"
     },
     {
       "id": 8,
-      "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
+      "icon": "solution",
+      "title": "Διάλεξη 7: Επίλυση Προβλημάτων",
+      "slides": "https://progintro.github.io/assets/pdf/lec07.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=3af51be7",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=216fc354"
     },
     {
       "id": 9,
+      "icon": "flow",
+      "title": "Διάλεξη 8: Ροή Ελέγχου #2",
+      "slides": "https://progintro.github.io/assets/pdf/lec08.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=c96a6f62",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=40bc918"
+    },
+    {
+      "id": 10,
+      "icon": "entry",
+      "title": "Διάλεξη 9: Δεδομένα Εισόδου",
+      "slides": "https://progintro.github.io/assets/pdf/lec09.pdf",
+      "part1":"https://delos.uoa.gr/opendelos/player?rid=7cb841d2",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=277c2dcb"
+    },
+    {
+      "id": 11,
+      "icon": "matrix",
+      "title": "Διάλεξη 10: Πίνακες",
+      "slides": "https://progintro.github.io/assets/pdf/lec10.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=af41d4c4",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=1790512"
+    },
+    {
+      "id": 12,
       "icon": "pointer",
-      "title": "TBD",
-      "source": "",
-      "slides": "",
-      "part1": "",
-      "part2": ""
+      "title": "Διάλεξη 11: Δείκτες και Αναδρομή",
+      "slides": "https://progintro.github.io/assets/pdf/lec11.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=8fe6e497",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=12a55f8d"
+    },
+    {
+      "id": 13,
+      "icon": "array",
+      "title": "Διάλεξη 12: Πίνακες και Δείκτες",
+      "slides": "https://progintro.github.io/assets/pdf/lec12.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=d1a52e63",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=4f9084a8"
+    },
+    {
+      "id": 14,
+      "icon": "ram",
+      "title": "Διάλεξη 13: Μνήμη",
+      "slides": "https://progintro.github.io/assets/pdf/lec13.pdf",
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=4389c91e",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=ffd34713"
     }
 ]

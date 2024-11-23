@@ -6,7 +6,7 @@ const PORT = 8000;
 
 // CORS configuration
 const corsOptions = {
-    origin: 'https://progintrolectures.netlify.app/OnlineCompiler', // Replace with your actual frontend URL
+    origin: 'http://localhost:3000', // Replace with your actual frontend URL
     methods: 'GET,POST,PUT,DELETE',
     allowedHeaders: 'Content-Type,Authorization'
 };
