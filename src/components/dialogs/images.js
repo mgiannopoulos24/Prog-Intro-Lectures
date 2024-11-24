@@ -103,6 +103,44 @@ import q10q9 from '../../assets/q10q9.jpg';
 import q10q10 from '../../assets/q10q10.jpg';
 import q10q11 from '../../assets/q10q11.jpg';
 import q10q12 from '../../assets/q10q12.jpg';
+import q11q1 from '../../assets/q11q1.jpg';
+import q11q2 from '../../assets/q11q2.jpg';
+import q11q3 from '../../assets/q11q3.jpg';
+import q11q4 from '../../assets/q11q4.png';
+import q11q5 from '../../assets/q11q5.jpg';
+import q11q6 from '../../assets/q11q6.jpg';
+import q11q7 from '../../assets/q11q7.jpg';
+import q11q8 from '../../assets/q11q8.png';
+import q11q9 from '../../assets/q11q9.jpg';
+import q11q10 from '../../assets/q11q10.jpg';
+import q11q11 from '../../assets/q11q11.jpg';
+import q11q12 from '../../assets/q11q12.jpg';
+import q11q13 from '../../assets/q11q13.jpg';
+import q11q14 from '../../assets/q11q14.jpg';
+import q12q1 from '../../assets/q12q1.jpg';
+import q12q2 from '../../assets/q12q2.jpg';
+import q12q3 from '../../assets/q12q3.jpg';
+import q12q4 from '../../assets/q12q4.jpg';
+import q12q5 from '../../assets/q12q5.jpg';
+import q12q6 from '../../assets/q12q6.jpg';
+import q12q7 from '../../assets/q12q7.jpg';
+import q12q8 from '../../assets/q12q8.png';
+import q12q9 from '../../assets/q12q9.jpg';
+import q13q1 from '../../assets/q13q1.jpg';
+import q13q2 from '../../assets/q13q2.jpg';
+import q13q3 from '../../assets/q13q3.jpg';
+import q13q4 from '../../assets/q13q4.jpg';
+import q13q5 from '../../assets/q13q5.jpeg';
+import q13q6 from '../../assets/q13q6.jpg';
+import q13q7 from '../../assets/q13q7.jpg';
+import q13q8 from '../../assets/q13q8.jpg';
+import q13q9 from '../../assets/q13q9.png';
+import q13q10 from '../../assets/q13q10.jpg';
+import q13q11 from '../../assets/q13q11.png';
+import q13q12 from '../../assets/q13q12.png';
+
+
+
 
 const images = {
     "q1q1": q1q1, "q1q2": q1q2, "q1q3": q1q3, "q1q4": q1q4, "q1q5": q1q5, "q1q6": q1q6, "q1q7": q1q7, "q1q8": q1q8,
@@ -114,7 +152,11 @@ const images = {
     "q7q1": q7q1 ,"q7q2": q7q2, "q7q3": q7q3, "q7q4": q7q4, "q7q5": q7q5, "q7q6": q7q6, "q7q7": q7q7, "q7q8": q7q8, "q7q9": q7q9, "q7q10": q7q10,
     "q8q1": q8q1, "q8q2": q8q2, "q8q3": q8q3, "q8q4": q8q4, "q8q5": q8q5, "q8q6": q8q6, "q8q7": q8q7, "q8q8": q8q8, "q8q9": q8q9, "q8q10": q8q10,
     "q9q1": q9q1, "q9q2": q9q2, "q9q3": q9q3, "q9q4": q9q4, "q9q5": q9q5, "q9q6": q9q6, "q9q7": q9q7, "q9q8": q9q8, "q9q9": q9q9, "q9q10": q9q10,
-    "q10q1": q10q1, "q10q2": q10q2, "q10q3": q10q3, "q10q4": q10q4, "q10q5": q10q5, "q10q6": q10q6, "q10q7": q10q7, "q10q8": q10q8, "q10q9": q10q9, "q10q10": q10q10, "q10q11": q10q11, "q10q12": q10q12
+    "q10q1": q10q1, "q10q2": q10q2, "q10q3": q10q3, "q10q4": q10q4, "q10q5": q10q5, "q10q6": q10q6, "q10q7": q10q7, "q10q8": q10q8, "q10q9": q10q9, "q10q10": q10q10, "q10q11": q10q11, "q10q12": q10q12,
+    "q11q1": q11q1, "q11q2": q11q2, "q11q3": q11q3, "q11q4": q11q4, "q11q5": q11q5, "q11q6": q11q6, "q11q7": q11q7, "q11q8": q11q8, "q11q9": q11q9, "q11q10": q11q10, "q11q11": q11q11, "q11q12": q11q12, "q11q13": q11q13, "q11q14": q11q14,
+    "q12q1": q12q1, "q12q2": q12q2, "q12q3": q12q3, "q12q4": q12q4, "q12q5": q12q5, "q12q6": q12q6, "q12q7": q12q7, "q12q8": q12q8, "q12q9": q12q9,
+    "q13q1": q13q1, "q13q2": q13q2, "q13q3": q13q3, "q13q4": q13q4, "q13q5": q13q5, "q13q6": q13q6, "q13q7": q13q7, "q13q8": q13q8, "q13q9": q13q9, "q13q10": q13q10, "q13q11": q13q11, "q13q12": q13q12
+
 };
 
 export default images;
