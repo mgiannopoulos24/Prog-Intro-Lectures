@@ -1,14 +1,16 @@
-.navbar, .navbar-brand, .nav-link {
-    font-family: 'Product Sans', sans-serif;
-    color: inherit !important;
+.navbar,
+.navbar-brand,
+.nav-link {
+  font-family: "Product Sans", sans-serif;
+  color: inherit !important;
 }
 
 body.dark-mode .navbar {
-    background-color: #1B1E1F;
-    border-bottom: 1px solid #333; 
+  background-color: #1b1e1f;
+  border-bottom: 1px solid #333;
 }
 
 .navbar {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
 }

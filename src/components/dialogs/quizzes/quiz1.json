@@ -1,50 +1,60 @@
 [
-    {
-        "question": "Καταλαβαίνω πως παίζεται αυτό το παιχνίδι;",
-        "answers": ["Ναι", "Όχι"],
-        "correctAnswer": "Ναι",
-        "photoURL": "q1q1"
-    },
-    {
-        "question": "Δεν συμπλήρωσα την φόρμα του μαθήματος, υπάρχει περίπτωση να βαθμολογηθούν οι ασκήσεις μου;",
-        "answers": ["True", "False"],
-        "correctAnswer": "False",
-        "photoURL": "q1q2"
-    },
-    {
-        "question": "Τι κάνει η συνάρτηση printf;",
-        "answers": ["Τυπώνει", "Διαβάζει","Δεν θυμάμαι :)"],
-        "correctAnswer": "Τυπώνει",
-        "photoURL": "q1q3"
-    },
-    {
-        "question": "Ποιο από τα παρακάτω ΔΕΝ είναι εργαλείο του μαθήματος;",
-        "answers": ["Pizza", "GrubHub", "Κατσαβίδι","Όλα τα παραπάνω"],
-        "correctAnswer": "Όλα τα παραπάνω",
-        "photoURL": "q1q4"
-    },
-    {
-        "question": "Έχω μια ερώτηση για το μάθημα, τι κάνω;",
-        "answers": ["Την κρατάω μέσα μου και περιμένω να μου έρθει η επιφοίτηση", "Στέλνω email στον Αυγερινό", "Κατευθείαν ποστάρω στο piazza με τον τίτλο \"Ερώτηση\"","Εαν *δεν* έχει απαντηθεί στο piazza, ανοίγω νέο θέμα με περιγραφικό τίτλο"],
-        "correctAnswer": "Εαν *δεν* έχει απαντηθεί στο piazza, ανοίγω νέο θέμα με περιγραφικό τίτλο",
-        "photoURL": "q1q5"
-    },
-    {
-        "question": "Ο προγραμματισμός δεν απαιτεί πνευματικό κόπο",
-        "answers": ["True", "False"],
-        "correctAnswer": "False",
-        "photoURL": "q1q6"
-    },
-    {
-        "question": "Τώρα που μπήκα σχολή επιτέλους θα ξεκουραστώ. Δεν θα χρειαστεί προσπαθεία και θα πάρω και βαθμό.",
-        "answers": ["True", "False"],
-        "correctAnswer": "False",
-        "photoURL": "q1q7"
-    },
-    {
-        "question": "Παραλλαγή φετινού θέματος: ποιο από τις παρακάτω γραμμές τυπώνει Michael Jordan ακολουθούμενο από νέα γραμμή;",
-        "answers": ["print \"Michael Jordan\";", "printf(\"Michael Jordan\\n\");", "printf(\"Michael Jordan\");", "print(Lebron James);"],
-        "correctAnswer": "printf(\"Michael Jordan\\n\");",
-        "photoURL": "q1q8"
-    }
+  {
+    "question": "Καταλαβαίνω πως παίζεται αυτό το παιχνίδι;",
+    "answers": ["Ναι", "Όχι"],
+    "correctAnswer": "Ναι",
+    "photoURL": "q1q1"
+  },
+  {
+    "question": "Δεν συμπλήρωσα την φόρμα του μαθήματος, υπάρχει περίπτωση να βαθμολογηθούν οι ασκήσεις μου;",
+    "answers": ["True", "False"],
+    "correctAnswer": "False",
+    "photoURL": "q1q2"
+  },
+  {
+    "question": "Τι κάνει η συνάρτηση printf;",
+    "answers": ["Τυπώνει", "Διαβάζει", "Δεν θυμάμαι :)"],
+    "correctAnswer": "Τυπώνει",
+    "photoURL": "q1q3"
+  },
+  {
+    "question": "Ποιο από τα παρακάτω ΔΕΝ είναι εργαλείο του μαθήματος;",
+    "answers": ["Pizza", "GrubHub", "Κατσαβίδι", "Όλα τα παραπάνω"],
+    "correctAnswer": "Όλα τα παραπάνω",
+    "photoURL": "q1q4"
+  },
+  {
+    "question": "Έχω μια ερώτηση για το μάθημα, τι κάνω;",
+    "answers": [
+      "Την κρατάω μέσα μου και περιμένω να μου έρθει η επιφοίτηση",
+      "Στέλνω email στον Αυγερινό",
+      "Κατευθείαν ποστάρω στο piazza με τον τίτλο \"Ερώτηση\"",
+      "Εαν *δεν* έχει απαντηθεί στο piazza, ανοίγω νέο θέμα με περιγραφικό τίτλο"
+    ],
+    "correctAnswer": "Εαν *δεν* έχει απαντηθεί στο piazza, ανοίγω νέο θέμα με περιγραφικό τίτλο",
+    "photoURL": "q1q5"
+  },
+  {
+    "question": "Ο προγραμματισμός δεν απαιτεί πνευματικό κόπο",
+    "answers": ["True", "False"],
+    "correctAnswer": "False",
+    "photoURL": "q1q6"
+  },
+  {
+    "question": "Τώρα που μπήκα σχολή επιτέλους θα ξεκουραστώ. Δεν θα χρειαστεί προσπαθεία και θα πάρω και βαθμό.",
+    "answers": ["True", "False"],
+    "correctAnswer": "False",
+    "photoURL": "q1q7"
+  },
+  {
+    "question": "Παραλλαγή φετινού θέματος: ποιο από τις παρακάτω γραμμές τυπώνει Michael Jordan ακολουθούμενο από νέα γραμμή;",
+    "answers": [
+      "print \"Michael Jordan\";",
+      "printf(\"Michael Jordan\\n\");",
+      "printf(\"Michael Jordan\");",
+      "print(Lebron James);"
+    ],
+    "correctAnswer": "printf(\"Michael Jordan\\n\");",
+    "photoURL": "q1q8"
+  }
 ]

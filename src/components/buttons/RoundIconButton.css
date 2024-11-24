@@ -1,28 +1,28 @@
 .RoundIconButton {
-    position: fixed !important;
-    left: 20px;
-    z-index: 3;
+  position: fixed !important;
+  left: 20px;
+  z-index: 3;
 }
 
 .RoundIconButton:hover {
-    cursor: pointer;
-    background-color: #76bdd5 !important;   /* darker version of card-header background color */
+  cursor: pointer;
+  background-color: #76bdd5 !important; /* darker version of card-header background color */
 }
 
 .dark-mode .RoundIconButton {
-    background-color: #256479 !important;
-    color: white;
-    transition: all 0.3s ease-in-out;
+  background-color: #256479 !important;
+  color: white;
+  transition: all 0.3s ease-in-out;
 }
 
 .dark-mode .RoundIconButton:hover {
-    background-color: #1a4e63 !important;
+  background-color: #1a4e63 !important;
 }
 
 .dark-mode #sports {
-    color: white;
+  color: white;
 }
 
 #sports {
-    color: black;
+  color: black;
 }

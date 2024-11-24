@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import "./styles/CustomQuizCard.css";
-import { PlayButton } from '../buttons/PlayButton';
+import { PlayButton } from "../buttons/PlayButton";
 
 const QuizCard = ({ image, title, description, onClick, buttonText }) => {
   return (
@@ -9,7 +9,7 @@ const QuizCard = ({ image, title, description, onClick, buttonText }) => {
         <img src={image} alt="quiz-img" className="quiz-img" />
       </div>
       <div className="quiz-title">
-        <div className='quiz-info'>
+        <div className="quiz-info">
           <h2>{title}</h2>
           <h3>{description}</h3>
         </div>
@@ -17,7 +17,6 @@ const QuizCard = ({ image, title, description, onClick, buttonText }) => {
           <PlayButton text={buttonText} />
         </div>
       </div>
-      
     </div>
   );
 };

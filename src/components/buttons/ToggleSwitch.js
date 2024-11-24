@@ -1,18 +1,18 @@
-import React, { useState, useEffect, useContext } from 'react';
-import styled from 'styled-components';
-import { ThemeContext } from './ThemeContext';
+import React, { useState, useEffect, useContext } from "react";
+import styled from "styled-components";
+import { ThemeContext } from "./ThemeContext";
 
 const ToggleSwitch = ({ onChange, defaultChecked }) => {
   const { toggleTheme } = useContext(ThemeContext);
 
   const [isChecked, setIsChecked] = useState(() => {
-    const savedPreference = localStorage.getItem('dark-mode');
-    return savedPreference === 'true' ? true : defaultChecked ?? false;
+    const savedPreference = localStorage.getItem("dark-mode");
+    return savedPreference === "true" ? true : (defaultChecked ?? false);
   });
 
   useEffect(() => {
-    document.body.classList.toggle('dark-mode', isChecked);
-    localStorage.setItem('dark-mode', isChecked);
+    document.body.classList.toggle("dark-mode", isChecked);
+    localStorage.setItem("dark-mode", isChecked);
   }, [isChecked]);
 
   const handleCheckboxChange = () => {
@@ -37,8 +37,7 @@ const ToggleSwitch = ({ onChange, defaultChecked }) => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 144 55"
               fill="none"
-            >
-            </svg>
+            ></svg>
           </div>
           <div className="theme-switch__circle-container">
             <div className="theme-switch__sun-moon-container">
@@ -65,19 +64,21 @@ const StyledWrapper = styled.div`
     --container-height: 2.5em;
     --container-radius: 6.25em;
     /* radius 0 - minecraft mode :) */
-    --container-light-bg: #3D7EAE;
-    --container-night-bg: #1D1F2C;
+    --container-light-bg: #3d7eae;
+    --container-night-bg: #1d1f2c;
     --circle-container-diameter: 3.375em;
     --sun-moon-diameter: 2.125em;
-    --sun-bg: #ECCA2F;
-    --moon-bg: #C4C9D1;
-    --spot-color: #959DB1;
-    --circle-container-offset: calc((var(--circle-container-diameter) - var(--container-height)) / 2 * -1);
+    --sun-bg: #ecca2f;
+    --moon-bg: #c4c9d1;
+    --spot-color: #959db1;
+    --circle-container-offset: calc(
+      (var(--circle-container-diameter) - var(--container-height)) / 2 * -1
+    );
     --stars-color: #fff;
-    --clouds-color: #F3FDFF;
-    --back-clouds-color: #AACADF;
-    --transition: .5s cubic-bezier(0, -0.02, 0.4, 1.25);
-    --circle-transition: .3s cubic-bezier(0, -0.02, 0.35, 1.17);
+    --clouds-color: #f3fdff;
+    --back-clouds-color: #aacadf;
+    --transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
+    --circle-transition: 0.3s cubic-bezier(0, -0.02, 0.35, 1.17);
   }
 
   .theme-switch,
@@ -97,22 +98,24 @@ const StyledWrapper = styled.div`
     border-radius: var(--container-radius);
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0em -0.062em 0.062em rgba(0, 0, 0, 0.25),
+    box-shadow:
+      0em -0.062em 0.062em rgba(0, 0, 0, 0.25),
       0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
     transition: var(--transition);
     position: absolute;
     top: 40px;
     right: -45px;
-    z-index:2;
+    z-index: 2;
     scale: 0.35;
   }
 
   .theme-switch__container::before {
-    content: '';
+    content: "";
     position: absolute;
     z-index: 1;
     inset: 0;
-    box-shadow: 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset,
+    box-shadow:
+      0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset,
       0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset;
     border-radius: var(--container-radius);
   }
@@ -129,7 +132,8 @@ const StyledWrapper = styled.div`
     left: var(--circle-container-offset);
     top: var(--circle-container-offset);
     border-radius: var(--container-radius);
-    box-shadow: inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
+    box-shadow:
+      inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
       inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
       0 0 0 0.625em rgba(255, 255, 255, 0.1),
       0 0 0 1.25em rgba(255, 255, 255, 0.1);
@@ -147,7 +151,8 @@ const StyledWrapper = styled.div`
     margin: auto;
     border-radius: var(--container-radius);
     background-color: var(--sun-bg);
-    box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset,
+    box-shadow:
+      0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset,
       0em -0.062em 0.062em 0em #a1872a inset;
     filter: drop-shadow(0.062em 0.125em 0.125em rgba(0, 0, 0, 0.25))
       drop-shadow(0em 0.062em 0.125em rgba(0, 0, 0, 0.25));
@@ -161,7 +166,8 @@ const StyledWrapper = styled.div`
     height: 100%;
     background-color: var(--moon-bg);
     border-radius: inherit;
-    box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset,
+    box-shadow:
+      0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset,
       0em -0.062em 0.062em 0em #969696 inset;
     transition: var(--transition);
     position: relative;
@@ -200,7 +206,8 @@ const StyledWrapper = styled.div`
     position: absolute;
     bottom: -0.625em;
     left: 0.312em;
-    box-shadow: 0.937em 0.312em var(--clouds-color),
+    box-shadow:
+      0.937em 0.312em var(--clouds-color),
       -0.312em -0.312em var(--back-clouds-color),
       1.437em 0.375em var(--clouds-color),
       0.5em -0.125em var(--back-clouds-color),
@@ -234,7 +241,9 @@ const StyledWrapper = styled.div`
     background-color: var(--container-night-bg);
   }
 
-  .theme-switch__checkbox:checked + .theme-switch__container .theme-switch__circle-container {
+  .theme-switch__checkbox:checked
+    + .theme-switch__container
+    .theme-switch__circle-container {
     left: calc(
       100% - var(--circle-container-offset) - var(--circle-container-diameter)
     );
@@ -244,7 +253,8 @@ const StyledWrapper = styled.div`
     + .theme-switch__container
     .theme-switch__circle-container:hover {
     left: calc(
-      100% - var(--circle-container-offset) - var(--circle-container-diameter) - 0.187em
+      100% - var(--circle-container-offset) - var(--circle-container-diameter) -
+        0.187em
     );
   }
 
@@ -252,11 +262,15 @@ const StyledWrapper = styled.div`
     left: calc(var(--circle-container-offset) + 0.187em);
   }
 
-  .theme-switch__checkbox:checked + .theme-switch__container .theme-switch__moon {
+  .theme-switch__checkbox:checked
+    + .theme-switch__container
+    .theme-switch__moon {
     transform: translate(0);
   }
 
-  .theme-switch__checkbox:checked + .theme-switch__container .theme-switch__clouds {
+  .theme-switch__checkbox:checked
+    + .theme-switch__container
+    .theme-switch__clouds {
     bottom: -4.062em;
   }
 

@@ -1,62 +1,82 @@
 [
-    {
-        "question": "Τι ντύθηκε για Halloween (στο μάθημα 31/10/2024) ο Αυγερινός;",
-        "answers": ["Μεσήλιξ Harry Potter","Μεσήλιξ Robin Hood","Μεσήλιξ Jedi","Είναι κουστούμι; Νόμιζα ότι απλά έτσι ντύνεται"],
-        "correctAnswer": "Μεσήλιξ Harry Potter",
-        "photoURL": "q7q1"
-    },
-    {
-        "question": "Θα βαθμολογηθεί η εργασία μου χωρίς σχόλια στον κώδικά μου",
-        "answers": ["True","False"],
-        "correctAnswer": "False",
-        "photoURL": "q7q2"
-    },
-    {
-        "question": "Πως βάζω σχόλια στο πρόγραμμά μου;",
-        "answers": ["/* this way */","*/ nope this is the way /*","// wrong again!", "\\\\ the only correct answer is 42"],
-        "correctAnswer": ["/* this way */","// wrong again!"],
-        "photoURL": "q7q3" 
-    },
-    {
-        "question": "Αυτό είναι ένα παράδειγμα καλού σχολίου: printf(\"Hello\"); // prints hello to the screen",
-        "answers": ["True","False"],
-        "correctAnswer": "False",
-        "photoURL": "q7q4"
-    },
-    {
-        "question": "Πόσες φορές θα τυπώσει hello αυτό το loop: for(int i = 0; i < N; i++) printf(\"hello\\n\");",
-        "answers": ["N","N-1","N+1","Εξαρτάται (call me Γιάννης)"],
-        "correctAnswer": "Εξαρτάται (call me Γιάννης)",
-        "photoURL": "q7q5"
-    },
-    {
-        "question": "Η γλώσσα στην οποία γράφουμε το README.md μας λέγεται:",
-        "answers": ["Parkdown","Markdown", "Smackdown", "Downtown"],
-        "correctAnswer": "Markdown",
-        "photoURL": "q7q6"
-    },
-    {
-        "question": "Ποιος αριθμός num κάνει την ακόλουθη έκφραση αληθή; (num > 10) && (num < 100) && (num % 3 == 0) && (num % 31 == 0)",
-        "answers": ["3","31","42","93"],
-        "correctAnswer": "93",
-        "photoURL": "q7q7"
-    },
-    {
-        "question": "Η εντολή while(!42) printf(\"yes\\n\"); θα τυπώσει yes:",
-        "answers": ["0 φορές","42 φορές","άπειρες φορές","Δεν είναι έγκυρη C"],
-        "correctAnswer": "0 φορές",
-        "photoURL": "q7q8"
-    },
-    {
-        "question": "Πότε τελειώνει αυτό το loop: int i; for(i = 0 ; i < 42; );",
-        "answers": ["Μετά από 232 επαναλήψεις","Όταν το i γίνει αρνητικό","Μετά από 42 επαναλήψεις","Όταν λιώσει η CPU"],
-        "correctAnswer": "Όταν λιώσει η CPU",
-        "photoURL": "q7q9"
-    },
-    {
-        "question": "Παλιό θέμα (δύσκολο): τι θα εκτυπωθεί από το πρόγραμμα int i = 0; while(--i); printf(\"@\");",
-        "answers": ["Σχεδόν ακαριαία, ένα @","Μετά από κάποια δευτερόλεπτα εκτέλεσης, ένα @","Θα εκτυπώνει συνεχώς @, επ' άπειρον","Hello 42 World"],
-        "correctAnswer": "Μετά από κάποια δευτερόλεπτα εκτέλεσης, ένα @",
-        "photoURL": "q7q10"
-    }
+  {
+    "question": "Τι ντύθηκε για Halloween (στο μάθημα 31/10/2024) ο Αυγερινός;",
+    "answers": [
+      "Μεσήλιξ Harry Potter",
+      "Μεσήλιξ Robin Hood",
+      "Μεσήλιξ Jedi",
+      "Είναι κουστούμι; Νόμιζα ότι απλά έτσι ντύνεται"
+    ],
+    "correctAnswer": "Μεσήλιξ Harry Potter",
+    "photoURL": "q7q1"
+  },
+  {
+    "question": "Θα βαθμολογηθεί η εργασία μου χωρίς σχόλια στον κώδικά μου",
+    "answers": ["True", "False"],
+    "correctAnswer": "False",
+    "photoURL": "q7q2"
+  },
+  {
+    "question": "Πως βάζω σχόλια στο πρόγραμμά μου;",
+    "answers": [
+      "/* this way */",
+      "*/ nope this is the way /*",
+      "// wrong again!",
+      "\\\\ the only correct answer is 42"
+    ],
+    "correctAnswer": ["/* this way */", "// wrong again!"],
+    "photoURL": "q7q3"
+  },
+  {
+    "question": "Αυτό είναι ένα παράδειγμα καλού σχολίου: printf(\"Hello\"); // prints hello to the screen",
+    "answers": ["True", "False"],
+    "correctAnswer": "False",
+    "photoURL": "q7q4"
+  },
+  {
+    "question": "Πόσες φορές θα τυπώσει hello αυτό το loop: for(int i = 0; i < N; i++) printf(\"hello\\n\");",
+    "answers": ["N", "N-1", "N+1", "Εξαρτάται (call me Γιάννης)"],
+    "correctAnswer": "Εξαρτάται (call me Γιάννης)",
+    "photoURL": "q7q5"
+  },
+  {
+    "question": "Η γλώσσα στην οποία γράφουμε το README.md μας λέγεται:",
+    "answers": ["Parkdown", "Markdown", "Smackdown", "Downtown"],
+    "correctAnswer": "Markdown",
+    "photoURL": "q7q6"
+  },
+  {
+    "question": "Ποιος αριθμός num κάνει την ακόλουθη έκφραση αληθή; (num > 10) && (num < 100) && (num % 3 == 0) && (num % 31 == 0)",
+    "answers": ["3", "31", "42", "93"],
+    "correctAnswer": "93",
+    "photoURL": "q7q7"
+  },
+  {
+    "question": "Η εντολή while(!42) printf(\"yes\\n\"); θα τυπώσει yes:",
+    "answers": ["0 φορές", "42 φορές", "άπειρες φορές", "Δεν είναι έγκυρη C"],
+    "correctAnswer": "0 φορές",
+    "photoURL": "q7q8"
+  },
+  {
+    "question": "Πότε τελειώνει αυτό το loop: int i; for(i = 0 ; i < 42; );",
+    "answers": [
+      "Μετά από 232 επαναλήψεις",
+      "Όταν το i γίνει αρνητικό",
+      "Μετά από 42 επαναλήψεις",
+      "Όταν λιώσει η CPU"
+    ],
+    "correctAnswer": "Όταν λιώσει η CPU",
+    "photoURL": "q7q9"
+  },
+  {
+    "question": "Παλιό θέμα (δύσκολο): τι θα εκτυπωθεί από το πρόγραμμα int i = 0; while(--i); printf(\"@\");",
+    "answers": [
+      "Σχεδόν ακαριαία, ένα @",
+      "Μετά από κάποια δευτερόλεπτα εκτέλεσης, ένα @",
+      "Θα εκτυπώνει συνεχώς @, επ' άπειρον",
+      "Hello 42 World"
+    ],
+    "correctAnswer": "Μετά από κάποια δευτερόλεπτα εκτέλεσης, ένα @",
+    "photoURL": "q7q10"
+  }
 ]

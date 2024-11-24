@@ -65,7 +65,7 @@ function CodeChallenge() {
         {
           code: code,
           input: input,
-        }
+        },
       );
       if (parseInt(response.data.return_code) === 0) {
         setOutput(response.data.output);
@@ -94,12 +94,12 @@ function CodeChallenge() {
             code: code,
             challengeIndex: parseInt(challengeIndex), // Ensure this is an integer
             testIndex: i,
-          }
+          },
         );
 
         if (response.data.isCorrect === true) {
           setProgress(
-            (100 * (i + 1)) / challenges[challengeIndex]["tests"].length
+            (100 * (i + 1)) / challenges[challengeIndex]["tests"].length,
           );
         } else {
           setProgress(0);

@@ -120,7 +120,10 @@ const Quizzes = () => {
           onClick={() => setOpenDialog10(true)}
           buttonText="Play"
         />
-        <QuizDialog10 open={openDialog10} onClose={() => setOpenDialog10(false)} />
+        <QuizDialog10
+          open={openDialog10}
+          onClose={() => setOpenDialog10(false)}
+        />
         <CustomQuizCard
           image={kahoot_img}
           title="Διάλεξη #11"
@@ -128,7 +131,10 @@ const Quizzes = () => {
           onClick={() => setOpenDialog11(true)}
           buttonText="Play"
         />
-        <QuizDialog11 open={openDialog11} onClose={() => setOpenDialog11(false)} />
+        <QuizDialog11
+          open={openDialog11}
+          onClose={() => setOpenDialog11(false)}
+        />
         <CustomQuizCard
           image={kahoot_img}
           title="Διάλεξη #12"
@@ -136,7 +142,10 @@ const Quizzes = () => {
           onClick={() => setOpenDialog12(true)}
           buttonText="Play"
         />
-        <QuizDialog12 open={openDialog12} onClose={() => setOpenDialog12(false)} />
+        <QuizDialog12
+          open={openDialog12}
+          onClose={() => setOpenDialog12(false)}
+        />
         <CustomQuizCard
           image={kahoot_img}
           title="Διάλεξη #13"
@@ -144,7 +153,10 @@ const Quizzes = () => {
           onClick={() => setOpenDialog13(true)}
           buttonText="Play"
         />
-        <QuizDialog13 open={openDialog13} onClose={() => setOpenDialog13(false)} />
+        <QuizDialog13
+          open={openDialog13}
+          onClose={() => setOpenDialog13(false)}
+        />
       </div>
     </>
   );
