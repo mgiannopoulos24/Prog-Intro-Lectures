@@ -103,7 +103,7 @@ const StyledWrapper = styled.div`
       0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
     transition: var(--transition);
     position: absolute;
-    top: 40px;
+    top: 50px;
     right: -45px;
     z-index: 2;
     scale: 0.35;
