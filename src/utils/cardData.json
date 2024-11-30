@@ -110,5 +110,29 @@
     "slides": "https://progintro.github.io/assets/pdf/lec13.pdf",
     "part1": "https://delos.uoa.gr/opendelos/player?rid=4389c91e",
     "part2": "https://delos.uoa.gr/opendelos/player?rid=ffd34713"
+  },
+  {
+    "id": 15,
+    "icon":"strings",
+    "title": "Διάλεξη 14: Εμβέλεια, Μνήμη και Συμβολοσειρές",
+    "slides": "https://progintro.github.io/assets/pdf/lec14.pdf",
+    "part1": "https://delos.uoa.gr/opendelos/player?rid=aef4900f",
+    "part2": "https://delos.uoa.gr/opendelos/player?rid=8353787d"    
+  },
+  {
+    "id": 16,
+    "icon":"idea",
+    "title": "Διάλεξη 15: Επίλυση Προβλημάτων",
+    "slides": "https://progintro.github.io/assets/pdf/lec15.pdf",
+    "part1": "https://delos.uoa.gr/opendelos/player?rid=44499b27",
+    "part2": "https://delos.uoa.gr/opendelos/player?rid=208351fa"
+  },
+  {
+    "id": 17,
+    "icon":"complexity",
+    "title": "Διάλεξη 16: Πολυπλοκότητα και Προεπεξεργαστής",
+    "slides": "https://progintro.github.io/assets/pdf/lec16.pdf",
+    "part1": "https://delos.uoa.gr/opendelos/player?rid=5644fa26",
+    "part2": "https://delos.uoa.gr/opendelos/player?rid=bd27baa8"
   }
 ]
