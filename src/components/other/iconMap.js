@@ -13,6 +13,9 @@ import lab from "../../assets/lab.png";
 import entry from "../../assets/entry.png";
 import array from "../../assets/array.png";
 import ram from "../../assets/ram.png";
+import strings from "../../assets/strings.png";
+import complexity from "../../assets/complexity.png";
+import idea from "../../assets/idea.png";
 
 export const iconMap = {
   wave: wave,
@@ -30,4 +33,7 @@ export const iconMap = {
   entry: entry,
   array: array,
   ram: ram,
+  strings: strings,
+  complexity: complexity,
+  idea: idea
 };
