@@ -15,6 +15,8 @@ import QuizDialog10 from "../components/dialogs/QuizDialog10";
 import QuizDialog11 from "../components/dialogs/QuizDialog11";
 import QuizDialog12 from "../components/dialogs/QuizDialog12";
 import QuizDialog13 from "../components/dialogs/QuizDialog13";
+import QuizDialog14 from "../components/dialogs/QuizDialog14";
+import QuizDialog15 from "../components/dialogs/QuizDialog15";
 
 const Quizzes = () => {
   const [openDialog1, setOpenDialog1] = useState(false);
@@ -30,6 +32,8 @@ const Quizzes = () => {
   const [openDialog11, setOpenDialog11] = useState(false);
   const [openDialog12, setOpenDialog12] = useState(false);
   const [openDialog13, setOpenDialog13] = useState(false);
+  const [openDialog14, setOpenDialog14] = useState(false);
+  const [openDialog15, setOpenDialog15] = useState(false);
 
   return (
     <>
@@ -156,6 +160,28 @@ const Quizzes = () => {
         <QuizDialog13
           open={openDialog13}
           onClose={() => setOpenDialog13(false)}
+        />
+        <CustomQuizCard
+          image={kahoot_img}
+          title="Διάλεξη #14"
+          description="Εμβέλεια, Μνήμη και Συμβολοσειρές"
+          onClick={() => setOpenDialog14(true)}
+          buttonText="Play"
+        />
+        <QuizDialog14
+          open={openDialog14}
+          onClose={() => setOpenDialog14(false)}
+        />
+        <CustomQuizCard
+          image={kahoot_img}
+          title="Διάλεξη #15"
+          description="Πολυπλοκότητα και άλλα"
+          onClick={() => setOpenDialog15(true)}
+          buttonText="Play"
+        />
+        <QuizDialog15
+          open={openDialog15}
+          onClose={() => setOpenDialog15(false)}
         />
       </div>
     </>

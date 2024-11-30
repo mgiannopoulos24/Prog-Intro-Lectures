@@ -1,0 +1,68 @@
+[
+    {
+        "question": "Υπάρχουν μόνο δύο είδη εμβέλειας μεταβλητών: τοπικές και παγκόσμιες",
+        "answers": ["True", "False"],
+        "correctAnswer": "True",
+        "photoURL": "q14q1"
+    },
+    {
+        "question": "Οι μεταβλητές παγκόσμιας εμβέλειας (global scope) δηλώνονται:",
+        "answers": ["Μέσα στην συνάρτηση main", "Έξω από οποιαδήποτε συνάρτηση", "Μέσα σε οποιαδήποτε συνάρτηση", "Δεν υπάρχουν μεταβλητές παγκόσμιας εμβέλειας"],
+        "correctAnswer": "Έξω από οποιαδήποτε συνάρτηση",
+        "photoURL": "q14q2"
+    },
+    {
+        "question": "Παλιό θέμα: Η εντολή char str[] = \"hello\" αποθηκεύει τον πίνακα str:",
+        "answers": ["Στην στοίβα", "Στον σωρό", "Στην στατική μνήμη", "Στην στοίβα ή στατική μνήμη ανάλογα με το σημείο δήλωσης"],
+        "correctAnswer": "Στην στοίβα ή στατική μνήμη ανάλογα με το σημείο δήλωσης",
+        "photoURL": "q14q3"
+    },
+    {
+        "question": "Που αποθηκεύονται οι τοπικές μεταβλητές μιας συνάρτησης;",
+        "answers": ["Στην στοίβα", "Στον σωρό", "Στην στατική μνήμη", "Στην στοίβα ή στην στατική μνήμη ανάλογα με το αν δηλώθηκε static"],
+        "correctAnswer": "Στην στοίβα ή στην στατική μνήμη ανάλογα με το αν δηλώθηκε static",
+        "photoURL": "q14q4"
+    },
+    {
+        "question": "char * s1 = \"World\", s2[] = \"Hello\"; strcpy(s2, s1); printf(\"%s\\n\", s2); - Τι θα τυπώσει;",
+        "answers": ["Hello","World", "HelloWorld", "Θα κρασάρει"],
+        "correctAnswer": "World",
+        "photoURL": "q14q5"
+    },
+    {
+        "question": "Ποια η τιμή της έκφρασης strcmp(\"Hodor\", \"Hodor\");",
+        "answers": ["0","1","42","Hodor"],
+        "correctAnswer": "0",
+        "photoURL": "q14q6"
+    },
+    {
+        "question":"char str[100]; strcpy(str, \"Hi\"); strcat(str, \"How\"); strcat(str, \" are you doing\"); printf(\"%s\", str); - Θα τυπώσει:",
+        "answers": ["Hi", "How are you doing", "HiHow are you doing", "Θα κρασάρει"],
+        "correctAnswer": "HiHow are you doing",
+        "photoURL": "q14q7"
+    },
+    {
+        "question":"char fruit[10]; strcpy(fruit, \"banana\"); strcat(fruit, fruit); strcat(fruit, fruit); printf(\"%s\", fruit); - Θα τυπώσει:",
+        "answers": ["banana", "bananabanana", "bananabananabananabanana", "Πιθανόν να κρασάρει"],
+        "correctAnswer": "Πιθανόν να κρασάρει",
+        "photoURL": "q14q8"
+    },
+    {
+        "question":"Ο παραπάνω κώδικας είναι σωστός",
+        "answers": ["True", "False"],
+        "correctAnswer": "False",
+        "photoURL": "q14q9"
+    },
+    {
+        "question": "Ο παραπάνω κώδικας είναι σωστός",
+        "answers": ["True", "False"],
+        "correctAnswer": "False",
+        "photoURL": "q14q10"
+    },
+    {
+        "question": "Τι θα τυπώσει το παραπάνω πρόγραμμα πρόγραμμα;",
+        "answers": ["4","0","1", "Δεν μεταγλωττίζεται"],
+        "correctAnswer": "4",
+        "photoURL": "q14q11"
+    }
+]
