@@ -16,6 +16,8 @@ import ram from "../../assets/ram.png";
 import strings from "../../assets/strings.png";
 import complexity from "../../assets/complexity.png";
 import idea from "../../assets/idea.png";
+import binary_search from "../../assets/binary_search.png";
+import sorting from "../../assets/sorting.png";
 
 export const iconMap = {
   wave: wave,
@@ -35,5 +37,7 @@ export const iconMap = {
   ram: ram,
   strings: strings,
   complexity: complexity,
-  idea: idea
+  idea: idea,
+  binary_search: binary_search,
+  sorting: sorting,
 };

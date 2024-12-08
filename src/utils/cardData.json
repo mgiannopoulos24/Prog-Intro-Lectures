@@ -134,5 +134,21 @@
     "slides": "https://progintro.github.io/assets/pdf/lec16.pdf",
     "part1": "https://delos.uoa.gr/opendelos/player?rid=5644fa26",
     "part2": "https://delos.uoa.gr/opendelos/player?rid=bd27baa8"
+  },
+  {
+    "id": 18,
+    "icon":"binary_search",
+    "title": "Διάλεξη 17: Δυαδική Αναζήτηση",
+    "slides": "https://progintro.github.io/assets/pdf/lec17.pdf",
+    "part1":"https://delos.uoa.gr/opendelos/player?rid=759faa84",
+    "part2":"https://delos.uoa.gr/opendelos/player?rid=68a7363c"
+  },
+  {
+    "id": 19,
+    "icon":"sorting",
+    "title": "Διάλεξη 18: Ταξινόμηση και Δεδομένα Εισόδου #2",
+    "slides": "https://progintro.github.io/assets/pdf/lec18.pdf",
+    "part1":"https://delos.uoa.gr/opendelos/player?rid=684166b2",
+    "part2":"https://delos.uoa.gr/opendelos/player?rid=56828baf"
   }
 ]
