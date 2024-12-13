@@ -161,6 +161,30 @@ import q15q9 from "../../assets/q15q9.jpg";
 import q15q10 from "../../assets/q15q10.png";
 import q15q11 from "../../assets/q15q11.png";
 import q15q12 from "../../assets/q15q12.png";
+import q16q1 from "../../assets/q16q1.jpg";
+import q16q2 from "../../assets/q16q2.png";
+import q16q3 from "../../assets/q16q3.jpg";
+import q16q4 from "../../assets/q16q4.png";
+import q16q5 from "../../assets/q16q5.jpg";
+import q16q6 from "../../assets/q16q6.jpg";
+import q16q7 from "../../assets/q16q7.jpg";
+import q16q8 from "../../assets/q16q8.jpg";
+import q16q9 from "../../assets/q16q9.gif";
+import q16q10 from "../../assets/q16q10.jpg";
+import q16q11 from "../../assets/q16q11.jpg";
+import q16q12 from "../../assets/q16q12.jpg";
+import q17q1 from "../../assets/q17q1.jpg";
+import q17q2 from "../../assets/q17q2.jpg";
+import q17q3 from "../../assets/q17q3.jpg";
+import q17q4 from "../../assets/q17q4.jpg";
+import q17q5 from "../../assets/q17q5.jpg";
+import q17q6 from "../../assets/q17q6.jpg";
+import q17q7 from "../../assets/q17q7.jpg";
+import q17q8 from "../../assets/q17q8.jpg";
+import q17q9 from "../../assets/q17q9.jpg";
+import q17q10 from "../../assets/q17q10.png";
+import q17q11 from "../../assets/q17q11.png";
+import q17q12 from "../../assets/q17q12.png";
 
 const images = {
   q1q1: q1q1,
@@ -326,6 +350,30 @@ const images = {
   q15q10: q15q10,
   q15q11: q15q11,
   q15q12: q15q12,
+  q16q1: q16q1,
+  q16q2: q16q2,
+  q16q3: q16q3,
+  q16q4: q16q4,
+  q16q5: q16q5,
+  q16q6: q16q6,
+  q16q7: q16q7,
+  q16q8: q16q8,
+  q16q9: q16q9,
+  q16q10: q16q10,
+  q16q11: q16q11,
+  q16q12: q16q12,
+  q17q1: q17q1,
+  q17q2: q17q2,
+  q17q3: q17q3,
+  q17q4: q17q4,
+  q17q5: q17q5,
+  q17q6: q17q6,
+  q17q7: q17q7,
+  q17q8: q17q8,
+  q17q9: q17q9,
+  q17q10: q17q10,
+  q17q11: q17q11,
+  q17q12: q17q12,
 };
 
 export default images;

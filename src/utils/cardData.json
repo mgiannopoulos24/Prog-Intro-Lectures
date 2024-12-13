@@ -150,5 +150,21 @@
     "slides": "https://progintro.github.io/assets/pdf/lec18.pdf",
     "part1":"https://delos.uoa.gr/opendelos/player?rid=684166b2",
     "part2":"https://delos.uoa.gr/opendelos/player?rid=56828baf"
+  },
+  {
+    "id": 20,
+    "icon":"struct",
+    "title": "Διάλεξη 19: Δομές",
+    "slides": "https://progintro.github.io/assets/pdf/lec19.pdf",
+    "part1":"https://delos.uoa.gr/opendelos/player?rid=65428114",
+    "part2":"https://delos.uoa.gr/opendelos/player?rid=31b53494"
+  },
+  {
+    "id": 21,
+    "icon":"struct",
+    "title": "Διάλεξη 20: Προχωρημένες Δομές",
+    "slides": "https://progintro.github.io/assets/pdf/lec20.pdf",
+    "part1":"https://delos.uoa.gr/opendelos/player?rid=3c675066",
+    "part2":"https://delos.uoa.gr/opendelos/player?rid=fbe5bafe"
   }
 ]

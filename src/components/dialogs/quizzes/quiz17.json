@@ -1,0 +1,74 @@
+[
+    {
+      "question": "Μπορώ να ορίσω δικούς μου τύπους στην C",
+      "answers": ["True", "False"],
+      "correctAnswer": "True",
+      "photoURL": "q17q1"
+    },
+    {
+        "question": "Σε τι χρησιμοποιούμε το typedef στην C;",
+        "answers": ["Για να ορίσουμε συνώνυμα τύπων", "Για να ορίσουμε μεταβλητές", "Για να διαγράψουμε από την μνήμη ένα struct", "Για να γράψουμε λίγο παραπάνω κώδικα"],
+        "correctAnswer": "Για να ορίσουμε συνώνυμα τύπων",
+        "photoURL": "q17q2"
+    },
+    {
+        "question": "Έστω typedef double trouble[1024] και sizeof(double) == 8, ποιο είναι το sizeof(trouble);",
+        "answers": ["1024", "4096", "8192", "Εξαρτάται"],
+        "correctAnswer": "8192",
+        "photoURL": "q17q3"
+    },
+    {
+        "question": "Έστω ότι οι int θέλουν 4 bytes για την αναπαράστασή τους, για να δεσμεύσω μνήμη για έναν πίνακα 10000 int κάνω:",
+        "answers": ["int * array = malloc(10000);", "int * array = malloc(4);", "int * array = malloc(40000);", "Εξαρτάται"],
+        "correctAnswer": "int * array = malloc(40000);",
+        "photoURL": "q17q4"
+    },
+    {
+        "question": "Ποιο είναι το μέγεθος του struct {char c; int x; double d};",
+        "answers": ["1 + 4 + 8 = 13", "1 + 8 + 8 = 17", "4 + 4 + 8 = 16", "Εξαρτάται"],
+        "correctAnswer": "Εξαρτάται",
+        "photoURL": "q17q5"
+    },
+    {
+        "question": "struct {int x; int y;} point; Ποια είναι η τιμή του point.y;",
+        "answers": ["0xFFFFFFFF", "0", "1", "Ότι έτυχε να έχει η μνήμη σε εκείνη την θέση"],
+        "correctAnswer": "Ότι έτυχε να έχει η μνήμη σε εκείνη την θέση",
+        "photoURL": "q17q6"
+    },
+    {
+        "question": "struct {int x; int y;} point = {42}; Ποια είναι η τιμή του point.y;",
+        "answers": ["42", "0", "1", "Ότι έτυχε να έχει η μνήμη σε εκείνη την θέση"],
+        "correctAnswer": "0",
+        "photoURL": "q17q7"
+    },
+    {
+        "question": "Έστω struct {int x;} cafe = {1}, bar = {2}; Η παράσταση cafe == bar αποτιμάται σε:",
+        "answers": ["1", "0", "Δεν αποτιμάται", "42"],
+        "correctAnswer": "Δεν αποτιμάται",
+        "photoURL": "q17q8"
+    },
+    {
+        "question": "Έστω struct {int x;} cafe = {1}, bar = {2}; bar = cafe; Η παράσταση bar.x αποτιμάται σε:",
+        "answers": ["1", "2", "Δεν αποτιμάται", "42"],
+        "correctAnswer": "1",
+        "photoURL": "q17q9"
+    },
+    {
+        "question": "Τι θα τυπώσει το παραπάνω πρόγραμμα;",
+        "answers": ["ManahManahManahManah", "ManahManah", "Manah", "(τίποτα)"],
+        "correctAnswer": "Manah",
+        "photoURL": "q17q10"
+    },
+    {
+        "question": "Θέλω να ταξινομήσω σε αύξουσα σειρά βαθμολογίας το struct student[1024] - χρησιμοποιώ την συνάρτηση σύγκρισης:",
+        "answers": ["int comp(... s1, ... s2) { return s1.grade - s2.grade; }","int comp(... s1, ... s2) { return s2.grade - s1.grade; }", "int comp(... s1, ... s2) { return s1.grade == s2.grade; }", "int comp(... s1, ... s2) { return s1.grade ^ s2.grade; }"],
+        "correctAnswer": "int comp(... s1, ... s2) { return s1.grade - s2.grade; }",
+        "photoURL": "q17q11"
+    },
+    {
+        "question": "Τι θα τυπώσει το παραπάνω πρόγραμμα;",
+        "answers": ["1", "0", "Δεν κάνει compile", "Θα κρασάρει", "42", "\"Dimitris\""],
+        "correctAnswer": "0",
+        "photoURL": "q17q12"
+    }
+]

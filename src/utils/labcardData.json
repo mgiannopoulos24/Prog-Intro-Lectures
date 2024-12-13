@@ -54,5 +54,12 @@
     "title": "Εργαστήριο 7",
     "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab07",
     "solution": ""
+  },
+  {
+    "id": 9,
+    "icon": "lab",
+    "title": "Εργαστήριο 8",
+    "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab08",
+    "solution": ""
   }
 ]

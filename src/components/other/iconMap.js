@@ -18,6 +18,7 @@ import complexity from "../../assets/complexity.png";
 import idea from "../../assets/idea.png";
 import binary_search from "../../assets/binary_search.png";
 import sorting from "../../assets/sorting.png";
+import struct from "../../assets/struct.png";
 
 export const iconMap = {
   wave: wave,
@@ -40,4 +41,5 @@ export const iconMap = {
   idea: idea,
   binary_search: binary_search,
   sorting: sorting,
+  struct: struct,
 };
