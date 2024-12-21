@@ -19,6 +19,9 @@ import idea from "../../assets/idea.png";
 import binary_search from "../../assets/binary_search.png";
 import sorting from "../../assets/sorting.png";
 import struct from "../../assets/struct.png";
+import tree from "../../assets/tree.png";
+import folder from "../../assets/folder.png";
+
 
 export const iconMap = {
   wave: wave,
@@ -42,4 +45,6 @@ export const iconMap = {
   binary_search: binary_search,
   sorting: sorting,
   struct: struct,
+  tree: tree,
+  folder: folder
 };

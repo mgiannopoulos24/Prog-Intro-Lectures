@@ -166,5 +166,21 @@
     "slides": "https://progintro.github.io/assets/pdf/lec20.pdf",
     "part1":"https://delos.uoa.gr/opendelos/player?rid=3c675066",
     "part2":"https://delos.uoa.gr/opendelos/player?rid=fbe5bafe"
+  },
+  {
+    "id": 22,
+    "icon":"tree",
+    "title": "Διάλεξη 21: Λίστες και Δέντρα",
+    "slides": "https://progintro.github.io/assets/pdf/lec21.pdf",
+    "part1": "https://delos.uoa.gr/opendelos/player?rid=cb4c053f",
+    "part2": "https://delos.uoa.gr/opendelos/player?rid=dbda9391"
+  },
+  {
+    "id": 23,
+    "icon":"folder",
+    "title": "Διάλεξη 22: Οργάνωση Κώδικα",
+    "slides": "https://progintro.github.io/assets/pdf/lec22.pdf",
+    "part1": "https://delos.uoa.gr/opendelos/player?rid=cd114d76",
+    "part2": "https://delos.uoa.gr/opendelos/player?rid=bce563c9"
   }
 ]
