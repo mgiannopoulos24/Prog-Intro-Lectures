@@ -46,34 +46,34 @@
     "icon": "lab",
     "title": "Εργαστήριο 6",
     "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab06",
-    "solution": ""
+    "solution": "https://github.com/dimskomex/ip-labs-solutions/tree/main/Lab%206"
   },
   {
     "id": 8,
     "icon": "lab",
     "title": "Εργαστήριο 7",
     "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab07",
-    "solution": ""
+    "solution": "https://github.com/dimskomex/ip-labs-solutions/tree/main/Lab%207"
   },
   {
     "id": 9,
     "icon": "lab",
     "title": "Εργαστήριο 8",
     "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab08",
-    "solution": ""
+    "solution": "https://github.com/dimskomex/ip-labs-solutions/tree/main/Lab%208"
   },
   {
     "id": 10,
     "icon": "lab",
     "title": "Εργαστήριο 9",
     "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab09",
-    "solution": ""
+    "solution": "https://github.com/dimskomex/ip-labs-solutions/tree/main/Lab%209"
   },
   {
     "id": 11,
     "icon": "lab",
     "title": "Εργαστήριο 10",
     "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab10",
-    "solution": ""
+    "solution": "https://github.com/dimskomex/ip-labs-solutions/tree/main/Lab%2010"
   }
 ]
