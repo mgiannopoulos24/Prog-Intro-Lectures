@@ -182,5 +182,13 @@
     "slides": "https://progintro.github.io/assets/pdf/lec22.pdf",
     "part1": "https://delos.uoa.gr/opendelos/player?rid=cd114d76",
     "part2": "https://delos.uoa.gr/opendelos/player?rid=bce563c9"
+  },
+  {
+    "id": 24,
+    "icon":"advanced",
+    "title": "Διάλεξη 23: Προχωρημένα Θέματα",
+    "slides": "https://progintro.github.io/assets/pdf/lec23.pdf",
+    "part1": "https://delos.uoa.gr/opendelos/player?rid=e6ffdd28",
+    "part2": "https://delos.uoa.gr/opendelos/player?rid=9f0bc38d"
   }
 ]

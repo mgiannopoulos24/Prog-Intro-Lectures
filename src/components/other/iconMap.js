@@ -21,6 +21,7 @@ import sorting from "../../assets/sorting.png";
 import struct from "../../assets/struct.png";
 import tree from "../../assets/tree.png";
 import folder from "../../assets/folder.png";
+import advanced from "../../assets/advanced.png";
 
 
 export const iconMap = {
@@ -46,5 +47,6 @@ export const iconMap = {
   sorting: sorting,
   struct: struct,
   tree: tree,
-  folder: folder
+  folder: folder,
+  advanced: advanced
 };
