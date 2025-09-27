@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./components/theme/ThemeContext.jsx";
 import { Toaster } from "sonner";
@@ -9,8 +10,17 @@ import Labs from "./pages/Labs";
 import Uoabot from "./pages/Uoabot";
 import NewNavbar from "./components/layout/NewNavbar";
 import Footer from "./components/layout/Footer";
+import { useSecretCode } from "./hooks/useCode.js";
+import Terminal from "./components/Terminal";
 
 function App() {
+  const [showTerminal, setShowTerminal] = useState(false);
+
+  const toggleTerminal = () => {
+    setShowTerminal((prev) => !prev);
+  };
+  useSecretCode(toggleTerminal);
+
   return (
     <>
       <ThemeProvider>
@@ -29,8 +39,8 @@ function App() {
           </Routes>
         </BrowserRouter>
         <Footer />
-        {/* REPLACE the old Toaster with sonner's Toaster */}
         <Toaster richColors position="top-right" />
+        {showTerminal && <Terminal onClose={() => setShowTerminal(false)} />}
       </ThemeProvider>
     </>
   );

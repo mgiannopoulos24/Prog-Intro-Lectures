@@ -57,9 +57,8 @@ export default {
   			}
   		},
 		fontFamily: {
-        // The double quotes inside the single quotes are crucial
         sans: ['"Google Sans"', ...fontFamily.sans],
-        mono: [
+        code: [
           'source-code-pro',
           'Menlo',
           'Monaco',
