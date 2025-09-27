@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
+import { ThemeContext } from "@/components/theme/ThemeContext";
+import { Play } from "lucide-react";
 
 const RunCodeButton = ({ onClick }) => {
   const { isDarkTheme } = useContext(ThemeContext);
@@ -11,7 +12,9 @@ const RunCodeButton = ({ onClick }) => {
         onClick={onClick}
         className={`button ${isDarkTheme === "true" ? "dark-mode" : ""}`}
       >
-        <span className="button-content">Run </span>
+        <span className="button-content">
+          Run <Play className="play-icon" />
+        </span>
       </button>
     </StyledWrapper>
   );
@@ -41,6 +44,14 @@ const StyledWrapper = styled.div`
   .button-content {
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .play-icon {
+    width: 1.2rem;
+    height: 1.2rem;
   }
 
   .button:hover {

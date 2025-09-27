@@ -24,15 +24,6 @@
 ## Έμπνευση
 Έμπνευση ήταν η σελίδα [Quiz App](https://starlit-daffodil-2e4733.netlify.app/). Credits στην [original creator](https://github.com/matinanadali).
 
-## To-Do
-
-- [X] Να βάλουμε τα quiz.
-- [X] Να βάλουμε τα emojis.
-- [X] Να φτιάξουμε το background dark-white.
-- [X] Να βάλουμε Google Sans γραμματοσειρά.
-- [X] Να οργανώσουμε τα αρχεία σε υποφακέλους.
-- [X] Να προστεθούν ασκήσεις με κώδικα.
-
 ## Εγκατάσταση
 ### Τοπική εγκατάσταση για Frontend:
 Για να εγκαταστήσετε και να τρέξετε το frontend τοπικά, ακολουθήστε τα παρακάτω βήματα:
@@ -51,7 +42,7 @@ npm install
 ```
 4. Ξεκινήστε την εφαρμογή.
 ```console
-npm start
+npm run dev
 ```
 
 Βεβαιωθείτε ότι έχετε εγκαταστήσει το [NodeJS](https://nodejs.org/en) στον υπολογιστή σας.

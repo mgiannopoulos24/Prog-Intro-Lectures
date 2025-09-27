@@ -1,20 +1,16 @@
-# Use the official Python image as the base
-FROM python:3.11-bullseye
+FROM python:3.11-slim-bullseye
 
-RUN apt-get update && apt-get install -y gcc
+RUN apt-get update && apt-get install -y gcc && rm -rf /var/lib/apt/lists/*
 
-# Set the working directory inside the Docker container
-WORKDIR /app/src/backend
+WORKDIR /app
 
-# Copy all files from the src/backend directory into the working directory
-COPY src/backend/ . 
-COPY requirements.txt .
 
-# Install Python dependencies (no need to copy requirements.txt separately)
+COPY backend/requirements.txt .
+
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the port your app runs on
+COPY backend/ .
+
 EXPOSE 5000
 
-# Command to run the Flask app
-CMD ["python", "main.py"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "main:app"]

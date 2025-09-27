@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "icon": "lab",
+    "title": "Εργαστήριο 0",
+    "desc": "https://github.com/progintro/lab-material/tree/main/labs/lab00",
+    "solution": "https://github.com/dimskomex/ip-labs-solutions/tree/main/Lab%200"
+  }
+]

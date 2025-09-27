@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
+import { ThemeContext } from "../theme/ThemeContext";
 
 const SubmitCodeButton = ({ onClick, disabled }) => {
   const { isDarkTheme } = useContext(ThemeContext);
@@ -45,19 +45,15 @@ const StyledWrapper = styled.div`
   }
 
   .button:hover {
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.1)
-      ),
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
       #76bdd5;
     transition: all 0.4s;
   }
 
   .button.dark-mode:hover {
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.1)
-      ),
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
       #1a4e63;
     transition: all 0.4s;
   }

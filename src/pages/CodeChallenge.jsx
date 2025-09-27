@@ -1,248 +1,180 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ThemeContext } from "../components/buttons/ThemeContext";
 import axios from "axios";
-
+import { Editor } from "@monaco-editor/react";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
+import { toast } from "sonner";
+import { Progress } from "@/components/ui/progress";
+import { ThemeContext } from "@/components/theme/ThemeContext";
+import BackToChalls from "@/components/buttons/BackToChalls";
+import RunCodeButton from "@/components/buttons/RunCodeButton";
+import SubmitCodeButton from "@/components/buttons/SubmitCodeButton";
+import challenges from "../../backend/challengeData";
 
-import Editor from "@monaco-editor/react";
-import BackToChalls from "../components/buttons/BackToChalls";
-import Grid from "@mui/material/Grid2";
-import LinearWithValueLabel from "../components/other/LinearProgressWithLabel";
-import SubmitCodeButton from "../components/buttons/SubmitCodeButton";
-import RunCodeButton from "../components/buttons/RunCodeButton";
-import FeedbackAlert from "../components/other/FeedbackAlert";
-import "./styles/CodeChallenge.css";
-import challenges from "../backend/challengeData";
-import { Alert } from "@mui/material";
+const isLocal = window.location.hostname === "localhost";
+
+const API_URL = isLocal
+  ? "http://localhost:5000"
+  : "https://prog-intro-lectures-api.onrender.com";
 
 function CodeChallenge() {
   const [code, setCode] = useState("");
   const [output, setOutput] = useState("");
   const [input, setInput] = useState("");
-  const [wrongAnswer, setWrongAnswer] = useState(false);
-  const [defaultCode, setDefaultCode] = useState("");
+  const [challenge, setChallenge] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [disabled, setDisabled] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [isWrongAnswer, setIsWrongAnswer] = useState(false);
 
   const { isDarkTheme } = useContext(ThemeContext);
   const navigate = useNavigate();
   const { challengeIndex } = useParams();
-  const [challenge, setChallenge] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [disabled, setDisabled] = useState(false);
-  const [openFeedback, setOpenFeedback] = useState(false);
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      const fetchedChallenge = challenges[challengeIndex];
-
-      // If the problem doesn't exist
-      if (!fetchedChallenge) {
-        navigate("/"); // Navigate to home or error page
-      } else {
-        setInput("");
-        setOutput("");
-        setProgress(0);
-        setWrongAnswer(false);
-        setOpenFeedback(false);
-        setChallenge(fetchedChallenge); // Set the problem data
-        setDefaultCode(fetchedChallenge["defaultCode"]);
-        setCode(fetchedChallenge["defaultCode"]);
-        setLoading(false); // Stop loading
-      }
-    }, 1000); // Simulating 1-second delay for data fetch
-
-    return () => clearTimeout(timeoutId); // Cleanup timeout on unmount
+    const fetchedChallenge = challenges[challengeIndex];
+    if (!fetchedChallenge) {
+      navigate("/");
+    } else {
+      setChallenge(fetchedChallenge);
+      setCode(fetchedChallenge.defaultCode);
+      setInput("");
+      setOutput("");
+      setProgress(0);
+      setIsWrongAnswer(false);
+      setLoading(false);
+    }
   }, [challengeIndex, navigate]);
 
   const handleRun = async () => {
-    setOutput("");
+    setOutput("Running...");
     try {
-      const response = await axios.post(
-        "https://prog-intro-lectures-lidq.onrender.com/run",
-        {
-          code: code,
-          input: input,
-        },
+      const response = await axios.post(`${API_URL}/run`, { code, input });
+      setOutput(
+        parseInt(response.data.return_code) === 0
+          ? response.data.output
+          : response.data.error,
       );
-      if (parseInt(response.data.return_code) === 0) {
-        setOutput(response.data.output);
-      } else {
-        setOutput(response.data.error);
-      }
     } catch (error) {
       setOutput(error.message);
     }
   };
 
-  const [progress, setProgress] = useState(0); // Progress in percentage
-
   const handleSubmit = async () => {
     setProgress(0);
+    setIsWrongAnswer(false);
     setDisabled(true);
     setOutput("");
-    setWrongAnswer(false);
-    let i;
-    for (i = 0; i < challenges[challengeIndex]["tests"].length; i++) {
-      try {
-        // Send code and challengeIndex to start tests
-        const response = await axios.post(
-          "https://prog-intro-lectures-lidq.onrender.com/run-tests",
-          {
-            code: code,
-            challengeIndex: parseInt(challengeIndex), // Ensure this is an integer
-            testIndex: i,
-          },
-        );
 
-        if (response.data.isCorrect === true) {
-          setProgress(
-            (100 * (i + 1)) / challenges[challengeIndex]["tests"].length,
-          );
+    let i;
+    for (i = 0; i < challenge.tests.length; i++) {
+      try {
+        const response = await axios.post(`${API_URL}/run-tests`, {
+          code,
+          challengeIndex: parseInt(challengeIndex),
+          testIndex: i,
+        });
+
+        if (response.data.isCorrect) {
+          setProgress(((i + 1) / challenge.tests.length) * 100);
         } else {
+          setOutput(
+            `Wrong answer on test ${i + 1}\n\n${response.data.error || ""}`,
+          );
+          setIsWrongAnswer(true);
           setProgress(0);
-          if (response.data.error !== "") {
-            setOutput(response.data.error);
-          } else {
-            setWrongAnswer(true);
-            setOutput(`Wrong answer on test ${i + 1}`);
-          }
           break;
         }
       } catch (err) {
         setOutput(err.message);
+        setIsWrongAnswer(true);
+        setProgress(0);
         break;
       }
     }
-    if (i === challenges[challengeIndex]["tests"].length) {
-      setOpenFeedback(true);
+
+    if (i === challenge.tests.length) {
+      toast.success("Success!", {
+        description: "All tests passed!",
+      });
     }
     setDisabled(false);
   };
 
   if (loading) {
     return (
-      <>
-        <div className="container mt-5">
-          <div className="text-center">
-            <h1>Coding Challenge</h1>
-            <h3>Ώρα για εξάσκηση!</h3>
-            <hr className="my-4" />
-          </div>
-        </div>
-        <div className="loading">Loading...</div>
-      </>
+      <div className="w-full text-center mt-20">
+        <h1 className="text-2xl">Loading Challenge...</h1>
+      </div>
     );
   }
-
-  // Auto-resizable text area
-  document.querySelectorAll("textarea").forEach(function (textarea) {
-    textarea.style.height = textarea.scrollHeight + "px";
-    textarea.style.overflowY = "hidden";
-
-    textarea.addEventListener("input", function () {
-      this.style.height = "auto";
-      this.style.height = this.scrollHeight + "px";
-    });
-  });
 
   return (
     <>
       <BackToChalls />
-      <FeedbackAlert open={openFeedback} setOpen={setOpenFeedback} />
-      <div className="container mt-5">
-        <div className="text-center">
-          <h1>Coding Challenge</h1>
-          <h3>{challenges[challengeIndex]["problemTitle"]}</h3>
-          <hr className="my-4" />
-        </div>
-        <div className="row">
-          <Alert severity="warning" style={{ opacity: "75%" }}>
-            <strong>Σημείωση:</strong> Αν το κουμπί 'Run' δεν ανταποκρίνεται,
-            οφείλεται σε καθυστέρηση στη φόρτωση.
-          </Alert>
-        </div>
+      <div className="container mx-auto px-4 mt-12 sm:mt-16 text-center">
+        <h1 className="text-4xl sm:text-5xl font-bold">
+          {challenge.problemTitle}
+        </h1>
+        <hr className="my-6" />
       </div>
 
-      <div className="onlineCompiler">
-        <Grid className="controlBar" item size={{ xs: 12, md: 12, lg: 12 }}>
-          <RunCodeButton onClick={handleRun} />
+      <div className="w-11/12 md:w-10/12 lg:w-4/5 mx-auto my-8 flex flex-col">
+        <div className="flex justify-end p-2 bg-gray-300 dark:bg-gray-700 rounded-t-lg">
+          <RunCodeButton onClick={handleRun} disabled={disabled} />
           <SubmitCodeButton onClick={handleSubmit} disabled={disabled} />
-        </Grid>
-        <Grid
-          className="editorContainer"
-          container
-          spacing="5px"
-          style={{ backgroundColor: "grey" }}
-        >
-          <Grid
-            item
-            size={{ xs: 12, md: 12, lg: 8 }}
-            style={{ minHeight: "400px" }}
-          >
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-0.5 bg-gray-500 rounded-b-lg overflow-hidden">
+          <div className="w-full lg:w-2/3 h-[600px] lg:h-auto">
             <Editor
-              width="100%"
               defaultLanguage="c"
-              defaultValue={defaultCode}
               value={code}
-              height="100%"
               onChange={(value) => setCode(value)}
-              loading=""
-              theme={isDarkTheme === "true" ? "vs-dark" : "white"}
-              options={{
-                fontSize: 16,
-                padding: {
-                  top: "8px",
-                },
-                minimap: {
-                  enabled: false,
-                },
-              }}
+              theme={isDarkTheme ? "vs-dark" : "light"}
+              options={{ fontSize: 16, minimap: { enabled: false } }}
             />
-          </Grid>
-          <Grid item size={{ xs: 12, md: 12, lg: 4 }}>
-            <div
-              className={`ioOuterContainer ${
-                isDarkTheme === "true" ? "dark-mode" : ""
-              }`}
-            >
-              <div className="ioContainer" style={{ flexGrow: 0 }}>
-                <h3>{challenges[challengeIndex]["problemTitle"]}</h3>
+          </div>
+
+          <div className="w-full lg:w-1/3 flex flex-col bg-white dark:bg-[#1e1e1e]">
+            <div className="p-3 border-b border-gray-300 dark:border-gray-600">
+              <h3 className="font-bold mb-2 text-lg">Problem</h3>
+              <div className="prose prose-sm dark:prose-invert max-h-60 overflow-y-auto">
                 <ReactMarkdown
                   remarkPlugins={[remarkMath]}
                   rehypePlugins={[rehypeKatex]}
                 >
-                  {challenge["problem"]}
+                  {challenge.problem}
                 </ReactMarkdown>
               </div>
-              <div className="ioContainer">
-                <h3>Input</h3>
-                <textarea
-                  onChange={(e) => setInput(e.target.value)}
-                  className="ioBox"
-                  multiline
-                  placeholder="Insert input for your program (if necessary)"
-                ></textarea>
-              </div>
-              <div className="ioContainer">
-                <h3>Output</h3>
-                <pre className="ioBox">{output}</pre>
-              </div>
-              <div
-                className="ioContainer testContainer"
-                style={{ flexGrow: 1 }}
-              >
-                <h3>Tests</h3>
-                <LinearWithValueLabel
-                  progress={progress}
-                  wrongAnswer={wrongAnswer}
-                />
-              </div>
             </div>
-          </Grid>
-        </Grid>
+            <div className="p-3 border-b border-gray-300 dark:border-gray-600">
+              <h3 className="font-bold mb-2">Input</h3>
+              <textarea
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Enter input for your program (if needed)"
+                className="w-full resize-none min-h-[60px] p-2 bg-gray-200/50 dark:bg-gray-800/50 border border-gray-400 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 placeholder-black/60 dark:placeholder-white/60"
+              />
+            </div>
+            <div className="p-3 border-b border-gray-300 dark:border-gray-600 flex-grow">
+              <h3 className="font-bold mb-2">Output</h3>
+              <pre className="w-full min-h-[60px] p-2 bg-gray-200/50 dark:bg-gray-800/50 border border-gray-400 dark:border-gray-600 rounded-md whitespace-pre-wrap break-words">
+                {output}
+              </pre>
+            </div>
+            <div className="p-3">
+              <h3 className="font-bold mb-2">Tests</h3>
+              <Progress
+                value={progress}
+                className={isWrongAnswer ? "bg-red-500" : ""}
+              />
+              <p className="text-sm text-right mt-1">{Math.round(progress)}%</p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
