@@ -1,0 +1,251 @@
+[
+  {
+    "problemTitle": "Βρες το όνομα",
+    "problem": "Γράψτε ένα πρόγραμμα που να τυπώνει το όνομα της μεγαλύτερης διαδικτυακής πλατφόρμας που χρησιμοποιείται για την αποθήκευση, διαχείριση και συνεργασία σε έργα λογισμικού.",
+    "tests": [
+      {
+        "input": "",
+        "expectedOutput": "Github"
+      }
+    ],
+    "mathLibrary": "True",
+    "defaultCode": "#include <stdio.h> \nint main() { \n\n}"
+  },
+  {
+    "problemTitle": "Μέτρα τα ψηφία",
+    "problem": "Συμπληρώστε τη συνάρτηση count_digits, έτσι ώστε να δέχεται ως όρισμα έναν ακέραιο $$n$$, (INT_MIN $$\\leq n \\leq$$ INT_MAX ) και να επιστρέφει τον αριθμό των ψηφίων του.  \n  \n**ΜΗΝ** τροποποιήσετε τη συνάρτηση main.",
+    "tests": [
+      {
+        "input": "12345",
+        "expectedOutput": "5"
+      },
+      {
+        "input": "0",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "-1234",
+        "expectedOutput": "4"
+      },
+      {
+        "input": "100000",
+        "expectedOutput": "6"
+      },
+      {
+        "input": "9876543210",
+        "expectedOutput": "10"
+      },
+      {
+        "input": "42",
+        "expectedOutput": "2"
+      },
+      {
+        "input": "999999999",
+        "expectedOutput": "9"
+      },
+      {
+        "input": "-1001",
+        "expectedOutput": "4"
+      },
+      {
+        "input": "7",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "-987654321",
+        "expectedOutput": "9"
+      }
+    ],
+    "mathLibrary": "True",
+    "defaultCode": "#include <stdio.h>\n\nint count_digits(int n) {\n\n}\n\nint main() { \n\tint n;\n\tscanf(\"%d\", &n);\n\tprintf(\"%d\", count_digits(n));\n\treturn 0;\n}"
+  },
+  {
+    "problemTitle": "Πειραγμένο Παραγοντικό",
+    "problem": "Συμπληρώστε τη συνάρτηση weird_factorial, έτσι ώστε να δέχεται ως όρισμα έναν θετικό ακέραιο $$n$$, (1 $$\\leq n \\leq$$ 1000 ) και να βρίσκει το γινόμενο όλων των θετικών ακέραιων που είναι μικρότεροι ή ίσοι του $$n$$, αλλά δεν είναι διαιρέτες του.  \nΕπιστρέψτε το αποτέλεσμα **mod** $$10^9+7$$.  \n \n**ΜΗΝ** τροποποιήσετε τη συνάρτηση main.",
+    "tests": [
+      {
+        "input": "1",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "294",
+        "expectedOutput": "901061679"
+      },
+      {
+        "input": "335",
+        "expectedOutput": "235221416"
+      },
+      {
+        "input": "1000",
+        "expectedOutput": "433178710"
+      },
+      {
+        "input": "743",
+        "expectedOutput": "999293262"
+      },
+      {
+        "input": "42",
+        "expectedOutput": "416069769"
+      },
+      {
+        "input": "999",
+        "expectedOutput": "200561020"
+      },
+      {
+        "input": "8",
+        "expectedOutput": "630"
+      },
+      {
+        "input": "689",
+        "expectedOutput": "567551532"
+      },
+      {
+        "input": "888",
+        "expectedOutput": "371975084"
+      }
+    ],
+    "mathLibrary": "True",
+    "defaultCode": "#include <stdio.h>\n\nlong long int weird_factorial(int n) {\n\n}\n\nint main() { \n\tint n;\n\tscanf(\"%d\", &n);\n\tprintf(\"%lld\", weird_factorial(n));\n\treturn 0;\n}"
+  },
+  {
+    "problemTitle": "2-Difference",
+    "problem": "Συμπληρώστε τη συνάρτηση `two_difference`, ώστε να επιστρέφει $$1$$ αν υπάρχουν δύο ακέραιοι στον πίνακα $array$, η διαφορά των οποίων ισούται κατά απόλυτη τιμή με τον ακέραιο $target$. \n\n Με άλλα λόγια, η συνάρτηση πρέπει να επιστρέφει 1 αν υπάρχουν $$i$$, $$j$$, με $$0 \\leq i < j < n$$, ώστε $$ | array[i] - array[j] | = target$$. Διαφορετικά, η συνάρτηση πρέπει να επιστρέφει $$0$$.",
+    "tests": [
+      {
+        "input": "6 78\n5 20 3 2 50 80",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "5 45\n90 70 20 80 50",
+        "expectedOutput": "0"
+      },
+      {
+        "input": "4 4\n1 5 9 12",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "3 5\n10 15 20",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "3 7\n10 15 20",
+        "expectedOutput": "0"
+      },
+      {
+        "input": "5 0\n1 2 3 4 5",
+        "expectedOutput": "0"
+      },
+      {
+        "input": "2 10\n-5 5",
+        "expectedOutput": "1"
+      },
+
+      {
+        "input": "7 2\n1 3 5 7 9 11 13",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "5 50\n100 150 200 250 300",
+        "expectedOutput": "1"
+      }
+    ],
+    "mathLibrary": "True",
+    "defaultCode": "#include <stdio.h>\n#include <stdlib.h>\n\nint two_difference(int n, int *array, int target) {\n\treturn 0;\n}\n\nint main() {\n\tint n, target;\n\tscanf(\"%d %d\", &n, &target);\n\tint *array = malloc(n * sizeof(int));\n\tif (!array)\n\t\treturn 1;\n\n\tfor (int i = 0; i < n; i++) {\n\t scanf(\"%d\", array + i); \n\t} \n\tprintf(\"%d\", two_difference(n, array, target));\n\tfree(array);\n\treturn 0;\n}"
+  },
+  {
+    "problemTitle": "'Ενας, πρώτος και μοναδικός",
+    "problem": "Γράψτε μια συνάρτηση `first_unique_char`, η οποία λαμβάνει ως όρισμα μια συμβολοσειρά s, μήκους $n$ και επιστρέφει τη θέση (index) του πρώτου χαρακτήρα της συμβολοσειράς που δεν επαναλαμβάνεται (δηλαδή εμφανίζεται ακριβώς μία φορά). \n\nΑν δεν υπάρχει τέτοιος χαρακτήρας στη συμβολοσειρά, η συνάρτηση πρέπει να επιστρέφει -1.",
+    "tests": [
+      {
+        "input": "13 geeksforgeeks",
+        "expectedOutput": "5"
+      },
+      {
+        "input": "6 aaabca",
+        "expectedOutput": "3"
+      },
+      {
+        "input": "7 abcdefa",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "5 aaaaa",
+        "expectedOutput": "-1"
+      },
+      {
+        "input": "1 a",
+        "expectedOutput": "0"
+      },
+      {
+        "input": "4 abab",
+        "expectedOutput": "-1"
+      },
+      {
+        "input": "10 aabbccddee",
+        "expectedOutput": "-1"
+      },
+      {
+        "input": "8 abcdeabc",
+        "expectedOutput": "3"
+      },
+      {
+        "input": "2 zz",
+        "expectedOutput": "-1"
+      },
+      {
+        "input": "0",
+        "expectedOutput": "-1"
+      }
+    ],
+    "mathLibrary": "True",
+    "defaultCode": "#include <stdio.h>\n\nint first_unique_char(int n, char *s) {\n\treturn -1;\n}\n\nint main() {\n\tint n;\n\tscanf(\"%d\", &n);\n\n\tchar *s = malloc((n+1) * sizeof(char));\n\tif (!s)\n\t\treturn 1;\n\n\tscanf(\"%s\", s);\n\tprintf(\"%d\", first_unique_char(n, s));\n\n\tfree(s);\n\treturn 0;\n}"
+  },
+  {
+    "problemTitle": "Αδύναμη δύναμη",
+    "problem": "Γράψτε μια συνάρτηση `powerless_power`, η οποία λαμβάνει ως όρισμα δύο ακέραιους $n, k$, $0 \\leq n, k \\leq 100$ και επιστρέφει την τιμή της παράστασης $n^k$ χωρίς να κάνει χρήση της συνάρτησης `pow` της μαθηματικής βιβλιοθήκης.",
+    "tests": [
+      {
+        "input": "2 3",
+        "expectedOutput": "8"
+      },
+      {
+        "input": "5 0",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "10 2",
+        "expectedOutput": "100"
+      },
+      {
+        "input": "7 1",
+        "expectedOutput": "7"
+      },
+      {
+        "input": "3 4",
+        "expectedOutput": "81"
+      },
+      {
+        "input": "1 100",
+        "expectedOutput": "1"
+      },
+      {
+        "input": "100 1",
+        "expectedOutput": "100"
+      },
+      {
+        "input": "4 5",
+        "expectedOutput": "1024"
+      },
+      {
+        "input": "9 3",
+        "expectedOutput": "729"
+      },
+      {
+        "input": "6 6",
+        "expectedOutput": "46656"
+      }
+    ],
+    "mathLibrary": "False",
+    "defaultCode": "#include <stdio.h>\n\nint powerless_power(int n, int k) {\n\treturn -1;\n}\n\nint main() {\n\tint n, k;\n\tscanf(\"%d %d\", &n, &k);\n\tprintf(\"%d\", powerless_power(n, k));\n\treturn 0;\n}"
+  }
+]
