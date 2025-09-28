@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import ToggleSwitch from "@/components/theme/ToggleSwitch"; // Import the ToggleSwitch
+import ToggleSwitch from "@/components/theme/ToggleSwitch";
 
 const NewNavbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -10,6 +10,7 @@ const NewNavbar = () => {
     { href: "/CodeChallenges", text: "Code Challenges" },
     { href: "/Labs", text: "Labs" },
     { href: "/Uoabot", text: "Uoabot" },
+    { href: "/FaqBot", text: "FAQ Bot" },
   ];
 
   return (

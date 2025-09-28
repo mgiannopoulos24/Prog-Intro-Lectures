@@ -8,6 +8,7 @@ import CodeChallenges from "./pages/CodeChallenges";
 import CodeChallenge from "./pages/CodeChallenge";
 import Labs from "./pages/Labs";
 import Uoabot from "./pages/Uoabot";
+import FaqBot from "./pages/FaqBot";
 import NewNavbar from "./components/layout/NewNavbar";
 import Footer from "./components/layout/Footer";
 import { useSecretCode } from "./hooks/useCode.js";
@@ -36,6 +37,7 @@ function App() {
             />
             <Route path="/labs" element={<Labs />} />
             <Route path="/uoabot" element={<Uoabot />} />
+            <Route path="/faqbot" element={<FaqBot />} />
           </Routes>
         </BrowserRouter>
         <Footer />

@@ -7,6 +7,8 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import { toast } from "sonner";
+import { Sun, Moon } from "lucide-react";
+
 import { Progress } from "@/components/ui/progress";
 import { ThemeContext } from "@/components/theme/ThemeContext";
 import BackToChalls from "@/components/buttons/BackToChalls";
@@ -31,8 +33,18 @@ function CodeChallenge() {
   const [isWrongAnswer, setIsWrongAnswer] = useState(false);
 
   const { isDarkTheme } = useContext(ThemeContext);
+  const [fontSize, setFontSize] = useState(16);
+  const [tabSize, setTabSize] = useState(4);
+  const [editorTheme, setEditorTheme] = useState(
+    isDarkTheme ? "vs-dark" : "light",
+  );
+
   const navigate = useNavigate();
   const { challengeIndex } = useParams();
+
+  useEffect(() => {
+    setEditorTheme(isDarkTheme ? "vs-dark" : "light");
+  }, [isDarkTheme]);
 
   useEffect(() => {
     const fetchedChallenge = challenges[challengeIndex];
@@ -112,6 +124,10 @@ function CodeChallenge() {
     );
   }
 
+  const controlClasses =
+    "w-20 h-9 text-sm rounded-md border border-gray-400 dark:border-gray-600 bg-gray-200 dark:bg-gray-800 text-center focus:outline-none focus:ring-2 focus:ring-sky-500";
+  const fontSizes = [12, 14, 16, 18, 20, 22, 24, 28, 32];
+
   return (
     <>
       <BackToChalls />
@@ -123,19 +139,91 @@ function CodeChallenge() {
       </div>
 
       <div className="w-11/12 md:w-10/12 lg:w-4/5 mx-auto my-8 flex flex-col">
-        <div className="flex justify-end p-2 bg-gray-300 dark:bg-gray-700 rounded-t-lg">
-          <RunCodeButton onClick={handleRun} disabled={disabled} />
-          <SubmitCodeButton onClick={handleSubmit} disabled={disabled} />
+        <div className="flex flex-wrap items-center justify-between gap-4 p-2 bg-gray-300 dark:bg-gray-700 rounded-t-lg">
+          <div className="flex flex-wrap items-end gap-4">
+            <div className="flex flex-col items-center">
+              <label
+                htmlFor="fontSize"
+                className="text-xs font-medium mb-1.5 text-gray-800 dark:text-gray-200"
+              >
+                Font Size
+              </label>
+              <select
+                id="fontSize"
+                value={fontSize}
+                onChange={(e) => setFontSize(Number(e.target.value))}
+                className={controlClasses}
+              >
+                {fontSizes.map((size) => (
+                  <option key={size} value={size}>
+                    {size}px
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <label
+                htmlFor="theme-toggle"
+                className="text-xs font-medium mb-1.5 text-gray-800 dark:text-gray-200"
+              >
+                Theme
+              </label>
+              <button
+                id="theme-toggle"
+                onClick={() =>
+                  setEditorTheme((prev) =>
+                    prev === "light" ? "vs-dark" : "light",
+                  )
+                }
+                className={`${controlClasses} flex items-center justify-center`}
+                aria-label="Toggle editor theme"
+              >
+                {editorTheme === "light" ? (
+                  <Sun className="h-5 w-5" />
+                ) : (
+                  <Moon className="h-5 w-5" />
+                )}
+              </button>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <label
+                htmlFor="tabSize"
+                className="text-xs font-medium mb-1.5 text-gray-800 dark:text-gray-200"
+              >
+                Tab Size
+              </label>
+              <select
+                id="tabSize"
+                value={tabSize}
+                onChange={(e) => setTabSize(Number(e.target.value))}
+                className={controlClasses}
+              >
+                <option value="2">2</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="flex">
+            <RunCodeButton onClick={handleRun} disabled={disabled} />
+            <SubmitCodeButton onClick={handleSubmit} disabled={disabled} />
+          </div>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-0.5 bg-gray-500 rounded-b-lg overflow-hidden">
-          <div className="w-full lg:w-2/3 h-[600px] lg:h-auto">
+          <div className="w-full lg:w-2-3 h-[600px] lg:h-auto">
             <Editor
               defaultLanguage="c"
               value={code}
               onChange={(value) => setCode(value)}
-              theme={isDarkTheme ? "vs-dark" : "light"}
-              options={{ fontSize: 16, minimap: { enabled: false } }}
+              theme={editorTheme}
+              options={{
+                fontSize: fontSize,
+                tabSize: tabSize,
+                minimap: { enabled: false },
+              }}
             />
           </div>
 
