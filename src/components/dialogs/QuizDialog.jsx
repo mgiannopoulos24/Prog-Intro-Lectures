@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-// Shadcn UI Components
 import {
   Dialog,
   DialogContent,
@@ -11,7 +10,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 
-// Lucide React Icons
 import {
   ChevronLeft,
   ChevronRight,
@@ -20,9 +18,8 @@ import {
   Frown,
 } from "lucide-react";
 
-// Utilities and Data
 import { cn } from "@/lib/utils";
-import images from "../../utils/images";
+import { loadImage } from "@/utils/imageLoader";
 
 const QuizDialog = ({ open, onClose, title, questions }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -30,6 +27,9 @@ const QuizDialog = ({ open, onClose, title, questions }) => {
   const [showResult, setShowResult] = useState(false);
   const [userSelections, setUserSelections] = useState([]);
   const [progress, setProgress] = useState(0);
+  const [imageSrc, setImageSrc] = useState(null);
+
+  const currentQuestion = questions?.[currentQuestionIndex];
 
   useEffect(() => {
     if (open && questions?.length) {
@@ -43,6 +43,18 @@ const QuizDialog = ({ open, onClose, title, questions }) => {
     }
   }, [currentQuestionIndex, questions]);
 
+  useEffect(() => {
+    const fetchImage = async () => {
+      setImageSrc(null);
+      if (currentQuestion?.photo) {
+        const src = await loadImage(currentQuestion.photo);
+        setImageSrc(src);
+      }
+    };
+
+    fetchImage();
+  }, [currentQuestion]);
+
   const resetQuiz = () => {
     setCurrentQuestionIndex(0);
     setCorrectAnswers(0);
@@ -51,9 +63,8 @@ const QuizDialog = ({ open, onClose, title, questions }) => {
   };
 
   const handleAnswerClick = (answer) => {
-    if (!questions?.length) return;
+    if (!currentQuestion) return;
 
-    const currentQuestion = questions[currentQuestionIndex];
     const correctAnswersArray = Array.isArray(currentQuestion.correctAnswer)
       ? currentQuestion.correctAnswer
       : [currentQuestion.correctAnswer];
@@ -84,7 +95,7 @@ const QuizDialog = ({ open, onClose, title, questions }) => {
 
   const handlePreviousQuestion = () => {
     if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex((prev) => prev + 1);
+      setCurrentQuestionIndex((prev) => prev - 1);
     }
   };
 
@@ -136,9 +147,8 @@ const QuizDialog = ({ open, onClose, title, questions }) => {
     );
   };
 
-  if (!questions?.length) return null;
+  if (!questions?.length || !currentQuestion) return null;
 
-  const currentQuestion = questions[currentQuestionIndex];
   const questionSelection = userSelections[currentQuestionIndex];
 
   return (
@@ -159,12 +169,16 @@ const QuizDialog = ({ open, onClose, title, questions }) => {
               </p>
             </div>
             <div className="flex-grow overflow-y-auto px-4 sm:px-6 py-4">
-              <div className="flex justify-center items-center my-4">
-                <img
-                  src={images[currentQuestion.photoURL]}
-                  alt={`Question ${currentQuestionIndex + 1}`}
-                  className="max-w-full rounded-lg shadow-md max-h-48 sm:max-h-72"
-                />
+              <div className="flex justify-center items-center my-4 h-48 sm:h-72">
+                {imageSrc ? (
+                  <img
+                    src={imageSrc}
+                    alt={`Question ${currentQuestionIndex + 1}`}
+                    className="max-w-full max-h-full rounded-lg shadow-md"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-slate-200 dark:bg-slate-700 animate-pulse rounded-lg" />
+                )}
               </div>
               <h3 className="text-xl sm:text-2xl text-center my-6 font-semibold">
                 {currentQuestion.question}
@@ -178,7 +192,7 @@ const QuizDialog = ({ open, onClose, title, questions }) => {
                     variant={getButtonVariant(answer, index)}
                     className={cn("h-auto py-3 text-base whitespace-normal", {
                       "bg-green-600 hover:bg-green-700 text-white":
-                        getButtonVariant(answer, index) === "default" &&
+                        getButton - variant(answer, index) === "default" &&
                         questionSelection,
                       "cursor-not-allowed": !!questionSelection,
                     })}

@@ -24,10 +24,9 @@ const Homepage = () => {
                 key={card.id}
                 icon={card.icon}
                 title={card.title}
-                source={card.source}
                 slides={card.slides}
-                part1={card.part1}
-                part2={card.part2}
+                prof1={card.prof1}
+                prof2={card.prof2}
               />
             ))}
           </div>

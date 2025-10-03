@@ -7,10 +7,8 @@ const Terminal = ({ onClose }) => {
     "Type `help` to see a list of available commands.",
     "------------------------------------------------",
   ]);
-  const [isTyping, setIsTyping] = useState(false);
-  const [showPrompt, setShowPrompt] = useState(true);
+  const [isProcessing, setIsProcessing] = useState(false);
   const inputRef = useRef(null);
-  const typeIntervalRef = useRef(null);
   const commandCancelledRef = useRef(false);
 
   useEffect(() => {
@@ -19,17 +17,11 @@ const Terminal = ({ onClose }) => {
     const handleKeyDown = (e) => {
       if (e.ctrlKey && e.key === "c") {
         e.preventDefault();
-        e.stopPropagation();
         handleCtrlC();
       } else if (e.ctrlKey && e.key === "d") {
         e.preventDefault();
-        e.stopPropagation();
-        e.stopImmediatePropagation();
         onClose();
-        return false;
       } else if (e.key === "Escape") {
-        e.preventDefault();
-        e.stopPropagation();
         onClose();
       }
     };
@@ -37,40 +29,20 @@ const Terminal = ({ onClose }) => {
     document.addEventListener("keydown", handleKeyDown, true);
     return () => {
       document.removeEventListener("keydown", handleKeyDown, true);
-      if (typeIntervalRef.current) {
-        clearInterval(typeIntervalRef.current);
-      }
     };
   }, [onClose]);
 
   const handleCtrlC = () => {
-    commandCancelledRef.current = true;
-
-    if (isTyping) {
-      if (typeIntervalRef.current) {
-        clearInterval(typeIntervalRef.current);
-        typeIntervalRef.current = null;
-      }
-
-      setOutput((prev) => {
-        const newOutput = [...prev];
-        newOutput[newOutput.length - 1] += "^C";
-        newOutput.push("");
-        return newOutput;
-      });
-    } else {
-      setOutput((prev) => [...prev, "^C"]);
+    if (isProcessing) {
+      commandCancelledRef.current = true;
     }
-
-    setIsTyping(false);
-    setShowPrompt(true);
+    setOutput((prev) => [...prev, "^C"]);
+    setIsProcessing(false);
     setInput("");
 
     setTimeout(() => {
       inputRef.current?.focus();
-
-      commandCancelledRef.current = false;
-    }, 100);
+    }, 10);
   };
 
   const handleInputChange = (e) => {
@@ -78,63 +50,32 @@ const Terminal = ({ onClose }) => {
   };
 
   const handleInputKeyDown = (e) => {
-    if (e.key === "Enter" && !isTyping) {
+    if (e.key === "Enter" && !isProcessing) {
+      e.preventDefault();
       const command = input.trim().toLowerCase();
       processCommand(command);
       setInput("");
     }
   };
 
-  const getPrompt = () => {
-    return (
-      <span>
-        <span className="text-green-400">Student</span>
-        <span className="text-blue-400">@</span>
-        <span className="text-purple-400">DIT</span>
-        <span className="text-white">:</span>
-        <span className="text-blue-400">~</span>
-        <span className="text-white">$ </span>
-      </span>
-    );
-  };
-
-  const typeMessage = (message, callback) => {
-    setIsTyping(true);
-    setShowPrompt(false);
-    let currentMessage = "";
-    let index = 0;
-
-    typeIntervalRef.current = setInterval(() => {
-      if (commandCancelledRef.current) {
-        clearInterval(typeIntervalRef.current);
-        typeIntervalRef.current = null;
-        return;
-      }
-
-      currentMessage += message[index];
-      setOutput((prev) => {
-        const newOutput = [...prev];
-        newOutput[newOutput.length - 1] = currentMessage;
-        return newOutput;
-      });
-      index++;
-
-      if (index >= message.length) {
-        clearInterval(typeIntervalRef.current);
-        typeIntervalRef.current = null;
-        setIsTyping(false);
-        setShowPrompt(true);
-        if (callback && !commandCancelledRef.current) callback();
-      }
-    }, 100);
-  };
+  const getPrompt = () => (
+    <span>
+      <span className="text-green-400">Student</span>
+      <span className="text-blue-400">@</span>
+      <span className="text-purple-400">DIT</span>
+      <span className="text-white">:</span>
+      <span className="text-blue-400">~</span>
+      <span className="text-white">$ </span>
+    </span>
+  );
 
   const fetchFortune = async () => {
     try {
-      const response = await fetch("http://api.quotable.io/random");
+      const response = await fetch("https://api.quotable.io/random");
       const data = await response.json();
       return `${data.content}\n\n— ${data.author}`;
     } catch (error) {
+      console.error("Fortune API Error:", error);
       return "Fortune telling failed. The network spirits are not responding.";
     }
   };
@@ -142,17 +83,17 @@ const Terminal = ({ onClose }) => {
   const processCommand = async (command) => {
     commandCancelledRef.current = false;
 
-    let newOutput = [...output];
-    newOutput.push(
+    const commandElement = (
       <div key={`prompt-${Date.now()}`} className="flex font-code">
         {getPrompt()}
         <span>{command}</span>
-      </div>,
+      </div>
     );
+    setOutput((prev) => [...prev, commandElement]);
 
     switch (command) {
       case "help":
-        newOutput.push(
+        const helpText = [
           "Available commands:",
           "  help     - Shows this list of commands",
           "  clear    - Clears the terminal screen",
@@ -166,15 +107,16 @@ const Terminal = ({ onClose }) => {
           "  Ctrl+C   - Interrupt any running command",
           "  Ctrl+D   - Close the terminal",
           "  Escape   - Close the terminal",
-        );
-        setOutput(newOutput);
+        ];
+        setOutput((prev) => [...prev, ...helpText]);
         break;
+
       case "clear":
-        newOutput = [];
-        setOutput(newOutput);
+        setOutput([]);
         break;
+
       case "cowsay":
-        newOutput.push(
+        const cow = [
           "  _____________",
           "< Hello, student! >",
           "  -------------",
@@ -183,51 +125,42 @@ const Terminal = ({ onClose }) => {
           "            (__)\\       )\\/\\",
           "                ||----w |",
           "                ||     ||",
-        );
-        setOutput(newOutput);
+        ];
+        setOutput((prev) => [...prev, ...cow]);
         break;
-      case "creators":
-        newOutput.push(
-          "This website was designed and developed by matinanadali and mgiannopoulos24.",
-        );
-        setOutput(newOutput);
-        break;
-      case "truth":
-        newOutput.push("");
-        setOutput(newOutput);
-        typeMessage(`Is any of it real?...`);
-        break;
-      case "fortune":
-        newOutput.push("Consulting the digital oracle...");
-        setOutput(newOutput);
 
+      case "creators":
+        setOutput((prev) => [
+          ...prev,
+          "This website was designed and developed by matinanadali and mgiannopoulos24.",
+        ]);
+        break;
+
+      case "truth":
+        setOutput((prev) => [...prev, "Is any of it real?..."]);
+        break;
+
+      case "fortune":
+        setIsProcessing(true);
+        setOutput((prev) => [...prev, "Consulting the digital oracle..."]);
         const fortune = await fetchFortune();
 
         if (commandCancelledRef.current) {
-          return;
+        } else {
+          setOutput((prev) => [...prev, fortune]);
         }
-
-        newOutput = [...output];
-        newOutput.push(
-          <div key={`prompt-${Date.now()}`} className="flex font-code">
-            {getPrompt()}
-            <span>{command}</span>
-          </div>,
-        );
-        newOutput.push("Consulting the digital oracle...");
-        newOutput.push("");
-        setOutput(newOutput);
-
-        if (!commandCancelledRef.current) {
-          typeMessage(fortune);
-        }
+        setIsProcessing(false);
+        setTimeout(() => inputRef.current?.focus(), 10);
         break;
+
       case "exit":
         onClose();
         return;
+
       default:
-        newOutput.push(`Command not found: ${command}`);
-        setOutput(newOutput);
+        if (command) {
+          setOutput((prev) => [...prev, `Command not found: ${command}`]);
+        }
         break;
     }
   };
@@ -260,7 +193,7 @@ const Terminal = ({ onClose }) => {
               )}
             </div>
           ))}
-          {showPrompt && (
+          {!isProcessing && (
             <div className="flex font-code">
               {getPrompt()}
               <input
@@ -271,7 +204,6 @@ const Terminal = ({ onClose }) => {
                 onKeyDown={handleInputKeyDown}
                 className="bg-transparent border-none text-white w-full focus:outline-none font-code"
                 autoComplete="off"
-                disabled={isTyping}
               />
             </div>
           )}

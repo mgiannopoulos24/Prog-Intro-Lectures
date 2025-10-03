@@ -4,31 +4,27 @@
     "icon": "wave",
     "title": "Διάλεξη 0: Καλημέρα Κόσμε!",
     "slides": "https://progintro.github.io/assets/pdf/lec00.pdf",
-    "part1": "https://delos.uoa.gr/opendelos/player?rid=80cd2838",
-    "part2": "https://delos.uoa.gr/opendelos/player?rid=b92133a1"
+    "prof1": {
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=6a1457ae",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=276a2232"
+    },
+    "prof2": {
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=47f83104",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=5affd311"
+    }
   },
   {
     "id": 2,
     "icon": "terminal",
     "title": "Διάλεξη 1: Η Γραμμή Εντολών",
     "slides": "https://progintro.github.io/assets/pdf/lec01.pdf",
-    "part1": "https://delos.uoa.gr/opendelos/player?rid=e52f3866",
-    "part2": "https://delos.uoa.gr/opendelos/player?rid=309ae0c5"
-  },
-  {
-    "id": 3,
-    "icon": "mem_variables",
-    "title": "Διάλεξη 2: Μνήμη και Μεταβλητές",
-    "slides": "https://progintro.github.io/assets/pdf/lec02.pdf",
-    "part1": "https://delos.uoa.gr/opendelos/player?rid=6232ea43",
-    "part2": "https://delos.uoa.gr/opendelos/player?rid=a456608c"
-  },
-  {
-    "id": 4,
-    "icon": "functions",
-    "title": "Διάλεξη 3: Συναρτήσεις",
-    "slides": "https://progintro.github.io/assets/pdf/lec03.pdf",
-    "part1": "https://delos.uoa.gr/opendelos/player?rid=39d8dbb2",
-    "part2": "https://delos.uoa.gr/opendelos/player?rid=f550c3de"
+    "prof1": {
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=1bc6e284",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=46eed195"
+    },
+    "prof2": {
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=fdec493f",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=42441dd6"
+    }
   }
 ]

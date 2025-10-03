@@ -1,11 +1,21 @@
-import React from "react";
-import { iconMap } from "../../utils/iconMap";
+import React, { useState, useEffect } from "react";
+import { loadImage } from "../../utils/imageLoader";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const LabCard = ({ icon, title, desc, solution }) => {
-  const iconSrc = iconMap[icon] || icon;
+  const [iconSrc, setIconSrc] = useState(null);
+
+  useEffect(() => {
+    const fetchImage = async () => {
+      if (icon) {
+        const src = await loadImage(icon);
+        setIconSrc(src);
+      }
+    };
+    fetchImage();
+  }, [icon]);
 
   return (
     <Card className="w-full max-w-sm overflow-hidden rounded-lg shadow-md dark:bg-slate-800/50">

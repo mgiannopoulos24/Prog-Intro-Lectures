@@ -6,6 +6,7 @@ const NewNavbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const navLinks = [
+    { href: "/", text: "Lectures" },
     { href: "/Quizzes", text: "Quizzes" },
     { href: "/CodeChallenges", text: "Code Challenges" },
     { href: "/Labs", text: "Labs" },
@@ -17,7 +18,6 @@ const NewNavbar = () => {
     <nav className="sticky top-0 z-50 w-full border-b border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/* Website Brand */}
           <div className="flex-shrink-0">
             <a
               href="/"
@@ -27,9 +27,7 @@ const NewNavbar = () => {
             </a>
           </div>
 
-          {/* Right side of the Navbar (Desktop Links, Switch, Mobile Button) */}
           <div className="flex items-center">
-            {/* Desktop Navigation Links */}
             <div className="hidden lg:flex lg:items-center lg:space-x-6">
               {navLinks.map((link) => (
                 <a
@@ -42,12 +40,10 @@ const NewNavbar = () => {
               ))}
             </div>
 
-            {/* Desktop Theme Switch (hidden on mobile) */}
             <div className="hidden lg:block ml-6">
               <ToggleSwitch />
             </div>
 
-            {/* Mobile Menu Button (hidden on desktop) */}
             <div className="lg:hidden ml-4">
               <button
                 onClick={() => setIsDrawerOpen(true)}
@@ -61,7 +57,6 @@ const NewNavbar = () => {
         </div>
       </div>
 
-      {/* --- Mobile Drawer Menu --- */}
       <div
         onClick={() => setIsDrawerOpen(false)}
         className={`fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity lg:hidden ${
@@ -75,7 +70,6 @@ const NewNavbar = () => {
         }`}
       >
         <div className="flex h-full flex-col p-5">
-          {/* Drawer Header with Switch on the left and Close button on the right */}
           <div className="mb-4 flex items-center justify-between">
             <ToggleSwitch />
             <button
