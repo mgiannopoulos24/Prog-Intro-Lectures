@@ -26,5 +26,19 @@
       "part1": "https://delos.uoa.gr/opendelos/player?rid=fdec493f",
       "part2": "https://delos.uoa.gr/opendelos/player?rid=42441dd6"
     }
+  },
+  {
+    "id": 3,
+    "icon": "mem_variables",
+    "title": "Διάλεξη 2: Μνήμη και Μεταβλητές",
+    "slides": "https://progintro.github.io/assets/pdf/lec02.pdf",
+    "prof1": {
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=e80f3091",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=def754e8"
+    },
+    "prof2": {
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=1788c1ff",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=6693d941"
+    }  
   }
 ]
