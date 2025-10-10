@@ -40,5 +40,19 @@
       "part1": "https://delos.uoa.gr/opendelos/player?rid=1788c1ff",
       "part2": "https://delos.uoa.gr/opendelos/player?rid=6693d941"
     }  
+  },
+  {
+    "id": 4,
+    "icon": "functions",
+    "title": "Διάλεξη 3: Συναρτήσεις",
+    "slides": "https://progintro.github.io/assets/pdf/lec03.pdf",
+    "prof1": {
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=2cc60121",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=845c8fba"
+    },
+    "prof2": {
+      "part1": "https://delos.uoa.gr/opendelos/player?rid=c7615a04",
+      "part2": "https://delos.uoa.gr/opendelos/player?rid=d7cc1cb"
+    }
   }
 ]
