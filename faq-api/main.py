@@ -125,7 +125,7 @@ if __name__ == '__main__':
     import uvicorn
     uvicorn.run(
         "main:app", 
-        host="0.0.0.0", 
+        host=FRONTEND_URL, 
         port=PORT, 
         reload=True, 
         log_level="info", 
