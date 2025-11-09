@@ -12,7 +12,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.7.7",
+    "axios": "^1.13.2",
     "body-parser": "^2.2.0",
     "cheerio": "^1.1.2",
     "class-variance-authority": "^0.7.1",
@@ -43,10 +43,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
-    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\"",
-    "start:server": "node ./faq-api/server.js",
-    "dev:server": "nodemon ./faq-api/server.js",
-    "dev:all": "concurrently \"npm run dev\" \"npm run dev:server\""
+    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,scss,json,md}\""
   },
   "eslintConfig": {
     "extends": [
