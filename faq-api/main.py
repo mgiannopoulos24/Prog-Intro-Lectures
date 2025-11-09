@@ -119,14 +119,13 @@ async def faq_query(body: QuestionBody):
 
 # --- Entry Point for running with uvicorn ---
 if __name__ == '__main__':
-    FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:5173')
+    API_HOST = os.getenv("API_HOST", "0.0.0.0") 
     PORT = int(os.getenv("PORT", 5000))
-    # To run: uvicorn faq_api.main:app --host 0.0.0.0 --port 5000 --reload
-    print(f"\nFAQ Bot API is starting on port {PORT}. Press Ctrl+C to stop.")
+
     import uvicorn
     uvicorn.run(
         "main:app", 
-        host=FRONTEND_URL, 
+        host=API_HOST, 
         port=PORT, 
         reload=True, 
         log_level="info", 
