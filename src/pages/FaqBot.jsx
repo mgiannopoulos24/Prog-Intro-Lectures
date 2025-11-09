@@ -5,7 +5,7 @@ import { Send, Loader2 } from "lucide-react";
 const isLocal = window.location.hostname === "localhost";
 const API_URL = isLocal
   ? "http://localhost:5000" 
-  : "https://prog-intro-lectures-api.onrender.com"; 
+  : "https://prog-intro-lectures-faq.onrender.com"; 
 
 // Simple message structure for state
 const initialMessages = [
