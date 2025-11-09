@@ -29,7 +29,8 @@ if (!contextString) {
 }
 
 // CORS and Middleware
-const frontendOrigin = process.env.FRONTEND_URL || 'http://localhost:5173'; 
+const rawFrontendOrigin = process.env.FRONTEND_URL || 'http://localhost:5173';
+const frontendOrigin = rawFrontendOrigin.replace(/\/$/, ""); 
 app.use(cors({ origin: frontendOrigin }));
 console.log(`CORS Origin set to: ${frontendOrigin}`);
 app.use(bodyParser.json());
