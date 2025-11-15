@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 from faq_processor import load_faq_data
 
-load_dotenv(override=True) 
+load_dotenv(override=True)
 
 app = FastAPI(
     title="FAQ Bot API",
@@ -21,7 +21,7 @@ if not CONTEXT_STRING:
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 AI_CLIENT = None
-GEMINI_MODEL = "gemini-2.5-flash" 
+GEMINI_MODEL = "gemini-2.5-flash"
 
 if not GEMINI_API_KEY:
     print("Warning: GEMINI_API_KEY not set. API will not be able to process queries.")
@@ -33,7 +33,7 @@ else:
         print(f"Error initializing Gemini client: {e}")
         AI_CLIENT = None
 
-FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:5173')
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173")
 print(f"CORS Origin set to: {FRONTEND_URL}")
 
 app.add_middleware(
@@ -44,32 +44,33 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 class QuestionBody(BaseModel):
     question: str
 
 
-@app.get('/')
+@app.get("/")
 async def root():
     """Simple health check endpoint."""
     return {"message": "FAQ Bot API is running."}
 
-@app.post('/faq-query')
+
+@app.post("/faq-query")
 async def faq_query(body: QuestionBody):
     """
     The main endpoint for the FAQ Bot, implementing Retrieval-Augmented Generation (RAG).
     """
     if not AI_CLIENT or not CONTEXT_STRING:
         raise HTTPException(
-            status_code=503, 
-            detail="Server not fully configured (GEMINI_API_KEY or FAQ data missing)."
+            status_code=503,
+            detail="Server not fully configured (GEMINI_API_KEY or FAQ data missing).",
         )
 
     user_question = body.question.strip()
 
     if not user_question:
         raise HTTPException(
-            status_code=400, 
-            detail="Παρακαλώ δώστε μια έγκυρη ερώτηση."
+            status_code=400, detail="Παρακαλώ δώστε μια έγκυρη ερώτηση."
         )
 
     prompt = f"""
@@ -86,36 +87,36 @@ async def faq_query(body: QuestionBody):
 
     try:
         response = AI_CLIENT.models.generate_content(
-            model=GEMINI_MODEL,
-            contents=prompt
+            model=GEMINI_MODEL, contents=prompt
         )
-        
+
         response_text = response.text.strip()
-        
+
         return {"answer": response_text}
-        
+
     except APIError as e:
         print(f"Gemini API Error: {e}")
         raise HTTPException(
-            status_code=500, 
-            detail="Προέκυψε ένα σφάλμα κατά την επικοινωνία με την υπηρεσία AI. Παρακαλώ δοκιμάστε ξανά."
+            status_code=500,
+            detail="Προέκυψε ένα σφάλμα κατά την επικοινωνία με την υπηρεσία AI. Παρακαλώ δοκιμάστε ξανά.",
         )
     except Exception as e:
         print(f"Internal Server Error: {e}")
         raise HTTPException(
-            status_code=500, 
-            detail="Ένα απροσδόκητο σφάλμα συνέβη στον server."
+            status_code=500, detail="Ένα απροσδόκητο σφάλμα συνέβη στον server."
         )
 
-if __name__ == '__main__':
-    API_HOST = os.getenv("API_HOST", "0.0.0.0") 
+
+if __name__ == "__main__":
+    API_HOST = os.getenv("API_HOST", "0.0.0.0")
     PORT = int(os.getenv("PORT", 5000))
 
     import uvicorn
+
     uvicorn.run(
-        "main:app", 
-        host=API_HOST, 
-        port=PORT, 
-        reload=True, 
-        log_level="info", 
+        "main:app",
+        host=API_HOST,
+        port=PORT,
+        reload=True,
+        log_level="info",
     )
