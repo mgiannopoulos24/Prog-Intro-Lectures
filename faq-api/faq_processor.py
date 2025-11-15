@@ -57,6 +57,9 @@ def load_faq_data() -> Optional[str]:
                 else None
             )
 
+            if question_content and answer_content:
+                faq_data.append({"question": question_content, "answer": answer_content})
+
         if not faq_data:
             print("Warning: No FAQ data pairs were successfully loaded.")
             return None
